@@ -8,10 +8,15 @@
   font-family: NanumPenScript;
   src: url('/fonts/NanumPenScript-Regular.ttf');
 }
+@font-face {
+  font-family: Instabread;
+  src: url('/font/Instabread Regular.ttf');
+}
 
 @theme {
   --font-intro-rust: IntroRust, sans-serif;
   --font-nanum-pen-script: NanumPenScript, cursive;
+  --font-instabread: Instabread, cursive;
 }
 
 :root {

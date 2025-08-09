@@ -1,4 +1,5 @@
 import './App.css'
+import About from './components/about'
 import ClientReviews from './components/client-reviews'
 import Contact from './components/contact'
 import ReviewSection from './components/countings'
@@ -24,15 +25,17 @@ function App() {
         </p>
       </div>
       <MyWorks />
-      {/* <ScenicGrid /> */}
       <div id="podcast">
         <PodcastFreeplay />
       </div>
       <div id="reviews">
         <ClientReviews />
       </div>
+      <div id="about">
+        <About />
+      </div>
       <div>
-        <Posters/>
+        <Posters />
       </div>
       <Contact />
     </div>
