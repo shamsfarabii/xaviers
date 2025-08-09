@@ -1,11 +1,12 @@
 import './App.css'
 import ClientReviews from './components/client-reviews'
+import Contact from './components/contact'
+import ReviewSection from './components/countings'
 import Hero from './components/hero'
 import MyWorks from './components/my-works'
-import Navigation from './components/top-nav'
 import PodcastFreeplay from './components/podcast'
-import ReviewSection from './components/countings'
 import Posters from './components/posters'
+import Navigation from './components/top-nav'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
       <div>
         <Posters/>
       </div>
+      <Contact />
     </div>
   )
 }
