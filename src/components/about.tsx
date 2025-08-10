@@ -9,17 +9,17 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Asad",
-    skill: "video editor",
+    skill: "Video Editor",
     image: '/T1.gif'
   },
   {
     name: "Tahasin",
-    skill: "prochur matha",
+    skill: "Managing Director",
     image: '/T2.gif'
   },
   {
     name: "Nafis",
-    skill: "Ral ko Nahi darte",
+    skill: "Graphic Designer",
     image: '/T3.gif'
   }
 ];
@@ -48,10 +48,10 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className='absolute bottom-16 left-5 text-white font-bold  font-instabread text-2xl'>
+          <div className='absolute bottom-15 left-5 text-white font-bold  font-instabread text-2xl'>
             <p>{member?.name}</p>
           </div>
-          <div className='absolute bottom-11 left-5 text-white'>
+          <div className='absolute bottom-10 left-5 text-white'>
             <p>{member?.skill}</p>
           </div>
         </div>

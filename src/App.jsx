@@ -3,6 +3,7 @@ import About from './components/about'
 import ClientReviews from './components/client-reviews'
 import Contact from './components/contact'
 import ReviewSection from './components/countings'
+import Footer from './components/footer'
 import Hero from './components/hero'
 import MyWorks from './components/my-works'
 import PodcastFreeplay from './components/podcast'
@@ -38,6 +39,7 @@ function App() {
         <Posters />
       </div>
       <Contact />
+      <Footer />
     </div>
   )
 }
