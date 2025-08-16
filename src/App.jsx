@@ -1,5 +1,5 @@
 import './App.css'
-import About from './components/about'
+import AboutUsSection from './components/about-us/AboutUsSection'
 import ClientReviews from './components/client-reviews'
 import Contact from './components/contact'
 import ReviewSection from './components/countings'
@@ -33,7 +33,7 @@ function App() {
         <ClientReviews />
       </div>
       <div id="about">
-        <About />
+        <AboutUsSection />
       </div>
       <div>
         <Posters />

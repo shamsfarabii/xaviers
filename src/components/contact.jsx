@@ -62,11 +62,11 @@ export default function Contact() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header Section */}
-                <div className={`text-center mb-16 transition-all duration-1000 ${
-                    isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
-                    <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-red-400 mb-4">CONTACT</h2>
-                    <p className="text-2xl md:text-4xl lg:text-5xl text-white mb-6">Get In Touch</p>
+                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Contact <span className="text-red-400">Us</span>
+                    </h2>
                     <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
                         For your project pricing contact with us
                     </p>
@@ -74,13 +74,12 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Left Column - Contact Form */}
-                    <div className={`transition-all duration-1000 delay-200 ${
-                        isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}>
+                    <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}>
                         <div className="relative group">
                             {/* Gradient Border Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                            
+
                             {/* Form Container */}
                             <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-red-500">
                                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -158,9 +157,8 @@ export default function Contact() {
                     </div>
 
                     {/* Right Column - Contact Info & Social Links */}
-                    <div className={`transition-all duration-1000 delay-400 ${
-                        isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}>
+                    <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}>
                         {/* Contact Info Cards */}
                         <div className="space-y-6 mb-12">
                             {/* Email Card */}
@@ -197,12 +195,11 @@ export default function Contact() {
                         </div>
 
                         {/* Social Media Section */}
-                        <div className={`transition-all duration-1000 delay-600 ${
-                            isVisible ? 'animate-fade-right opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-                        }`}>
-                            <h3 className="text-3xl font-bold text-white mb-6 text-center">
-                                CONTACT US ON :
-                            </h3>
+                        <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-right opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+                            }`}>
+                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                                Contact <span className="text-red-400">Us</span>
+                            </h2>
                             <div className="flex justify-center gap-6">
                                 {/* Facebook */}
                                 <a
