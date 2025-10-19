@@ -12,11 +12,21 @@
   font-family: Instabread;
   src: url('/font/Instabread Regular.ttf');
 }
+@font-face {
+  font-family: Montserrat;
+  src: url('/font/Montserrat-Bold.ttf');
+}
+@font-face {
+  font-family: walbaum;
+  src: url('/font/Instabread Regular.ttf');
+}
 
 @theme {
   --font-intro-rust: IntroRust, sans-serif;
   --font-nanum-pen-script: NanumPenScript, cursive;
   --font-instabread: Instabread, cursive;
+  --font-montserrat: Montserrat, sans-serif;
+  --font-walbaum: walbaum, serif; 
 }
 
 :root {

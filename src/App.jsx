@@ -19,12 +19,6 @@ function App() {
         <Hero />
       </div>
       <ReviewSection />
-      <div className='relative' id="works">
-        <img src="/mywork1.gif" className='w-full mt-20' alt="Hero Image" />
-        <p className='absolute top-[25%] left-[38%] text-7xl text-red-400 z-20 italic animate-fade-up'>
-          <span className="inline-block">My Work</span>
-        </p>
-      </div>
       <MyWorks />
       <div id="podcast">
         <PodcastFreeplay />

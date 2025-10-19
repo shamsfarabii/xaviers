@@ -20,7 +20,7 @@ const teamMembers = [
 
 export default function AboutUsSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
