@@ -8,7 +8,6 @@ const PodcastFreeplay = () => {
   const reelVideoUrls = [
     "https://www.youtube.com/embed/U_NRW4nRrl8?si=cwJIaOcjEfTQ3odT",
     "https://www.youtube.com/embed/U_NRW4nRrl8?si=cwJIaOcjEfTQ3odT",
-    "https://www.youtube.com/embed/U_NRW4nRrl8?si=cwJIaOcjEfTQ3odT",
   ];
 
   useEffect(() => {
@@ -36,18 +35,16 @@ const PodcastFreeplay = () => {
   }, []);
 
   return (
-    <div 
+    <div
       ref={sectionRef}
-      className={`bg-[#0e0e0e] text-white px-8 py-12 font-sans transition-all duration-1000 ${
-        isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className={`bg-[#0e0e0e] text-white px-8 py-12 font-sans transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 items-start">
         {/* Left Column - Reels */}
-        <div className={`transition-all duration-1000 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="relative w-full h-100 mb-6">
+        <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+          <div className="relative w-full h-75 mb-6">
             <img src="/mask2.png" alt="" />
             <div className="absolute top-10 left-0 right-0 text-left text-white px-4 flex flex-col gap-6">
               <p className="text-8xl font-intro-rust">PODCAST</p>
@@ -55,33 +52,40 @@ const PodcastFreeplay = () => {
             </div>
           </div>
           <div className="flex items-center justify-left mb-6">
-            <p className="font-nanum-pen-script text-5xl">Podcast from Reel  </p>
+            <p className="font-nanum-pen-script text-5xl">Reels from Podcast</p>
           </div>
           <div className="flex gap-4">
             {reelVideoUrls.map((url, idx) => (
-              <div key={idx} className="w-full h-100 border-2 rounded-lg overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src='/videos/reel.mp4'
-                  title={`Reel ${idx + 1}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div
+                key={idx}
+                className="relative aspect-[9/16] w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px] border-2 border-gray-700 rounded-lg overflow-hidden"
+              >
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/videos/reel.mp4"
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  onMouseEnter={(e) => e.currentTarget.play()}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.pause();
+                    e.currentTarget.currentTime = 0;
+                  }}
+                />
               </div>
+
             ))}
           </div>
         </div>
 
         {/* Right Column - Longform Video */}
-        <div className={`transition-all duration-1000 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <h3 className="text-4xl font-medium">
             <p className="font-nanum-pen-script text-5xl">Long from</p>
-            <div className={`flex items-center justify-center transition-all duration-1000 delay-600 ${
-              isVisible ? 'animate-fade-right opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}>
+            <div className={`flex items-center justify-center transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-right opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}>
               <img src="/red-arrow.gif" className="h-auto w-40" alt="" />
             </div>
           </h3>

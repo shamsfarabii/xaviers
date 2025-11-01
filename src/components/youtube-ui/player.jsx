@@ -1,15 +1,28 @@
-import ReactPlayer from "react-player";
+export const YoutubeFrame = ({ url }) => {
+    const handleMouseEnter = (e) => {
+        e.currentTarget.play();
+    };
 
-export const YoutubeFrame = ({ url }) => (
-    <div className="bg-black overflow-hidden shadow-md border border-gray-700">
-        <div className="relative w-full pt-[56.25%]">
-            <ReactPlayer
-                src={url}
-                width="100%"
-                height="100%"
-                className="absolute top-0 left-0"
-                controls={true}
-            />
+    const handleMouseLeave = (e) => {
+        e.currentTarget.pause();
+        e.currentTarget.currentTime = 0;
+    };
+
+    return (
+        <div className="bg-black overflow-hidden shadow-md border border-gray-700">
+            <div className="relative w-full pt-[56.25%]">
+                <video
+                    src={url}
+                    width="100%"
+                    height="100%"
+                    className="absolute top-0 left-0 object-cover"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    muted
+                    loop
+                    playsInline
+                />
+            </div>
         </div>
-    </div>
-);
+    );
+};

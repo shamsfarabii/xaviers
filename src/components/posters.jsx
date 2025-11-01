@@ -40,12 +40,12 @@ export default function Posters() {
             </div>
 
             {/* Main content grid */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 w-full">
                 {/* Left Column – Thumbnails */}
                 <div className={`flex flex-col h-full transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}>
                     {/* Top Thumbnails */}
-                    <div className="flex-1 flex flex-col gap-6">
+                    <div className="flex-1 flex flex-col gap-2">
                         <div className={`relative w-full aspect-video border-4 border-[#7daaee] transition-all duration-700 delay-200 ${isVisible ? 'animate-jump-in opacity-100' : 'opacity-0'
                             }`}>
                             <img
@@ -79,11 +79,11 @@ export default function Posters() {
                 <div className={`flex flex-col h-full transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}>
                     {/* Top Posters */}
-                    <div className="flex-1 grid grid-cols-2 gap-4 w-full">
+                    <div className="flex-grow grid grid-cols-2 w-full">
                         {[1, 2, 3, 4].map((i) => (
                             <div
                                 key={i}
-                                className={`aspect-square rounded-lg overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                                className={`rounded-lg transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
                                     }`}
                                 style={{ transitionDelay: `${400 + i * 100}ms` }}
                             >

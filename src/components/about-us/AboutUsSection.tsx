@@ -228,27 +228,6 @@ export default function AboutUsSection() {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className={`text-center mt-20 transition-all duration-1000 delay-600 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-            <div className="relative inline-flex items-center gap-4 rounded-2xl p-8 bg-gradient-to-br from-gray-900 to-black border border-red-500 hover:border-red-400 transition-all duration-500 hover:scale-105">
-              <div className="h-12 w-12 rounded-full bg-gradient-to-r from-red-500 to-purple-500 flex items-center justify-center animate-bounce">
-                <span className="text-2xl">✨</span>
-              </div>
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-white group-hover:text-red-100 transition-colors duration-300">
-                  Ready to create something amazing?
-                </h3>
-                <p className="text-gray-300 group-hover:text-red-200 transition-colors duration-300">
-                  Let's bring your vision to life together.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
