@@ -1,18 +1,8 @@
 import { Briefcase, Menu, MessageCircle, Play, Star, User, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const navItems = [
         { name: 'Home', icon: <User className="w-4 h-4" />, href: '#home' },
@@ -24,19 +14,16 @@ const Navigation = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-black/90 backdrop-blur-md border-b border-red-500/30'
-            : 'bg-transparent'
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0e0e0e] backdrop-blur-md border-1 rounded-md border-red-500'
             }`}>
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="flex items-center justify-between h-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                <div className="flex items-center justify-between h-16 sm:h-20">
                     {/* Logo/Brand */}
                     <div className="flex items-center space-x-3">
                         <div className="relative">
                             <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 flex items-center justify-center">
                                 <span className="text-white font-bold text-xl">X</span>
                             </div>
-                            <div className="absolute -inset-1 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-lg blur opacity-30 animate-pulse"></div>
                         </div>
 
                     </div>
@@ -93,21 +80,9 @@ const Navigation = () => {
                                 <span className="font-medium">{item.name}</span>
                             </a>
                         ))}
-                        <div className="px-4 pt-4">
-                            <button className="w-full relative group">
-                                <div className="absolute -inset-1 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-lg blur opacity-75"></div>
-                                <div className="relative bg-gradient-to-r from-red-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold w-full">
-                                    Let's Work
-                                </div>
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-red-500/30 to-transparent"></div>
-            <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-purple-500/30 to-transparent"></div>
         </nav>
     );
 };

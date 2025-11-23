@@ -75,7 +75,7 @@ const ClientReviews = () => {
     return (
         <div 
             ref={sectionRef}
-            className="bg-[#0e0e0e] text-white py-16 px-4"
+            className="bg-[#0e0e0e] text-white py-4 px-4"
             id="reviews"
         >
             <div className="max-w-7xl mx-auto">

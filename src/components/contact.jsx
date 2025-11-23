@@ -1,5 +1,5 @@
 import { Mail, Phone, Send, User } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
@@ -55,9 +55,9 @@ export default function Contact() {
             id="contact"
         >
             {/* Background mask overlays */}
-            <div className="absolute inset-0 flex justify-between items-center pointer-events-none z-0">
-                <img src="/MaskLeft.png" alt="" className="h-[400px] opacity-30" />
-                <img src="/MaskRight.png" alt="" className="h-[400px] opacity-30" />
+            <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
+                <img src="/MaskLeft.png" alt="" className="h-[300px] lg:h-[400px] opacity-30 object-contain" />
+                <img src="/MaskRight.png" alt="" className="h-[300px] lg:h-[400px] opacity-30 object-contain" />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -197,7 +197,7 @@ export default function Contact() {
                         {/* Social Media Section */}
                         <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-right opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                             }`}>
-                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">
                                 Contact <span className="text-red-400">Us</span>
                             </h2>
                             <div className="flex justify-center gap-6">

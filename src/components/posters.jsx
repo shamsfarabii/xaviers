@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Posters() {
     const [isVisible, setIsVisible] = useState(false);
@@ -34,9 +34,9 @@ export default function Posters() {
             className="bg-[#0e0e0e] py-5 px-4 relative flex items-center justify-center"
         >
             {/* Background mask overlays */}
-            <div className="absolute inset-0 flex justify-between items-center pointer-events-none z-0">
-                <img src="/MaskLeft.png" alt="" className="h-[400px]" />
-                <img src="/MaskRight.png" alt="" className="h-[400px]" />
+            <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
+                <img src="/MaskLeft.png" alt="" className="h-[300px] lg:h-[400px] object-contain" />
+                <img src="/MaskRight.png" alt="" className="h-[300px] lg:h-[400px] object-contain" />
             </div>
 
             {/* Main content grid */}
@@ -107,7 +107,7 @@ export default function Posters() {
                         <img src="/POsterArrow.gif" alt="Arrow" className="w-16 h-16 rotate-360 scale-x-[-1]" />
                         {/* <img src="/Circle.gif" alt="Arrow" className="w-16 h-16 absolute rotate-360 scale-x-[-1]" /> */}
                     </div>
-                    
+
                 </div>
 
                 {/* Right Column – Reel Thumbnails */}

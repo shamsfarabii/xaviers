@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function Hero() {
   return (
@@ -29,11 +28,11 @@ export default function Hero() {
         z-20
       ">
         {/* Title */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 text-center">
-          <p className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 text-center px-4">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold">
             Title
           </p>
-          <p className="text-3xl sm:text-4xl md:text-5xl font-nanum-pen-script font-bold text-red-400">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-nanum-pen-script font-bold text-red-400">
             Asdsdsadf
           </p>
         </div>

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const teamMembers = [
   {
@@ -47,7 +48,7 @@ export default function AboutUsSection() {
     };
   }, []);
 
-  const getCardTransform = (index) => {
+  const getCardTransform = (index: number) => {
     if (hoveredIndex === null) {
       // Default overlapping position - same line
       const offsetX = index * 120; // Horizontal offset for overlap
@@ -88,9 +89,8 @@ export default function AboutUsSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <p className="text-sm font-semibold text-red-400 tracking-wider uppercase mb-4 animate-pulse">
             MEET THE TEAM
           </p>
@@ -103,18 +103,63 @@ export default function AboutUsSection() {
           </p>
         </div>
 
-        {/* Cascading Team Cards */}
-        <div className="flex justify-center items-center min-h-[600px] relative">
-          <div 
-            className="relative w-[600px] h-[450px]"
+        {/* Team Cards - Mobile: Vertical Stack, Desktop: Cascading */}
+
+        {/* Mobile View - Vertical Stack */}
+        <div className="md:hidden space-y-8">
+          {teamMembers.map((member, index) => (
+            <div
+              key={member.name}
+              className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <div className="relative group max-w-sm mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-100 transition-all duration-500"></div>
+
+                <div className="relative w-full h-96 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border border-gray-700 group-hover:border-red-500 transition-all duration-500">
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={`${member.name} - ${member.designation}`}
+                      className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 brightness-75"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/60 group-hover:via-red-900/20 transition-all duration-500" />
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="absolute inset-0 rounded-b-2xl bg-gradient-to-t from-black/95 via-black/70 to-transparent group-hover:from-black/95 group-hover:via-red-900/40 transition-all duration-500"></div>
+
+                    <div className="relative">
+                      <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-red-100 group-hover:scale-105 transition-all duration-500">
+                        {member.name}
+                      </h3>
+                      <p className="font-medium tracking-wide text-gray-300 group-hover:text-red-300 group-hover:text-lg transition-all duration-500">
+                        {member.designation}
+                      </p>
+                    </div>
+
+                    <div className="relative h-1 rounded-full mt-4 bg-gray-700/50 group-hover:bg-red-500/30 transition-all duration-500 overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-red-500 to-purple-500 rounded-full w-1/4 group-hover:w-full transition-all duration-700"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View - Cascading Cards */}
+        <div className="hidden md:flex justify-center items-center min-h-[600px] relative">
+          <div
+            className="relative w-[600px] lg:w-[700px] h-[450px]"
             onMouseLeave={() => setHoveredIndex(null)}
           >
             {teamMembers.map((member, index) => (
               <div
                 key={member.name}
-                className={`absolute transition-all duration-700 ease-out cursor-pointer ${
-                  isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`absolute transition-all duration-700 ease-out cursor-pointer ${isVisible ? 'opacity-100' : 'opacity-0'
+                  }`}
                 style={{
                   ...getCardTransform(index),
                   transitionDelay: `${index * 200}ms`,
@@ -122,18 +167,16 @@ export default function AboutUsSection() {
                 onMouseEnter={() => setHoveredIndex(index)}
               >
                 {/* Enhanced Glow Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur-xl transition-all duration-500 ${
-                  hoveredIndex === index ? 'opacity-100 scale-110' : 'opacity-40 scale-100'
-                }`}></div>
-                
+                <div className={`absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur-xl transition-all duration-500 ${hoveredIndex === index ? 'opacity-100 scale-110' : 'opacity-40 scale-100'
+                  }`}></div>
+
                 {/* Card Container */}
                 <div className="relative w-72 h-96 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border transition-all duration-500">
                   {/* Dynamic Border */}
-                  <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
-                    hoveredIndex === index 
-                      ? 'border-2 border-red-500 shadow-lg shadow-red-500/50' 
-                      : 'border border-gray-700'
-                  }`}></div>
+                  <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${hoveredIndex === index
+                    ? 'border-2 border-red-500 shadow-lg shadow-red-500/50'
+                    : 'border border-gray-700'
+                    }`}></div>
 
                   {/* Floating Elements */}
                   {hoveredIndex === index && (
@@ -154,29 +197,26 @@ export default function AboutUsSection() {
 
                   {/* Status Indicator */}
                   <div className="absolute top-4 right-4 z-10">
-                    <div className={`h-3 w-3 rounded-full transition-all duration-500 ${
-                      hoveredIndex === index 
-                        ? 'bg-red-500 shadow-lg shadow-red-500/50 animate-pulse' 
-                        : 'bg-gray-500'
-                    }`}></div>
+                    <div className={`h-3 w-3 rounded-full transition-all duration-500 ${hoveredIndex === index
+                      ? 'bg-red-500 shadow-lg shadow-red-500/50 animate-pulse'
+                      : 'bg-gray-500'
+                      }`}></div>
                   </div>
-                  
+
                   {/* Image Container */}
                   <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={member.image} 
+                    <img
+                      src={member.image}
                       alt={`${member.name} - ${member.designation}`}
-                      className={`h-full w-full object-cover transition-all duration-700 ${
-                        hoveredIndex === index ? 'scale-110 brightness-110' : 'scale-100 brightness-75'
-                      }`}
+                      className={`h-full w-full object-cover transition-all duration-700 ${hoveredIndex === index ? 'scale-110 brightness-110' : 'scale-100 brightness-75'
+                        }`}
                     />
-                    
+
                     {/* Dynamic Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
-                      hoveredIndex === index 
-                        ? 'from-black/60 via-red-900/20 to-transparent' 
-                        : 'from-black/90 via-black/50 to-transparent'
-                    }`} />
+                    <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${hoveredIndex === index
+                      ? 'from-black/60 via-red-900/20 to-transparent'
+                      : 'from-black/90 via-black/50 to-transparent'
+                      }`} />
 
                     {/* Active Border Effects */}
                     {hoveredIndex === index && (
@@ -189,34 +229,28 @@ export default function AboutUsSection() {
 
                   {/* Content Section */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className={`absolute inset-0 rounded-b-2xl transition-all duration-500 ${
-                      hoveredIndex === index 
-                        ? 'bg-gradient-to-t from-black/95 via-red-900/40 to-transparent' 
-                        : 'bg-gradient-to-t from-black/95 via-black/70 to-transparent'
-                    }`}></div>
-                    
-                    <div className={`relative transition-all duration-500 ${
-                      hoveredIndex === index ? 'transform translate-y-0' : 'transform translate-y-2'
-                    }`}>
-                      <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
-                        hoveredIndex === index ? 'text-red-100 scale-105' : 'text-white'
+                    <div className={`absolute inset-0 rounded-b-2xl transition-all duration-500 ${hoveredIndex === index
+                      ? 'bg-gradient-to-t from-black/95 via-red-900/40 to-transparent'
+                      : 'bg-gradient-to-t from-black/95 via-black/70 to-transparent'
+                      }`}></div>
+
+                    <div className={`relative transition-all duration-500 ${hoveredIndex === index ? 'transform translate-y-0' : 'transform translate-y-2'
                       }`}>
+                      <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${hoveredIndex === index ? 'text-red-100 scale-105' : 'text-white'
+                        }`}>
                         {member.name}
                       </h3>
-                      <p className={`font-medium tracking-wide transition-all duration-500 ${
-                        hoveredIndex === index ? 'text-red-300 text-lg' : 'text-gray-300'
-                      }`}>
+                      <p className={`font-medium tracking-wide transition-all duration-500 ${hoveredIndex === index ? 'text-red-300 text-lg' : 'text-gray-300'
+                        }`}>
                         {member.designation}
                       </p>
                     </div>
-                    
+
                     {/* Progress Line */}
-                    <div className={`relative h-1 rounded-full mt-4 transition-all duration-500 overflow-hidden ${
-                      hoveredIndex === index ? 'bg-red-500/30' : 'bg-gray-700/50'
-                    }`}>
-                      <div className={`h-full bg-gradient-to-r from-red-500 to-purple-500 rounded-full transition-all duration-700 ${
-                        hoveredIndex === index ? 'w-full' : 'w-1/4'
-                      }`}></div>
+                    <div className={`relative h-1 rounded-full mt-4 transition-all duration-500 overflow-hidden ${hoveredIndex === index ? 'bg-red-500/30' : 'bg-gray-700/50'
+                      }`}>
+                      <div className={`h-full bg-gradient-to-r from-red-500 to-purple-500 rounded-full transition-all duration-700 ${hoveredIndex === index ? 'w-full' : 'w-1/4'
+                        }`}></div>
                       {hoveredIndex === index && (
                         <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-purple-400 rounded-full animate-pulse"></div>
                       )}

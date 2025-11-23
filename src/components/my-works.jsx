@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react';
 
 export default function MyWorks() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,12 +70,12 @@ export default function MyWorks() {
   return (
     <div>
       <div className='relative' id="works">
-        <img src="/mywork1.gif" className='w-full mt-5' alt="Hero Image" />
+        <img src="/mywork1.gif" className='w-full' alt="Hero Image" />
 
         {/* Center the title safely across screen sizes; keep your color & font */}
         <p
           className='absolute top-[12%] sm:top-[25%] left-1/2 -translate-x-1/2
-                     text-6xl text-[#ff3131] font-bold z-20 italic animate-fade-up whitespace-nowrap'
+                     text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#ff3131] font-bold z-20 italic animate-fade-up px-4 text-center'
         >
           <span className="inline-block font-walbaum">My Work</span>
         </p>
