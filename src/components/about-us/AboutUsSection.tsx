@@ -110,19 +110,18 @@ export default function AboutUsSection() {
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
+              className={`transition-all duration-1000 translate-y-0`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="relative group max-w-sm mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-100 transition-all duration-500"></div>
 
-                <div className="relative w-full h-96 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border border-gray-700 group-hover:border-red-500 transition-all duration-500">
+                <div className="relative w-full h-96 overflow-hidden rounded-2xl shadow-2xl border border-gray-700 group-hover:border-red-500 transition-all duration-500">
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={member.image}
                       alt={`${member.name} - ${member.designation}`}
-                      className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 brightness-75"
+                      className="h-full w-full object-cover transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/60 group-hover:via-red-900/20 transition-all duration-500" />
                   </div>
@@ -138,10 +137,6 @@ export default function AboutUsSection() {
                         {member.designation}
                       </p>
                     </div>
-
-                    <div className="relative h-1 rounded-full mt-4 bg-gray-700/50 group-hover:bg-red-500/30 transition-all duration-500 overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-red-500 to-purple-500 rounded-full w-1/4 group-hover:w-full transition-all duration-700"></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -150,7 +145,7 @@ export default function AboutUsSection() {
         </div>
 
         {/* Desktop View - Cascading Cards */}
-        <div className="hidden md:flex justify-center items-center min-h-[600px] relative">
+        <div className="hidden md:flex justify-center items-center min-h-[200px] relative ml-34">
           <div
             className="relative w-[600px] lg:w-[700px] h-[450px]"
             onMouseLeave={() => setHoveredIndex(null)}

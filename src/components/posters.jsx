@@ -35,8 +35,8 @@ export default function Posters() {
         >
             {/* Background mask overlays */}
             <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
-                <img src="/MaskLeft.png" alt="" className="h-[300px] lg:h-[400px] object-contain" />
-                <img src="/MaskRight.png" alt="" className="h-[300px] lg:h-[400px] object-contain" />
+                <img src="/MaskLeft.png" alt="" className="h-[450px] lg:h-[650px] object-contain" />
+                <img src="/MaskRight.png" alt="" className="h-[350px] lg:h-[550px] object-contain" />
             </div>
 
             {/* Main content grid */}
@@ -76,19 +76,19 @@ export default function Posters() {
                 </div>
 
                 {/* Center Column – Social Media Posters */}
-                <div className={`flex flex-col h-full transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                <div className={`flex flex-col h-full transition-all mx-[10px] duration-1000 delay-300 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}>
                     {/* Top Posters */}
-                    <div className="flex-grow grid grid-cols-2 w-full">
+                    <div className="flex-grow grid grid-cols-2 w-full gap-[10px]">
                         {[1, 2, 3, 4].map((i) => (
                             <div
                                 key={i}
-                                className={`rounded-lg transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                                className={`transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
                                     }`}
                                 style={{ transitionDelay: `${400 + i * 100}ms` }}
                             >
                                 <img
-                                    src="/Dummy.png"
+                                    src="/poster.jpg"
                                     alt={`Social Post ${i}`}
                                     className="w-full h-full object-cover"
                                 />
@@ -105,7 +105,6 @@ export default function Posters() {
                             </p>
                         </div>
                         <img src="/POsterArrow.gif" alt="Arrow" className="w-16 h-16 rotate-360 scale-x-[-1]" />
-                        {/* <img src="/Circle.gif" alt="Arrow" className="w-16 h-16 absolute rotate-360 scale-x-[-1]" /> */}
                     </div>
 
                 </div>
@@ -118,12 +117,12 @@ export default function Posters() {
                         {[1, 2].map((i) => (
                             <div
                                 key={i}
-                                className={`h-full rounded-lg overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                                className={`overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
                                     }`}
                                 style={{ transitionDelay: `${700 + i * 150}ms` }}
                             >
                                 <img
-                                    src="/Dummy.png"
+                                    src="/poster.jpg"
                                     alt={`Reel ${i}`}
                                     className="w-full h-full object-cover"
                                 />

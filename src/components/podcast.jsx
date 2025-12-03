@@ -37,50 +37,50 @@ const PodcastFreeplay = () => {
   return (
     <div
       ref={sectionRef}
-      className={`bg-[#0e0e0e] text-white px-8 py-12 font-sans transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      className={`bg-[#0e0e0e] text-white px-8 py-6 font-sans transition-all duration-1000 ${isVisible ? 'animate-fade-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 items-start">
-        {/* Left Column - Reels */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-          <div className="relative w-full h-75 mb-6">
+          <div className="relative">
             <img src="/mask2.png" alt="" />
-            <div className="absolute top-10 left-0 right-0 text-left text-white px-4 flex flex-col gap-6">
-              <p className="text-8xl font-intro-rust">PODCAST</p>
-              <p className="text-5xl font-intro-rust">FreePlay</p>
-            </div>
           </div>
-          <div className="flex items-center justify-left mb-6">
+          <div className="absolute top-0 left-0 right-0 text-left text-white px-4 flex flex-col gap-6">
+            <p className="lg:text-7xl text-5xl font-intro-rust">PODCAST</p>
+            <p className="md:text-3xl text-5xl font-intro-rust">FreePlay</p>
+          </div>
+          <div className="absolute lg:top-50 top-40 left-6 flex items-center justify-left">
             <p className="font-nanum-pen-script text-5xl">Reels from Podcast</p>
           </div>
-          <div className="flex gap-4">
-            {reelVideoUrls.map((url, idx) => (
-              <div
-                key={idx}
-                className="relative aspect-[9/16] w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px] border-2 border-gray-700 rounded-lg overflow-hidden"
-              >
-                <video
-                  className="absolute inset-0 w-full h-full object-cover"
-                  src="/videos/reel.mp4"
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  onMouseEnter={(e) => e.currentTarget.play()}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.pause();
-                    e.currentTarget.currentTime = 0;
-                  }}
-                />
-              </div>
+          <div className="absolute lg:top-90 md:top-70 top-65 w-[100%]">
+            <div className="flex gap-4">
+              {reelVideoUrls.map((url, idx) => (
+                <div
+                  key={idx}
+                  className="relative aspect-[9/16] w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px] border-2 border-gray-700 rounded-lg overflow-hidden"
+                >
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="/videos/reel.mp4"
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    onMouseEnter={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause();
+                      e.currentTarget.currentTime = 0;
+                    }}
+                  />
+                </div>
 
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Right Column - Longform Video */}
-        <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        <div className={`transition-all mt-80 md:mt-0 duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
           <h3 className="text-4xl font-medium">
             <p className="font-nanum-pen-script text-5xl">Long from</p>

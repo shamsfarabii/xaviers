@@ -9,12 +9,30 @@ import MyWorks from './components/my-works'
 import PodcastFreeplay from './components/podcast'
 import Posters from './components/posters'
 import Navigation from './components/top-nav'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import AllVideos from './components/all-video';
+import { VideoCollage } from './components/video-collage'
 
 function App() {
+
+  const videos = [
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+    "https://youtu.be/oHg5SJYRHA0",
+  ];
+
+  
   return (
     <>
       {/* Sticky, blurred nav that stays readable over content */}
-      <div className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40">
+      <div className="sticky top-0 z-50">
         <Navigation />
       </div>
 
@@ -29,12 +47,27 @@ function App() {
           <ReviewSection />
         </section>
 
-        <section className="py-8" id='works'>
+        <section className="py-4" id='works'>
           <MyWorks />
         </section>
 
+        <section className="py-4" id='video-collage'>
+          <VideoCollage videoLinks={videos} />
+        </section>
+
         <section className="py-4" id='podcast'>
-          <PodcastFreeplay />
+          <Tabs defaultValue="all" className="w-full flex items-center">
+            <TabsList className="flex gap-[5px] text-white bg-[#0e0e0e]">
+              <TabsTrigger className="text-white bg-[#0e0e0e]" value="all">All</TabsTrigger>
+              <TabsTrigger className="text-white bg-[#0e0e0e]" value="video">Videos</TabsTrigger>
+            </TabsList>
+            <TabsContent value="all">
+              <PodcastFreeplay />
+            </TabsContent>
+            <TabsContent value="video">
+              <AllVideos />
+            </TabsContent>
+          </Tabs>
         </section>
 
         <section className="py-4" id='reviews'>
