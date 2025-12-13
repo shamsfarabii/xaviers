@@ -11,21 +11,22 @@ import Posters from './components/posters'
 import Navigation from './components/top-nav'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AllVideos from './components/all-video';
+import AllReels from './components/allreels'
 import { VideoCollage } from './components/video-collage'
 
 function App() {
 
   const videos = [
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
-    "https://youtu.be/oHg5SJYRHA0",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=qEJ4hkpQW8E",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://www.youtube.com/watch?v=_i11gj-iq1I",
   ];
 
   
@@ -57,15 +58,19 @@ function App() {
 
         <section className="py-4" id='podcast'>
           <Tabs defaultValue="all" className="w-full flex items-center">
-            <TabsList className="flex gap-[5px] text-white bg-[#0e0e0e]">
-              <TabsTrigger className="text-white bg-[#0e0e0e]" value="all">All</TabsTrigger>
-              <TabsTrigger className="text-white bg-[#0e0e0e]" value="video">Videos</TabsTrigger>
+            <TabsList className="flex gap-[5px]">
+              <TabsTrigger className="text-[#ffffff] :bg-[#0e0e0e] dark:text-[#0e0e0e] dark:bg-white" value="all">All</TabsTrigger>
+              <TabsTrigger className="text-[#ffffff] :bg-[#0e0e0e] dark:text-[#0e0e0e] dark:bg-white" value="video">Videos</TabsTrigger>
+              <TabsTrigger className="text-[#ffffff] :bg-[#0e0e0e] dark:text-[#0e0e0e] dark:bg-white" value="reels">Reels</TabsTrigger>
             </TabsList>
             <TabsContent value="all">
               <PodcastFreeplay />
             </TabsContent>
             <TabsContent value="video">
               <AllVideos />
+            </TabsContent>
+            <TabsContent value="reels">
+              <AllReels />
             </TabsContent>
           </Tabs>
         </section>

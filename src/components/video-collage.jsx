@@ -2,25 +2,25 @@ import React from "react";
 
 const FRAME_POSITIONS = [
   // 1
-  { left: 1.277, top: 1.163, width: 41.206, height: 35.917 },
+  { left: 1.277, top: 3, width: 41.60, height: 35.917 },
   // 2
-  { left: 82.695, top: 1.163, width: 16.879, height: 45.607 },
+  { left: 82.695, top: 3, width: 17, height: 44 },
   // 3
-  { left: 43.333, top: 2.713, width: 18.511, height: 20.93 },
+  { left: 43.55, top: 3, width: 19, height: 20 },
   // 4
-  { left: 63.333, top: 2.713, width: 17.872, height: 20.93 },
+  { left: 63.00, top: 3, width: 19, height: 20 },
   // 5
-  { left: 43.333, top: 28.811, width: 38.44, height: 23.127 },
+  { left: 43.333, top: 24, width: 38.66, height: 23.127 },
   // 6
-  { left: 1.773, top: 44.574, width: 18.298, height: 22.61 },
+  { left: 1.25, top: 40, width: 18.298, height: 22.61 },
   // 7
-  { left: 21.418, top: 44.574, width: 16.454, height: 44.315 },
+  { left: 20.35, top: 40, width: 22.33, height: 45.11 },
   // 8
-  { left: 39.433, top: 58.01, width: 28.723, height: 33.85 },
+  { left: 43.33, top: 48, width: 28.723, height: 37 },
   // 9
-  { left: 69.716, top: 58.01, width: 29.362, height: 33.85 },
+  { left: 72.55, top: 48, width: 27.22, height: 37 },
   // 10
-  { left: 1.773, top: 72.481, width: 18.511, height: 21.447 },
+  { left: 1.25, top: 63.55, width: 18.511, height: 21.447 },
 ];
 
 function extractYoutubeId(videoLink) {

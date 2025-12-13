@@ -6,9 +6,8 @@ const Navigation = () => {
 
     const navItems = [
         { name: 'Home', icon: <User className="w-4 h-4" />, href: '#home' },
-        { name: 'Works', icon: <Briefcase className="w-4 h-4" />, href: '#works' },
+        { name: 'Works', icon: <Briefcase className="w-4 h-4" />, href: '#podcast' },
         { name: 'About', icon: <User className="w-4 h-4" />, href: '#about' },
-        { name: 'Podcast', icon: <Play className="w-4 h-4" />, href: '#podcast' },
         { name: 'Reviews', icon: <Star className="w-4 h-4" />, href: '#reviews' },
         { name: 'Contact', icon: <MessageCircle className="w-4 h-4" />, href: '#contact' },
     ];
