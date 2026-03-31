@@ -44,10 +44,6 @@ function App() {
           <Hero />
         </section>
 
-        <section className="py-4">
-          <ReviewSection />
-        </section>
-
         <section className="py-4" id='works'>
           <MyWorks />
         </section>

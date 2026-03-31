@@ -20,9 +20,7 @@ const Navigation = () => {
                     {/* Logo/Brand */}
                     <div className="flex items-center space-x-3">
                         <div className="relative">
-                            <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">X</span>
-                            </div>
+                        <img src="/logo.png" className='w-[150px]' alt="Hero Image" />
                         </div>
 
                     </div>
@@ -45,11 +43,11 @@ const Navigation = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <div className="hidden md:block">
+                    {/* <div className="hidden md:block">
                         <div className="relative bg-gradient-to-r from-red-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-500 hover:to-purple-500 transition-all duration-200">
                             Let's Work
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Mobile Menu Button */}
                     <button
