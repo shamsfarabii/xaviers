@@ -70,7 +70,7 @@ export default function MyWorks() {
   return (
     <div>
       <div className='relative' id="works">
-        <img src="/mywork1.gif" className='w-full' alt="Hero Image" />
+        <img src="/mywork1.gif" className='w-full' alt="Hero Image" loading="lazy" />
 
         {/* Center the title safely across screen sizes; keep your color & font */}
         <p
@@ -86,8 +86,8 @@ export default function MyWorks() {
         <div className='hidden lg:block'>
           {/* Keep masks; allow them to shrink on narrower desktops to avoid overlap */}
           <div className='flex items-center justify-between p-4 overflow-x-hidden'>
-            <img src="/MaskLeft.png" alt="" className='w-auto h-[300px] max-w-full object-contain' />
-            <img src="/MaskRight.png" alt="" className='w-auto h-[300px] max-w-full object-contain' />
+            <img src="/MaskLeft.png" alt="" className='w-auto h-[300px] max-w-full object-contain' loading="lazy" />
+            <img src="/MaskRight.png" alt="" className='w-auto h-[300px] max-w-full object-contain' loading="lazy" />
           </div>
 
           {/* Ensure the grid doesn't overflow horizontally; give images a reliable height */}
@@ -100,6 +100,7 @@ export default function MyWorks() {
                     src={img}
                     alt={`Work ${index + 1}`}
                     className='h-[120px] xl:h-[150px] w-auto max-w-full object-contain'
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -120,6 +121,7 @@ export default function MyWorks() {
                     src={img}
                     alt={`Work ${index + 1}`}
                     className='max-h-[50vh] sm:max-h-[320px] w-auto object-contain'
+                    loading="lazy"
                   />
                 </div>
               ))}

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import './App.css'
 import AboutUsSection from './components/about-us/AboutUsSection'
 import ClientReviews from './components/client-reviews'
@@ -10,12 +11,17 @@ import PodcastFreeplay from './components/podcast'
 import Posters from './components/posters'
 import Navigation from './components/top-nav'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import AllVideos from './components/all-video';
-import AllReels from './components/allreels'
 import { VideoCollage } from './components/video-collage'
 
-function App() {
+// Lazy load tab contents — only loaded when the tab is activated
+const AllVideos = lazy(() => import('./components/all-video'))
+const AllReels = lazy(() => import('./components/allreels'))
 
+const TabFallback = () => (
+  <div className="flex items-center justify-center py-12 text-gray-400">Loading...</div>
+)
+
+function App() {
   const videos = [
     "https://www.youtube.com/watch?v=_i11gj-iq1I",
     "https://www.youtube.com/watch?v=qEJ4hkpQW8E",
@@ -29,7 +35,6 @@ function App() {
     "https://www.youtube.com/watch?v=_i11gj-iq1I",
   ];
 
-  
   return (
     <>
       {/* Sticky, blurred nav that stays readable over content */}
@@ -39,7 +44,6 @@ function App() {
 
       {/* Mobile-first container: centered with responsive horizontal padding */}
       <main className="container mx-auto min-w-0 px-4 sm:px-6 lg:px-8 pt-[env(safe-area-inset-top)]">
-        {/* Space sections vertically with responsive padding */}
         <section className="py-4" id='home'>
           <Hero />
         </section>
@@ -63,10 +67,14 @@ function App() {
               <PodcastFreeplay />
             </TabsContent>
             <TabsContent value="video">
-              <AllVideos />
+              <Suspense fallback={<TabFallback />}>
+                <AllVideos />
+              </Suspense>
             </TabsContent>
             <TabsContent value="reels">
-              <AllReels />
+              <Suspense fallback={<TabFallback />}>
+                <AllReels />
+              </Suspense>
             </TabsContent>
           </Tabs>
         </section>

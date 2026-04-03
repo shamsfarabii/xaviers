@@ -21,6 +21,7 @@ export const YoutubeFrame = ({ url }) => {
                     muted
                     loop
                     playsInline
+                    preload="none"
                 />
             </div>
         </div>

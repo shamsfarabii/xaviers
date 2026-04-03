@@ -1,5 +1,4 @@
 export default function Hero() {
-
   return (
     <section
       style={{
@@ -66,7 +65,7 @@ export default function Hero() {
             height: "auto",
             marginBottom: "18px",
             filter: "drop-shadow(0 0 18px rgba(255,255,255,0.12))",
-          marginTop: "0",
+            marginTop: "0",
           }}
         />
 
@@ -78,7 +77,6 @@ export default function Hero() {
             lineHeight: 1.15,
           }}
         >
-          {/* "Your go-to Video" */}
           <p
             style={{
               margin: 0,
@@ -91,7 +89,6 @@ export default function Hero() {
             Your go-to Video
           </p>
 
-          {/* "Editing Team" row */}
           <div
             style={{
               display: "flex",
@@ -142,7 +139,7 @@ export default function Hero() {
           content without hiring, managing, or operational friction.
         </p>
 
-        {/* YouTube Embed */}
+        {/* Video Embed — proper <video> tag instead of iframe */}
         <div
           style={{
             width: "100%",
@@ -150,24 +147,22 @@ export default function Hero() {
             overflow: "hidden",
             boxShadow: "0 8px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06)",
             position: "relative",
-            paddingTop: "56.25%", // 16:9
             background: "#111",
           }}
         >
-          <iframe
+          <video
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
               width: "100%",
-              height: "100%",
-              border: "none",
+              height: "auto",
+              display: "block",
               borderRadius: "25px",
             }}
             src="/videos/hero-section-video.mp4"
-            title="Xavier's Video Editing Team"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
         </div>
       </div>
