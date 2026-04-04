@@ -23,16 +23,16 @@ const TabFallback = () => (
 
 function App() {
   const videos = [
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=qEJ4hkpQW8E",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
-    "https://www.youtube.com/watch?v=_i11gj-iq1I",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/podcast.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/reel.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/sqare%203.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/sqare%202.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/trend.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/sqare.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/reel%202.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/sqare%206.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/sqare%204.mp4",
+    "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/sqare%205.mp4",
   ];
 
   return (

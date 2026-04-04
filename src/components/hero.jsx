@@ -157,12 +157,12 @@ export default function Hero() {
               display: "block",
               borderRadius: "25px",
             }}
-            src="/videos/hero-section-video.mp4"
+            src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/hero-section-video.mp4"
             autoPlay
-            muted
             loop
             playsInline
             preload="auto"
+            controls
           />
         </div>
       </div>
