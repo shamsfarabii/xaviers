@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { Suspense } from 'react'
 import './App.css'
 import AboutUsSection from './components/about-us/AboutUsSection'
 import ClientReviews from './components/client-reviews'
@@ -12,15 +12,12 @@ import Posters from './components/posters'
 import Navigation from './components/top-nav'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { VideoCollage } from './components/video-collage'
-
-// Lazy load tab contents — only loaded when the tab is activated
-const AllVideos = lazy(() => import('./components/all-video'))
-const AllReels = lazy(() => import('./components/allreels'))
+import AllVideos from './components/all-video'
+import AllReels from "./components/allreels"
 
 const TabFallback = () => (
   <div className="flex items-center justify-center py-12 text-gray-400">Loading...</div>
 )
-
 function App() {
   const videos = [
     "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/podcast.mp4",
@@ -79,16 +76,16 @@ function App() {
           </Tabs>
         </section>
 
+        <section className="py-4">
+          <Posters />
+        </section>
+
         <section className="py-4" id='reviews'>
           <ClientReviews />
         </section>
 
         <section className="py-4" id='about'>
           <AboutUsSection />
-        </section>
-
-        <section className="py-4">
-          <Posters />
         </section>
 
         <section className="py-4" id='contact'>

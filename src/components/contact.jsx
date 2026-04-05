@@ -31,8 +31,8 @@ export default function Contact() {
         >
             {/* Background mask overlays */}
             <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
-                <img src="/MaskLeft.png" alt="" className="h-[300px] lg:h-[400px] opacity-30 object-contain" loading="lazy" />
-                <img src="/MaskRight.png" alt="" className="h-[300px] lg:h-[400px] opacity-30 object-contain" loading="lazy" />
+                <img src="/MaskLeft.png" alt="" className="h-[300px] lg:h-[400px] opacity-30 object-contain" />
+                <img src="/MaskRight.png" alt="" className="h-[300px] lg:h-[400px] opacity-30 object-contain" />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">

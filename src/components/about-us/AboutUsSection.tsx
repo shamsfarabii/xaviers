@@ -92,7 +92,7 @@ export default function AboutUsSection() {
                       src={member.image}
                       alt={`${member.name} - ${member.designation}`}
                       className="h-full w-full object-cover transition-all duration-700"
-                      loading="lazy"
+                      
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/60 group-hover:via-red-900/20 transition-all duration-500" />
                   </div>
@@ -176,7 +176,7 @@ export default function AboutUsSection() {
                       className={`h-full w-full object-cover transition-all duration-700 ${
                         hoveredIndex === index ? 'scale-110 brightness-110' : 'scale-100 brightness-75'
                       }`}
-                      loading="lazy"
+                      
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
                       hoveredIndex === index

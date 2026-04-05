@@ -22,7 +22,7 @@ const PodcastFreeplay = () => {
           isVisible ? 'opacity-100' : 'opacity-80'
         }`}>
           <div className="relative">
-            <img src="/mask2.png" alt="" loading="lazy" />
+            <img src="/mask2.png" alt=""  />
           </div>
           <div className="absolute top-0 left-0 right-0 text-left text-white px-4 flex flex-col gap-6">
             <p className="lg:text-7xl text-5xl font-intro-rust">PODCAST</p>
@@ -64,7 +64,7 @@ const PodcastFreeplay = () => {
           <h3 className="text-4xl font-medium">
             <p className="font-nanum-pen-script text-5xl">Long from</p>
             <div className="flex items-center justify-center">
-              <img src="/red-arrow.gif" className="h-auto w-40" alt="" loading="lazy" />
+              <img src="/red-arrow.gif" className="h-auto w-40" alt="" />
             </div>
           </h3>
           <div className="flex flex-col gap-6">

@@ -3,6 +3,18 @@ import useInView from '../hooks/useInView';
 export default function Posters() {
     const [sectionRef, isVisible] = useInView();
 
+    const posters = [
+        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/Copy%20of%20agent.jpg",
+        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/Bangladesh%20victory%20day.jpg",
+        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/trap.jpg",
+        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/Copy%20of%20agent2.jpg"
+    ];
+
+    const reels = [
+        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/poster_reel_1.jpg",
+        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/poster_reel_2.jpg"
+    ];
+
     return (
         <div>
             <div className='flex justify-between'>
@@ -19,8 +31,8 @@ export default function Posters() {
             >
                 {/* Background mask overlays */}
                 <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
-                    <img src="/MaskLeft.png" alt="" className="h-[450px] lg:h-[650px] object-contain" loading="lazy" />
-                    <img src="/MaskRight.png" alt="" className="h-[350px] lg:h-[550px] object-contain" loading="lazy" />
+                    <img src="/MaskLeft.png" alt="" className="h-[450px] lg:h-[650px] object-contain" />
+                    <img src="/MaskRight.png" alt="" className="h-[350px] lg:h-[650px] object-contain"  />
                 </div>
 
                 {/* Main content grid */}
@@ -33,25 +45,25 @@ export default function Posters() {
                             <div className={`relative w-full aspect-video transition-all duration-700 delay-200 ${
                                 isVisible ? 'animate-jump-in' : ''
                             }`}>
-                                <img src="/poster.jpg" alt="Thumbnail 1" className="w-full h-full" loading="lazy" />
-                                <img src="/whitebox.png" alt="" className="absolute inset-0 w-full h-full z-10 pointer-events-none" loading="lazy" />
+                                <img src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/unboxing.jpg" alt="Thumbnail 1" className="w-full h-full" />
+                                <img src="/whitebox.png" alt="" className="absolute inset-0 w-full h-full z-10 pointer-events-none"  />
                             </div>
 
                             <div className={`relative w-full aspect-video transition-all duration-700 delay-400 ${
                                 isVisible ? 'animate-jump-in' : ''
                             }`}>
-                                <img src="/poster.jpg" alt="Thumbnail 2" className="w-full h-full" loading="lazy" />
-                                <img src="/whitebox.png" alt="" className="absolute inset-0 w-full h-full z-10 pointer-events-none" loading="lazy" />
+                                <img src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/4.jpg" alt="Thumbnail 2" className="w-full h-full"  />
+                                <img src="/whitebox.png" alt="" className="absolute inset-0 w-full h-full z-10 pointer-events-none"  />
                             </div>
                         </div>
 
                         <div className={`mt-4 flex items-center transition-all duration-700 delay-500 ${
                             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'
                         }`}>
-                            <img src="/POsterArrow.gif" alt="Arrow" className="w-12 h-12 md:w-16 md:h-16" loading="lazy" />
+                            <img src="/POsterArrow.gif" alt="Arrow" className="w-12 h-12 md:w-16 md:h-16"  />
                             <div className="ml-2">
                                 <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">Thumbnails</p>
-                                <img src="/RedSpot.gif" alt="" className="h-4 md:h-6 ml-4" loading="lazy" />
+                                <img src="/RedSpot.gif" alt="" className="h-4 md:h-6 ml-4"  />
                             </div>
                         </div>
                     </div>
@@ -61,7 +73,7 @@ export default function Posters() {
                         isVisible ? 'animate-fade-up' : ''
                     }`}>
                         <div className="flex-grow grid grid-cols-2 w-full gap-2 md:gap-[10px]">
-                            {[1, 2, 3, 4].map((i) => (
+                            {posters.map((item,i) => (
                                 <div
                                     key={i}
                                     className={`transition-all duration-700 ${
@@ -69,7 +81,7 @@ export default function Posters() {
                                     }`}
                                     style={{ transitionDelay: isVisible ? `${300 + i * 100}ms` : '0ms' }}
                                 >
-                                    <img src="/poster.jpg" alt={`Social Post ${i}`} className="w-full h-full object-cover" loading="lazy" />
+                                    <img src={item} alt={`Social Post ${i}`} className="w-full h-full object-cover"  />
                                 </div>
                             ))}
                         </div>
@@ -78,9 +90,10 @@ export default function Posters() {
                             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                         }`}>
                             <div className="ml-0 md:ml-12 text-center md:text-left">
-                                <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">social media poster</p>
+                                <p className="font-nanum-pen-script text-3xl md:text-4xl text-white relative">social media poster</p>
+                                {/* <img src="/Circle.gif" alt="" className="absolute top-0 right-50 h-10 md:h-12 z-50"  /> */}
                             </div>
-                            <img src="/POsterArrow.gif" alt="Arrow" className="w-12 h-12 md:w-16 md:h-16 rotate-360 scale-x-[-1] ml-2" loading="lazy" />
+                            <img src="/POsterArrow.gif" alt="Arrow" className="w-12 h-12 md:w-16 md:h-16 rotate-360 scale-x-[-1] ml-2"  />
                         </div>
                     </div>
 
@@ -89,7 +102,7 @@ export default function Posters() {
                         isVisible ? 'animate-fade-up' : ''
                     }`}>
                         <div className="flex-1 grid grid-cols-2 gap-2 md:gap-4 w-full">
-                            {[1, 2].map((i) => (
+                            {reels.map((item,i) => (
                                 <div
                                     key={i}
                                     className={`overflow-hidden transition-all duration-700 ${
@@ -97,7 +110,7 @@ export default function Posters() {
                                     }`}
                                     style={{ transitionDelay: isVisible ? `${500 + i * 150}ms` : '0ms' }}
                                 >
-                                    <img src="/poster.jpg" alt={`Reel ${i}`} className="w-full h-full object-cover" loading="lazy" />
+                                    <img src={item} alt={`Reel ${i}`} className="w-full h-137 object-cover"  />
                                 </div>
                             ))}
                         </div>
@@ -106,7 +119,7 @@ export default function Posters() {
                         }`}>
                             <div className="ml-0 md:ml-20 text-center md:text-left">
                                 <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">Reel thumbnails</p>
-                                <img src="/RedSpot.gif" alt="" className="h-3 mx-auto md:mx-0" loading="lazy" />
+                                <img src="/RedSpot.gif" alt="" className="h-3 mx-auto md:mx-0"  />
                             </div>
                         </div>
                     </div>
