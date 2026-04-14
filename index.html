@@ -5,12 +5,33 @@
     <link rel="icon" type="image/png" href="/XaviersLogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
+    <link rel="preconnect" href="https://xaviers.b-cdn.net" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Nanum+Pen+Script&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Nanum+Pen+Script&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Nanum+Pen+Script&display=swap"
+      />
+    </noscript>
+    <style>
+      html,
+      body {
+        background: #0e0e0e;
+        color: #fff;
+      }
+    </style>
     <title>Xaviers</title>
   </head>
   <body>

@@ -159,18 +159,14 @@ export default function Hero() {
             }}
             src="https://xaviers.b-cdn.net/hero-section-video.mp4"
             autoPlay
+            muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             controls
           />
         </div>
       </div>
-
-      {/* Google Fonts import via style tag */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Nanum+Pen+Script&display=swap');
-      `}</style>
     </section>
   );
 }

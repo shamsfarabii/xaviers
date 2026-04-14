@@ -3,26 +3,31 @@
 @font-face {
   font-family: IntroRust;
   src: url('/fonts/IntroRustH2-BaseShade.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: NanumPenScript;
   src: url('/fonts/NanumPenScript-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Instabread;
-  src: url('/font/Instabread Regular.ttf');
+  src: url('/fonts/Instabread Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url('/font/Montserrat-Bold.ttf');
+  src: url('/fonts/Montserrat-Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: walbaum;
-  src: url('/font/Instabread Regular.ttf');
+  src: url('/fonts/Walbaum Bold Italic.ttf');
+  font-display: swap;
 }
 
 @theme {
