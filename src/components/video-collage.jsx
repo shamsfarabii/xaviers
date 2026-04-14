@@ -13,25 +13,6 @@ const FRAME_POSITIONS = [
   { left: 1.25, top: 63.55, width: 18.511, height: 21.447 },
 ]
 
-function extractYoutubeId(videoLink) {
-  if (!videoLink) return null
-
-  if (videoLink.length === 11 && !videoLink.includes('http')) {
-    return videoLink
-  }
-
-  const match = videoLink.match(
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/
-  )
-
-  return match ? match[1] : null
-}
-
-function isDirectVideoFile(videoLink) {
-  if (!videoLink) return false
-  return /\.(mp4|webm|ogg)(\?.*)?$/i.test(videoLink)
-}
-
 export function VideoCollage({ videoLinks }) {
   const [collageRef, isVisible] = useInView()
 
@@ -46,8 +27,6 @@ export function VideoCollage({ videoLinks }) {
         <div className="absolute inset-0 bg-[#0e0e0e]">
           {FRAME_POSITIONS.map((frame, index) => {
             const videoLink = paddedVideos[index]
-            const youtubeId = extractYoutubeId(videoLink)
-            const directVideoFile = isDirectVideoFile(videoLink)
 
             return (
               <div
@@ -60,15 +39,7 @@ export function VideoCollage({ videoLinks }) {
                   height: `${frame.height}%`,
                 }}
               >
-                {isVisible && youtubeId ? (
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={""}
-                    title={`Video ${index + 1}`}
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    allowFullScreen
-                  />
-                ) : isVisible && directVideoFile ? (
+                {isVisible && videoLink ? (
                   <video
                     className="absolute inset-0 h-full w-full object-cover"
                     src={videoLink}
@@ -76,10 +47,9 @@ export function VideoCollage({ videoLinks }) {
                     playsInline
                     onMouseEnter={(e) => e.currentTarget.play()}
                     onMouseLeave={(e) => {
-                      e.currentTarget.pause();
-                      e.currentTarget.currentTime = 0;
+                      e.currentTarget.pause()
+                      e.currentTarget.currentTime = 0
                     }}
-                    preload="metadata"
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-neutral-900 text-xs text-white/70">

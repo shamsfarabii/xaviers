@@ -18,10 +18,8 @@ export const YoutubeFrame = ({ url }) => {
                     className="absolute top-0 left-0 w-full h-full object-cover"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    muted
                     loop
                     playsInline
-                    preload="none"
                 />
             </div>
         </div>

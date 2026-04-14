@@ -25,7 +25,7 @@ const workImages = [
 export default function MyWorks() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [hasEnteredViewport, setHasEnteredViewport] = useState(false);
+  const [hasEnteredViewport] = useState(true);
 
   const intervalRef = useRef(null);
   const desktopSectionRef = useRef(null);
@@ -44,29 +44,6 @@ export default function MyWorks() {
       mediaQuery.removeEventListener?.('change', handleChange);
     };
   }, []);
-
-  useEffect(() => {
-    if (isMobile) return;
-
-    const desktopSectionElement = desktopSectionRef.current;
-    if (!desktopSectionElement) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-
-        setHasEnteredViewport(true);
-        observer.disconnect();
-      },
-      {
-        threshold: 0.25,
-      }
-    );
-
-    observer.observe(desktopSectionElement);
-
-    return () => observer.disconnect();
-  }, [isMobile]);
 
   useEffect(() => {
     const startAutoSlide = () => {

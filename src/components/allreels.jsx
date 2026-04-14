@@ -5,14 +5,16 @@ const AllReels = () => {
     const [sectionRef, isVisible] = useInView();
 
     const reelVideoUrls = [
-        "https://www.youtube.com/embed/U_NRW4nRrl8?si=cwJIaOcjEfTQ3odT",
-        "https://www.youtube.com/embed/U_NRW4nRrl8?si=cwJIaOcjEfTQ3odT",
+        "https://xaviers.b-cdn.net/s1.mp4",
+        "https://xaviers.b-cdn.net/s2.mp4",
+        "https://xaviers.b-cdn.net/s3.mp4",
+        "https://xaviers.b-cdn.net/s4.mp4",
     ];
 
     return (
         <div
             ref={sectionRef}
-            className={`bg-[#0e0e0e] flex flex-col md:flex-row gap-[10px] text-white px-8 py-6 font-sans transition-all duration-700 ${
+            className={`bg-[#0e0e0e] flex flex-col container md:flex-row gap-[10px] text-white px-8 py-6 font-sans transition-all duration-700 ${
                 isVisible ? 'animate-fade-up' : ''
             }`}
         >
@@ -24,7 +26,7 @@ const AllReels = () => {
                     {isVisible && (
                         <video
                             className="absolute inset-0 w-full h-full object-cover"
-                            src="https://xaviers.b-cdn.net/reel.mp4"
+                            src={url}
                             loop
                             playsInline
                             onMouseEnter={(e) => e.currentTarget.play()}
