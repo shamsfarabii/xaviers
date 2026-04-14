@@ -4,15 +4,15 @@ export default function Posters() {
     const [sectionRef, isVisible] = useInView();
 
     const posters = [
-        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/Copy%20of%20agent.jpg",
-        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/Bangladesh%20victory%20day.jpg",
-        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/trap.jpg",
-        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/Copy%20of%20agent2.jpg"
+        "https://xaviers.b-cdn.net/Copy%20of%20agent.jpg",
+        "https://xaviers.b-cdn.net/Bangladesh%20victory%20day.jpg",
+        "https://xaviers.b-cdn.net/trap.jpg",
+        "https://xaviers.b-cdn.net/Copy%20of%20agent2.jpg"
     ];
 
     const reels = [
-        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/poster_reel_1.jpg",
-        "https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/poster_reel_2.jpg"
+        "https://xaviers.b-cdn.net/poster_reel_1.jpg",
+        "https://xaviers.b-cdn.net/poster_reel_2.jpg"
     ];
 
     return (
@@ -45,14 +45,14 @@ export default function Posters() {
                             <div className={`relative w-full aspect-video transition-all duration-700 delay-200 ${
                                 isVisible ? 'animate-jump-in' : ''
                             }`}>
-                                <img src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/unboxing.jpg" alt="Thumbnail 1" className="w-full h-full" />
+                                <img src="https://xaviers.b-cdn.net/unboxing.jpg" alt="Thumbnail 1" className="w-full h-full" />
                                 <img src="/whitebox.png" alt="" className="absolute inset-0 w-full h-full z-10 pointer-events-none"  />
                             </div>
 
                             <div className={`relative w-full aspect-video transition-all duration-700 delay-400 ${
                                 isVisible ? 'animate-jump-in' : ''
                             }`}>
-                                <img src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/4.jpg" alt="Thumbnail 2" className="w-full h-full"  />
+                                <img src="https://xaviers.b-cdn.net/4.jpg" alt="Thumbnail 2" className="w-full h-full"  />
                                 <img src="/whitebox.png" alt="" className="absolute inset-0 w-full h-full z-10 pointer-events-none"  />
                             </div>
                         </div>
@@ -91,7 +91,7 @@ export default function Posters() {
                         }`}>
                             <div className="ml-0 md:ml-12 text-center md:text-left">
                                 <p className="font-nanum-pen-script text-3xl md:text-4xl text-white relative">social media poster</p>
-                                {/* <img src="/Circle.gif" alt="" className="absolute top-0 right-50 h-10 md:h-12 z-50"  /> */}
+                                {/* <img src="/mark.png" alt="" className="absolute top-0 right-10 w-full z-50"  /> */}
                             </div>
                             <img src="/POsterArrow.gif" alt="Arrow" className="w-12 h-12 md:w-16 md:h-16 rotate-360 scale-x-[-1] ml-2"  />
                         </div>

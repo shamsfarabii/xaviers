@@ -24,11 +24,9 @@ const AllReels = () => {
                     {isVisible && (
                         <video
                             className="absolute inset-0 w-full h-full object-cover"
-                            src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/reel.mp4"
+                            src="https://xaviers.b-cdn.net/reel.mp4"
                             loop
-                            muted
                             playsInline
-                            preload="metadata"
                             onMouseEnter={(e) => e.currentTarget.play()}
                             onMouseLeave={(e) => {
                                 e.currentTarget.pause();

@@ -13,11 +13,7 @@ const FRAME_POSITIONS = [
   { left: 1.25, top: 63.55, width: 18.511, height: 21.447 },
 ]
 
-type VideoCollageProps = {
-  videoLinks: string[]
-}
-
-function extractYoutubeId(videoLink?: string | null) {
+function extractYoutubeId(videoLink) {
   if (!videoLink) return null
 
   if (videoLink.length === 11 && !videoLink.includes('http')) {
@@ -31,27 +27,12 @@ function extractYoutubeId(videoLink?: string | null) {
   return match ? match[1] : null
 }
 
-function isDirectVideoFile(videoLink?: string | null) {
+function isDirectVideoFile(videoLink) {
   if (!videoLink) return false
   return /\.(mp4|webm|ogg)(\?.*)?$/i.test(videoLink)
 }
 
-function getYoutubeEmbedUrl(youtubeId: string) {
-  const params = new URLSearchParams({
-    autoplay: '1',
-    mute: '1',
-    loop: '1',
-    playlist: youtubeId,
-    controls: '0',
-    modestbranding: '1',
-    playsinline: '1',
-    rel: '0',
-  })
-
-  return `https://www.youtube.com/embed/${youtubeId}?${params.toString()}`
-}
-
-export function VideoCollage({ videoLinks }: VideoCollageProps) {
+export function VideoCollage({ videoLinks }) {
   const [collageRef, isVisible] = useInView()
 
   const paddedVideos = [...videoLinks]
@@ -82,7 +63,7 @@ export function VideoCollage({ videoLinks }: VideoCollageProps) {
                 {isVisible && youtubeId ? (
                   <iframe
                     className="absolute inset-0 h-full w-full"
-                    src={getYoutubeEmbedUrl(youtubeId)}
+                    src={""}
                     title={`Video ${index + 1}`}
                     allow="autoplay; encrypted-media; picture-in-picture"
                     allowFullScreen

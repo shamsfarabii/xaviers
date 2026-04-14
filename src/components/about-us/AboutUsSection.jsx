@@ -21,9 +21,9 @@ const teamMembers = [
 
 export default function AboutUsSection() {
   const [sectionRef, isVisible] = useInView();
-  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = React.useState(null);
 
-  const getCardTransform = (index: number) => {
+  const getCardTransform = (index) => {
     if (hoveredIndex === null) {
       const offsetX = index * 120;
       return {

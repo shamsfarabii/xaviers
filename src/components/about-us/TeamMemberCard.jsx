@@ -1,21 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 
-interface TeamMemberCardProps {
-  name: string;
-  designation: string;
-  image: string;
-  animationType: 'float' | 'scale' | 'slide';
-  delay?: number;
-}
-
-export const TeamMemberCard = ({ 
-  name, 
-  designation, 
-  image, 
+export const TeamMemberCard = ({
+  name,
+  designation,
+  image,
   animationType,
-  delay = 0 
-}: TeamMemberCardProps) => {
+  delay = 0
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const getAnimationClass = () => {

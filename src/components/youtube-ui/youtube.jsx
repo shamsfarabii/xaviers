@@ -7,7 +7,7 @@ const YouTubeUIClone = () => {
                 <div className="flex items-center justify-between text-white mb-2 sm:mb-4 w-full">
                     <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain"  />
                 </div>
-                <YoutubeFrame url={"https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/file.mp4"} />
+                <YoutubeFrame url={"https://xaviers.b-cdn.net/file.mp4"} />
                 <div className="flex items-center justify-between text-white mb-2 sm:mb-4 w-full">
                     <img src="/youtubeBottomBar.png" alt="" className="w-full h-auto object-contain"  />
                 </div>
@@ -16,7 +16,7 @@ const YouTubeUIClone = () => {
                 <div className="flex items-center justify-between text-white mb-2 sm:mb-4 w-full">
                     <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain"  />
                 </div>
-                <YoutubeFrame url={"https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/file.mp4"} />
+                <YoutubeFrame url={"https://xaviers.b-cdn.net/file.mp4"} />
                 <div className="flex items-center justify-between text-white mb-2 sm:mb-4 w-full">
                     <img src="/youtubeBottomBar.png" alt="" className="w-full h-auto object-contain"  />
                 </div>

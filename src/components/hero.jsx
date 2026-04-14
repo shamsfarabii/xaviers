@@ -157,7 +157,7 @@ export default function Hero() {
               display: "block",
               borderRadius: "25px",
             }}
-            src="https://pub-0773cdae5b99497fb3555dc89b494881.r2.dev/hero-section-video.mp4"
+            src="https://xaviers.b-cdn.net/hero-section-video.mp4"
             autoPlay
             loop
             playsInline
