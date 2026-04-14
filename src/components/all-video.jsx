@@ -12,7 +12,7 @@ const AllVideos = () => {
                 isVisible ? 'animate-fade-up' : ''
             }`}
         >
-            <div className="grid grid-cols-2 gap-[10px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-[10px]">
                 <div className="bg-black w-full">
                     <div className="flex items-center justify-between text-white mb-2 sm:mb-4 w-full">
                         <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain"  />
