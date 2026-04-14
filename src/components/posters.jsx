@@ -18,12 +18,7 @@ export default function Posters() {
     return (
         <div>
             <div className='flex justify-between'>
-                <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#ff3131] font-bold z-20 italic animate-fade-up px-4 text-center'>
-                    <span className="inline-block font-walbaum">Designs</span>
-                </p>
-                <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#ff3131] font-bold z-20 italic animate-fade-up px-4 text-center'>
-                    <span className="inline-block font-walbaum">My Work</span>
-                </p>
+            <img src="https://xaviers.b-cdn.net/1230%20(2).gif" className="w-full" alt="Hero Image" />
             </div>
             <div
                 ref={sectionRef}

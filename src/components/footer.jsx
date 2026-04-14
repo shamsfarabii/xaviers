@@ -13,7 +13,7 @@ export default function Footer() {
       {/* Only mount the heavy GIF once the footer is in view */}
       {isVisible && (
         <img
-          src="/footer.gif"
+          src="https://xaviers.b-cdn.net/1230%20(3).gif"
           alt="Footer animation"
           className="w-full h-auto"
         />
