@@ -75,7 +75,7 @@ export default function TeamExpectationsSection() {
                         style={{
                             fontFamily: "'Montserrat', sans-serif",
                             fontWeight: 800,
-                            fontSize: 'clamp(28px, 4vw, 48px)',
+                            fontSize: 'clamp(28px, 4vw, 44px)',
                             lineHeight: 1.1,
                         }}
                     >
@@ -95,7 +95,7 @@ export default function TeamExpectationsSection() {
                                     style={{
                                         fontFamily: "'Montserrat', sans-serif",
                                         fontWeight: 800,
-                                        fontSize: 'clamp(24px, 2.2vw, 30px)',
+                                        fontSize: 'clamp(18px, 1.6vw, 22px)',
                                         lineHeight: 1.15,
                                     }}
                                 >
@@ -107,7 +107,7 @@ export default function TeamExpectationsSection() {
                                     style={{
                                         fontFamily: "'Montserrat', sans-serif",
                                         fontWeight: 400,
-                                        fontSize: 'clamp(15px, 1.2vw, 18px)',
+                                        fontSize: 'clamp(13px, 1vw, 15px)',
                                         lineHeight: 1.35,
                                     }}
                                 >
@@ -123,7 +123,7 @@ export default function TeamExpectationsSection() {
                             style={{
                                 fontFamily: "'Montserrat', sans-serif",
                                 fontWeight: 900,
-                                fontSize: 'clamp(34px, 5vw, 66px)',
+                                fontSize: 'clamp(28px, 4vw, 44px)',
                                 lineHeight: 1.04,
                             }}
                         >
@@ -146,7 +146,7 @@ export default function TeamExpectationsSection() {
                                             style={{
                                                 fontFamily: "'Montserrat', sans-serif",
                                                 fontWeight: 800,
-                                                fontSize: 'clamp(24px, 2.3vw, 31px)',
+                                                fontSize: 'clamp(18px, 1.6vw, 22px)',
                                                 lineHeight: 1.18,
                                             }}
                                         >
@@ -158,7 +158,7 @@ export default function TeamExpectationsSection() {
                                             style={{
                                                 fontFamily: "'Montserrat', sans-serif",
                                                 fontWeight: 400,
-                                                fontSize: 'clamp(15px, 1.15vw, 18px)',
+                                                fontSize: 'clamp(13px, 1vw, 15px)',
                                                 lineHeight: 1.65,
                                             }}
                                         >

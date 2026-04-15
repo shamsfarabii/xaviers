@@ -18,7 +18,7 @@ export default function MyTeam() {
                         <h2
                             className='m-0 uppercase leading-none'
                             style={{
-                                fontSize: 'clamp(32px, 8vw, 60px)',
+                                fontSize: 'clamp(28px, 5vw, 48px)',
                                 fontWeight: 900,
                                 fontFamily: "'Montserrat', sans-serif",
                                 letterSpacing: '-0.03em',
@@ -36,7 +36,7 @@ export default function MyTeam() {
                         <p
                             className='mx-auto mt-8 max-w-[640px] px-2 uppercase text-[#7f7f7f] sm:mt-10 md:mt-14'
                             style={{
-                                fontSize: 'clamp(12px, 3.2vw, 18px)',
+                                fontSize: 'clamp(12px, 2vw, 16px)',
                                 lineHeight: 1.6,
                                 fontWeight: 300,
                                 fontFamily: "'Montserrat', sans-serif",
