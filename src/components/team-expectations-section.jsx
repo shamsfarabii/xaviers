@@ -1,12 +1,11 @@
-import React from 'react'
 import {
-    BadgeCheck,
     CheckSquare,
     CircleDollarSign,
     ClipboardCheck,
     Clock3,
-    UserRoundCog,
+    UserRoundCog
 } from 'lucide-react'
+import React from 'react'
 
 const expectationItems = [
     {
@@ -60,7 +59,7 @@ const decisionItems = [
 
 export default function TeamExpectationsSection() {
     return (
-        <section className='w-full bg-[#0d0d0d] text-white'>
+        <section className='w-full bg-[black] text-white'>
             <div
                 className='mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-12 lg:py-12'
                 style={{
@@ -86,7 +85,7 @@ export default function TeamExpectationsSection() {
                         {expectationItems.map((item) => (
                             <div
                                 key={item.title}
-                                className='rounded-[22px] bg-[#0d0d0d] border-2 px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:min-h-[290px] md:px-8 md:py-9'
+                                className='rounded-[22px] bg-[black] border-2 px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:min-h-[290px] md:px-8 md:py-9'
                             >
                                 <div className='mb-6'>{item.icon}</div>
 

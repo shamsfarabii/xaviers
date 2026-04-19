@@ -5,15 +5,15 @@ import AllVideos from './components/all-video'
 import AllReels from './components/allreels'
 import ClientReviews from './components/client-reviews'
 import Contact from './components/contact'
+import FAQ from "./components/faq"
 import Footer from './components/footer'
 import Hero from './components/hero'
 import MyTeam from "./components/my-team"
 import MyWorks from './components/my-works'
 import Posters from './components/posters'
+import TeamExpectationsSection from "./components/team-expectations-section"
 import Navigation from './components/top-nav'
 import { VideoCollage } from './components/video-collage'
-import TeamExpectationsSection from "./components/team-expectations-section"
-import FAQ from "./components/faq"
 
 const videos = [
   "https://xaviers.b-cdn.net/podcast.mp4",
@@ -51,8 +51,8 @@ function App() {
         <section className="py-4" id="podcast">
           <Tabs defaultValue="video" className="w-full flex items-center">
             <TabsList className="flex gap-[5px]">
-              <TabsTrigger className="text-[#ffffff] bg-[#0e0e0e] dark:text-[#0e0e0e] dark:bg-white" value="video">Videos</TabsTrigger>
-              <TabsTrigger className="text-[#ffffff] bg-[#0e0e0e] dark:text-[#0e0e0e] dark:bg-white" value="reels">Reels</TabsTrigger>
+              <TabsTrigger className="text-[#ffffff] dark:text-white " value="video">Videos</TabsTrigger>
+              <TabsTrigger className="text-[#ffffff] dark:text-white " value="reels">Reels</TabsTrigger>
             </TabsList>
             <TabsContent value="video">
               <AllVideos />

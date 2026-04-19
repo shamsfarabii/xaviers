@@ -23,14 +23,14 @@ export function VideoCollage({ videoLinks }) {
   return (
     <div ref={collageRef} className="mx-auto w-full max-w-[1400px]">
       <div className="relative h-0 w-full pt-[54.96%]">
-        <div className="absolute inset-0 bg-[#0e0e0e]">
+        <div className="absolute inset-0 bg-[black]">
           {FRAME_POSITIONS.map((frame, index) => {
             const videoLink = paddedVideos[index]
 
             return (
               <div
                 key={index}
-                className="absolute overflow-hidden bg-[#0e0e0e]"
+                className="absolute overflow-hidden bg-[black]"
                 style={{
                   left: `${frame.left}%`,
                   top: `${frame.top}%`,

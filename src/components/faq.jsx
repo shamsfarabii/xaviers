@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 
 const faqs = [
     {
@@ -102,7 +102,7 @@ export default function FAQ() {
     }
 
     return (
-        <section className='w-full bg-[#0d0d0d] text-white'>
+        <section className='w-full bg-[black] text-white'>
             <div
                 className='mx-auto w-full max-w-[1280px] px-4 py-12 sm:px-6 sm:py-16 md:px-10 lg:px-12 lg:py-20'
                 style={{
@@ -132,7 +132,7 @@ export default function FAQ() {
                         <span className='text-[#ef4b2f]'>Questions</span>
                     </h2>
 
-                    <div className='rounded-[22px] bg-[#0d0d0d] px-6 py-2 sm:px-8'>
+                    <div className='rounded-[22px] bg-[black] flex flex-col px-6 py-2 gap-2 sm:px-8'>
                         {faqs.map((faq, index) => (
                             <FAQItem
                                 key={index}

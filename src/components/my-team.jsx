@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function MyTeam() {
     return (
-        <section className='w-full bg-[#0d0d0d]'>
-            <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-between gap-10 overflow-hidden px-4 py-8 sm:px-6 md:px-10 md:py-10 lg:flex-row lg:gap-10 lg:px-14 xl:px-16'>
+        <section className='w-full bg-[black]'>
+            <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-between gap-10 overflow-hidden px-4 py-8 sm:px-6 md:px-10 md:py-10 lg:flex-row lg:gap-[100px] lg:px-14 xl:px-16'>
                 <div className='flex w-full items-center justify-center lg:w-[48%] lg:justify-start'>
                     <img
-                        src='https://xaviers.b-cdn.net/team_pic_last.png'
+                        src='https://xaviers.b-cdn.net/my-team3.png'
                         alt='Xavier Media team collage'
-                        className='h-auto w-full max-w-[520px] object-contain select-none sm:max-w-[600px] lg:max-w-[650px]'
+                        className='h-auto w-full object-contain select-none'
                         draggable={false}
                     />
                 </div>

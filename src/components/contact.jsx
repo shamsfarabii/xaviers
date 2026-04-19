@@ -26,7 +26,7 @@ export default function Contact() {
     return (
         <div
             ref={sectionRef}
-            className="bg-[#0e0e0e] text-white py-12 px-4 relative"
+            className="bg-[black] text-white py-12 px-4 relative"
             id="contact"
         >
             {/* Background mask overlays */}

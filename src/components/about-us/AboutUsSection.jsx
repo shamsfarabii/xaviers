@@ -55,7 +55,7 @@ export default function AboutUsSection() {
   return (
     <div
       ref={sectionRef}
-      className="bg-[#0e0e0e] text-white py-16 px-4 overflow-hidden"
+      className="bg-[black] text-white py-16 px-4 overflow-hidden"
       id="about"
     >
       <div className="max-w-7xl mx-auto">

@@ -1,4 +1,4 @@
-import { Briefcase, Menu, MessageCircle, Play, Star, User, X } from 'lucide-react';
+import { Briefcase, Menu, MessageCircle, Star, User } from 'lucide-react';
 import { useState } from 'react';
 
 const Navigation = () => {
@@ -13,7 +13,7 @@ const Navigation = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0e0e0e] backdrop-blur-md'
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[black] backdrop-blur-md'
             }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="flex items-center justify-between h-16 sm:h-20">

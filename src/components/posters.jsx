@@ -15,13 +15,13 @@ export default function Posters() {
       <div>
         <div className="flex justify-between">
           <img
-            src="https://xaviers.b-cdn.net/1230%20(2).gif"
+            src="https://xaviers.b-cdn.net/design-our-works.gif"
             className="w-full"
             alt="Hero Image"
           />
         </div>
   
-        <div className="bg-[#0e0e0e] py-5 px-4 relative flex items-center justify-center">
+        <div className="bg-[black] py-5 px-4 relative flex items-center justify-center">
           {/* Background mask overlays */}
           <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
             <img
@@ -68,21 +68,16 @@ export default function Posters() {
                 </div>
               </div>
   
-              <div className="mt-4 flex items-center">
+              <div className="mt-4 flex items-center relative">
                 <img
-                  src="/POsterArrow.gif"
+                  src="https://xaviers.b-cdn.net/arrow.gif"
                   alt="Arrow"
-                  className="w-12 h-12 md:w-16 md:h-16"
+                  className="w-[150px] h-[150px] rotate-[140deg] absolute top-[-70px] left-[15px]"
                 />
-                <div className="ml-2">
+                <div className="ml-[120px]">
                   <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">
                     Thumbnails
                   </p>
-                  <img
-                    src="/RedSpot.gif"
-                    alt=""
-                    className="h-4 md:h-6 ml-4"
-                  />
                 </div>
               </div>
             </div>
@@ -102,16 +97,16 @@ export default function Posters() {
               </div>
   
               <div className="mt-4 flex items-center justify-center md:justify-start">
-                <div className="ml-0 md:ml-12 text-center md:text-left">
+                <div className="ml-0 md:ml-12 text-center md:text-left relative">
                   <p className="font-nanum-pen-script text-3xl md:text-4xl text-white relative">
                     social media poster
                   </p>
                   {/* <img src="/mark.png" alt="" className="absolute top-0 right-10 w-full z-50" /> */}
                 </div>
                 <img
-                  src="/POsterArrow.gif"
+                  src="https://xaviers.b-cdn.net/circle.gif"
                   alt="Arrow"
-                  className="w-12 h-12 md:w-16 md:h-16 rotate-360 scale-x-[-1] ml-2"
+                  className="rotate-360 absolute w-[100px] left-[690px]"
                 />
               </div>
             </div>
@@ -131,14 +126,14 @@ export default function Posters() {
               </div>
   
               <div className="mt-4 flex items-center justify-center md:justify-start">
-                <div className="ml-0 md:ml-20 text-center md:text-left">
+                <div className="ml-0 md:ml-20 text-center md:text-left relative">
                   <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">
                     Reel thumbnails
                   </p>
                   <img
-                    src="/RedSpot.gif"
+                    src="https://xaviers.b-cdn.net/red-line-draw.gif"
                     alt=""
-                    className="h-3 mx-auto md:mx-0"
+                    className="absolute top-[-30px] w-[150px] left-[-40px]"
                   />
                 </div>
               </div>

@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       style={{
-        background: "#0d0d0d",
+        background: "black",
         position: "relative",
         overflow: "hidden",
         display: "flex",
@@ -36,7 +36,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse at center, transparent 30%, #0d0d0d 85%)",
+            "radial-gradient(ellipse at center, transparent 30%, black 85%)",
           zIndex: 1,
           pointerEvents: "none",
         }}

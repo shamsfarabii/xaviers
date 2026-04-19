@@ -13,7 +13,7 @@ const PodcastFreeplay = () => {
   return (
     <div
       ref={sectionRef}
-      className={`bg-[#0e0e0e] text-white px-8 py-6 font-sans transition-all duration-700 ${
+      className={`bg-[black] text-white px-8 py-6 font-sans transition-all duration-700 ${
         isVisible ? 'animate-fade-up' : ''
       }`}
     >
