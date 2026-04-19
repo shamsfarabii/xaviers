@@ -2,7 +2,6 @@ export default function Hero() {
   return (
     <section
       style={{
-        minHeight: "100vh",
         background: "#0d0d0d",
         position: "relative",
         overflow: "hidden",
@@ -52,7 +51,7 @@ export default function Hero() {
           flexDirection: "column",
           alignItems: "center",
           width: "100%",
-          maxWidth: "620px",
+          maxWidth: "700px",
           padding: "0 24px",
         }}
       >

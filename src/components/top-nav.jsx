@@ -20,7 +20,7 @@ const Navigation = () => {
                     {/* Logo/Brand */}
                     <div className="flex items-center space-x-3">
                         <div className="relative">
-                        <img src="/logo.png" className='w-[150px]' alt="Hero Image" />
+                            <img src="/logo.png" className='w-[150px]' alt="Hero Image" />
                         </div>
 
                     </div>
@@ -37,28 +37,17 @@ const Navigation = () => {
                                     {item.icon}
                                     <span className="font-medium">{item.name}</span>
                                 </div>
-                                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-500 to-purple-500 group-hover:w-full transition-all duration-300"></div>
+                                <div className="absolute bottom-0 left-0 w-0 h-0.5  group-hover:w-full transition-all duration-300"></div>
                             </a>
                         ))}
                     </div>
 
-                    {/* CTA Button */}
-                    {/* <div className="hidden md:block">
-                        <div className="relative bg-gradient-to-r from-red-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-500 hover:to-purple-500 transition-all duration-200">
-                            Let's Work
-                        </div>
-                    </div> */}
-
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden relative w-10 h-10 rounded-lg bg-gradient-to-r from-red-500 to-purple-500 flex items-center justify-center"
+                        className="md:hidden relative w-10 h-10 rounded-lg flex items-center justify-center"
                     >
-                        {isMenuOpen ? (
-                            <X className="w-5 h-5 text-white" />
-                        ) : (
-                            <Menu className="w-5 h-5 text-white" />
-                        )}
+                        <Menu className="w-5 h-5 " />
                     </button>
                 </div>
 

@@ -1,18 +1,17 @@
 import useInView from '../hooks/useInView';
 
 const FRAME_POSITIONS = [
-  { left: 1.277, top: 3, width: 41.6, height: 35.917 },
+  { left: 1.277, top: 3, width: 41.6, height: 35.917, radius: "30px" },
   { left: 82.695, top: 3, width: 17, height: 44 },
-  { left: 43.55, top: 3, width: 19, height: 20 },
-  { left: 63.0, top: 3, width: 19, height: 20 },
+  { left: 43.55, top: 3, width: 19, height: 20, radius: "30px" },
+  { left: 63.0, top: 3, width: 19, height: 20 , radius: "30px"},
   { left: 43.333, top: 24, width: 38.66, height: 23.127 },
-  { left: 1.25, top: 40, width: 18.298, height: 22.61 },
+  { left: 1.25, top: 40, width: 18.298, height: 22.61, radius: "30px" },
   { left: 20.35, top: 40, width: 22.33, height: 45.11 },
-  { left: 43.33, top: 48, width: 28.723, height: 37 },
-  { left: 72.55, top: 48, width: 27.22, height: 37 },
-  { left: 1.25, top: 63.55, width: 18.511, height: 21.447 },
+  { left: 43.33, top: 48, width: 28.723, height: 37, radius: "30px" },
+  { left: 72.55, top: 48, width: 27.22, height: 37, radius: "30px" },
+  { left: 1.25, top: 63.55, width: 18.511, height: 21.447, radius: "30px" },
 ]
-
 export function VideoCollage({ videoLinks }) {
   const [collageRef, isVisible] = useInView()
 
@@ -37,6 +36,7 @@ export function VideoCollage({ videoLinks }) {
                   top: `${frame.top}%`,
                   width: `${frame.width}%`,
                   height: `${frame.height}%`,
+                  borderRadius:`${frame?.radius}`
                 }}
               >
                 {isVisible && videoLink ? (

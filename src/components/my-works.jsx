@@ -99,8 +99,8 @@ export default function MyWorks() {
 
   return (
     <div>
-      <div className="relative" id="works">
-        <img src="https://xaviers.b-cdn.net/1230%20(1)(1).gif" className="w-full" alt="Hero Image" />
+      <div className="relative flex items-center justify-center" id="works">
+        <img src="https://xaviers.b-cdn.net/1230%20(1)(1).gif" className="w-[1440px]" alt="Hero Image" />
       </div>
 
       <div className="relative">
@@ -108,7 +108,7 @@ export default function MyWorks() {
         <div className="hidden lg:block">
           <div
             ref={desktopSectionRef}
-            className={`relative mx-auto w-full max-w-[1400px] px-4 transition-all duration-700 ease-out ${
+            className={`relative mx-auto w-full px-4 transition-all duration-700 ease-out ${
               hasEnteredViewport ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
             }`}
           >
@@ -116,7 +116,7 @@ export default function MyWorks() {
               <img
                 src="/MaskLeft.png"
                 alt=""
-                className="pointer-events-none absolute inset-y-0 left-0 h-full max-w-none select-none object-contain"
+                className="pointer-events-none absolute inset-y-0 left-0 h-full max-w-none select-none"
               />
 
               <img

@@ -13,6 +13,7 @@ import Posters from './components/posters'
 import Navigation from './components/top-nav'
 import { VideoCollage } from './components/video-collage'
 import TeamExpectationsSection from "./components/team-expectations-section"
+import FAQ from "./components/faq"
 
 const videos = [
   "https://xaviers.b-cdn.net/podcast.mp4",
@@ -76,6 +77,10 @@ function App() {
 
         <section>
           <TeamExpectationsSection/>
+        </section>
+
+        <section>
+          <FAQ />
         </section>
 
         <section className="py-4" id="about">
