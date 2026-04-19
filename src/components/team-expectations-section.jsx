@@ -86,7 +86,7 @@ export default function TeamExpectationsSection() {
                         {expectationItems.map((item) => (
                             <div
                                 key={item.title}
-                                className='rounded-[22px] bg-black px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:min-h-[290px] md:px-8 md:py-9'
+                                className='rounded-[22px] bg-[#0d0d0d] border-2 px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:min-h-[290px] md:px-8 md:py-9'
                             >
                                 <div className='mb-6'>{item.icon}</div>
 

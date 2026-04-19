@@ -61,6 +61,17 @@ function App() {
               <AllReels />
             </TabsContent>
           </Tabs>
+          <div className="flex items-center justify-center py-8">
+            <button
+              className="see-more-btn"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              <span className="see-more-shimmer" aria-hidden="true" />
+              <span className="see-more-content">
+                Click to see more Work
+              </span>
+            </button>
+          </div>
         </section>
 
         <section className="py-4">
@@ -72,11 +83,11 @@ function App() {
         </section>
 
         <section>
-          <MyTeam/>
+          <MyTeam />
         </section>
 
         <section>
-          <TeamExpectationsSection/>
+          <TeamExpectationsSection />
         </section>
 
         <section>
