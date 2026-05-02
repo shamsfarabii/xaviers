@@ -31,7 +31,7 @@ const reviews = [
 
 const ClientReviews = () => {
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(255,89,48,0.18),transparent_28%),radial-gradient(circle_at_top_right,rgba(255,138,76,0.12),transparent_32%),linear-gradient(180deg,#080808_0%,#020202_100%)] px-5 py-10 font-[Inter,Arial,sans-serif] text-white before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(rgba(255,75,0,0.28)_1px,transparent_1px)] before:bg-[length:32px_32px] before:opacity-[0.22] max-[640px]:items-start max-[640px]:px-4 max-[640px]:py-16">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent px-5 py-10 font-[Inter,Arial,sans-serif] text-white max-[640px]:items-start max-[640px]:px-4 max-[640px]:py-8">
       <section className="relative z-[1] w-full max-w-[1180px]">
         <div className="mx-auto mb-[54px] max-w-[980px] text-center max-[640px]:mb-[34px]">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,122,60,0.26)] bg-[rgba(255,122,60,0.08)] px-3.5 py-2 text-xs font-extrabold uppercase tracking-[1.8px] text-[#ff8a4c] before:h-[7px] before:w-[7px] before:rounded-full before:bg-[#ff7a3c] before:shadow-[0_0_18px_rgba(255,122,60,0.9)]">
@@ -40,7 +40,7 @@ const ClientReviews = () => {
 
           <h1 className="mb-[26px] text-[clamp(44px,7vw,88px)] font-black uppercase leading-[0.92] tracking-[-4px] text-white max-[1050px]:tracking-[-3px] max-[640px]:text-[clamp(42px,13vw,62px)] max-[640px]:leading-[0.95] max-[640px]:tracking-[-2px]">
             PEOPLE DONT JUST HIRE US.
-            <span className="block italic text-[#ff4b00]">
+            <span className="block italic text-[#ff7a3c]">
               THEY TRUST US
             </span>
           </h1>
@@ -54,7 +54,7 @@ const ClientReviews = () => {
           {reviews.map((review) => (
             <article
               key={review.initials}
-              className="group relative flex min-h-[360px] flex-col overflow-hidden rounded-[28px] border border-white/[0.09] bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-[26px] transition duration-300 ease-in-out after:absolute after:inset-x-[-30%] after:bottom-[-35%] after:h-[170px] after:bg-[radial-gradient(circle,rgba(255,122,60,0.22),transparent_68%)] after:opacity-0 after:transition after:duration-300 hover:-translate-y-2 hover:border-[rgba(255,122,60,0.36)] hover:shadow-[0_28px_80px_rgba(0,0,0,0.35)] hover:after:opacity-100 max-[640px]:min-h-0"
+              className="group relative flex min-h-[360px] flex-col overflow-hidden rounded-[28px] border border-white/[0.09] bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-[26px] transition duration-300 ease-in-out after:absolute after:inset-x-[-30%] after:bottom-[-50%] after:h-[180px] after:bg-[radial-gradient(ellipse_at_center,rgba(255,122,60,0.09),transparent_72%)] after:opacity-0 after:transition after:duration-300 hover:-translate-y-2 hover:border-[rgba(255,122,60,0.22)] hover:shadow-[0_28px_80px_rgba(0,0,0,0.35)] hover:after:opacity-100 max-[640px]:min-h-0"
             >
               <div className="absolute right-6 top-[22px] text-[70px] font-black leading-none text-white/[0.08]">
                 “

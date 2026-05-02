@@ -26,7 +26,7 @@ export default function Contact() {
     return (
         <div
             ref={sectionRef}
-            className="bg-[black] text-white py-12 px-4 relative"
+            className="bg-transparent text-white py-12 px-4 relative"
             id="contact"
         >
             {/* Background mask overlays */}
@@ -41,7 +41,7 @@ export default function Contact() {
                     isVisible ? 'animate-fade-up' : ''
                 }`}>
                     <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Contact <span className="text-red-400">Us</span>
+                        Contact <span className="text-[#ff7a3c]">Us</span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
                         For your project pricing contact with us
@@ -54,10 +54,10 @@ export default function Contact() {
                         isVisible ? 'animate-fade-up' : ''
                     }`}>
                         <div className="relative group">
-                            {/* Gradient Border Effect — removed animate-pulse for perf */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                            {/* Orange glow border */}
+                            <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] rounded-lg blur opacity-60 group-hover:opacity-90 transition duration-500"></div>
 
-                            <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-red-500">
+                            <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-[#ff7a3c]">
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="relative">
                                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -69,7 +69,7 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             placeholder="Name"
-                                            className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300"
+                                            className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
                                             required
                                         />
                                     </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 placeholder="Your E-mail"
-                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300"
+                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
                                                 required
                                             />
                                         </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 placeholder="+01634633244"
-                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300"
+                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
                                             />
                                         </div>
                                     </div>
@@ -111,17 +111,16 @@ export default function Contact() {
                                             onChange={handleInputChange}
                                             placeholder="Write Some Description about your project if you want."
                                             rows={5}
-                                            className="w-full px-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300 resize-none"
+                                            className="w-full px-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300 resize-none"
                                         />
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="w-full relative group bg-gradient-to-r from-red-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-red-500 hover:to-purple-500 transition-all duration-300 flex items-center justify-center gap-2"
+                                        className="w-full relative group bg-[linear-gradient(135deg,#ff7a3c_0%,#ff5a2a_100%)] text-white px-8 py-4 rounded-lg font-semibold hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2"
                                     >
                                         <Send className="h-5 w-5" />
                                         SUBMIT
-                                        <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     </button>
                                 </form>
                             </div>
@@ -134,10 +133,10 @@ export default function Contact() {
                     }`}>
                         <div className="space-y-6 mb-12">
                             <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
-                                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-blue-500">
+                                <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] rounded-lg blur opacity-40 group-hover:opacity-65 transition duration-300"></div>
+                                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-[#ff7a3c]">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                                        <div className="w-12 h-12 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center">
                                             <Mail className="h-6 w-6 text-white" />
                                         </div>
                                         <div className='flex flex-col items-start'>
@@ -149,10 +148,10 @@ export default function Contact() {
                             </div>
 
                             <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
-                                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-green-500">
+                                <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] rounded-lg blur opacity-40 group-hover:opacity-65 transition duration-300"></div>
+                                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-[#ff7a3c]">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center">
+                                        <div className="w-12 h-12 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center">
                                             <Phone className="h-6 w-6 text-white" />
                                         </div>
                                         <div className='flex flex-col items-start'>
@@ -166,22 +165,22 @@ export default function Contact() {
 
                         <div>
                             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">
-                                Contact <span className="text-red-400">Us</span>
+                                Contact <span className="text-[#ff7a3c]">Us</span>
                             </h2>
                             <div className="flex justify-center gap-6">
-                                <a href="#" className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                                <a href="#" className="w-16 h-16 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
                                     <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                                        <span className="text-blue-600 font-bold text-lg">f</span>
+                                        <span className="text-[#ff7a3c] font-bold text-lg">f</span>
                                     </div>
                                 </a>
-                                <a href="#" className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                                <a href="#" className="w-16 h-16 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
                                     <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                                        <span className="text-pink-600 font-bold text-lg">@</span>
+                                        <span className="text-[#ff7a3c] font-bold text-lg">@</span>
                                     </div>
                                 </a>
-                                <a href="#" className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                                <a href="#" className="w-16 h-16 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
                                     <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                                        <span className="text-blue-500 font-bold text-lg">Be</span>
+                                        <span className="text-[#ff7a3c] font-bold text-lg">Be</span>
                                     </div>
                                 </a>
                             </div>

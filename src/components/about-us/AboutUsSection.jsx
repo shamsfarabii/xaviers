@@ -55,7 +55,7 @@ export default function AboutUsSection() {
   return (
     <div
       ref={sectionRef}
-      className="bg-[black] text-white py-16 px-4 overflow-hidden"
+      className="bg-transparent text-white py-8 px-4 overflow-hidden"
       id="about"
     >
       <div className="max-w-7xl mx-auto">
@@ -63,13 +63,13 @@ export default function AboutUsSection() {
         <div className={`text-center mb-16 transition-all duration-700 ${
           isVisible ? 'animate-fade-up' : ''
         }`}>
-          <p className="text-sm font-semibold text-red-400 tracking-wider uppercase mb-4">
+          <p className="text-sm font-semibold text-[#ff7a3c] tracking-wider uppercase mb-4">
             MEET THE TEAM
           </p>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            About <span className="text-red-400">Us</span>
+            About <span className="text-[#ff7a3c]">Us</span>
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-red-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+          <div className="h-1 w-24 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] mx-auto rounded-full mb-8"></div>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             We are a passionate team of creative professionals dedicated to bringing your vision to life through innovative design and artistic excellence.
           </p>
@@ -84,9 +84,9 @@ export default function AboutUsSection() {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="relative group max-w-sm mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-[#ff7a3c] rounded-2xl blur-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500"></div>
 
-                <div className="relative w-full h-96 overflow-hidden rounded-2xl shadow-2xl border border-gray-700 group-hover:border-red-500 transition-all duration-500">
+                <div className="relative w-full h-96 overflow-hidden rounded-2xl shadow-2xl border border-white/[0.09] group-hover:border-[#ff7a3c]/50 transition-all duration-500">
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={member.image}
@@ -94,16 +94,16 @@ export default function AboutUsSection() {
                       className="h-full w-full object-cover transition-all duration-700"
                       
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/60 group-hover:via-red-900/20 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/70 group-hover:via-[rgba(255,122,60,0.06)] transition-all duration-500" />
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="absolute inset-0 rounded-b-2xl bg-gradient-to-t from-black/95 via-black/70 to-transparent group-hover:from-black/95 group-hover:via-red-900/40 transition-all duration-500"></div>
+                    <div className="absolute inset-0 rounded-b-2xl bg-gradient-to-t from-black/95 via-black/70 to-transparent group-hover:from-black/95 group-hover:via-black/65 group-hover:to-[rgba(255,122,60,0.08)] transition-all duration-500"></div>
                     <div className="relative">
-                      <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-red-100 group-hover:scale-105 transition-all duration-500">
+                      <h3 className="text-2xl font-bold mb-2 text-white group-hover:scale-105 transition-all duration-500">
                         {member.name}
                       </h3>
-                      <p className="font-medium tracking-wide text-gray-300 group-hover:text-red-300 group-hover:text-lg transition-all duration-500">
+                      <p className="font-medium tracking-wide text-gray-300 group-hover:text-[#ff8a4c] group-hover:text-lg transition-all duration-500">
                         {member.designation}
                       </p>
                     </div>
@@ -133,39 +133,22 @@ export default function AboutUsSection() {
                 onMouseEnter={() => setHoveredIndex(index)}
               >
                 {/* Glow — only on hover, not continuous */}
-                <div className={`absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 rounded-2xl blur-xl transition-all duration-500 ${
-                  hoveredIndex === index ? 'opacity-100 scale-110' : 'opacity-40 scale-100'
+                <div className={`absolute inset-0 bg-[#ff7a3c] rounded-2xl blur-2xl transition-opacity duration-500 ${
+                  hoveredIndex === index ? 'opacity-25' : 'opacity-0'
                 }`}></div>
 
                 <div className="relative w-72 h-96 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border transition-all duration-500">
                   <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
                     hoveredIndex === index
-                      ? 'border-2 border-red-500 shadow-lg shadow-red-500/50'
-                      : 'border border-gray-700'
+                      ? 'border border-[#ff7a3c]/50 shadow-md shadow-[#ff7a3c]/15'
+                      : 'border border-white/[0.09]'
                   }`}></div>
-
-                  {/* Floating ping elements — only render on hover to avoid constant animation */}
-                  {hoveredIndex === index && (
-                    <>
-                      {[0, 1, 2].map((i) => (
-                        <div
-                          key={i}
-                          className="absolute h-1 w-1 bg-red-400 rounded-full animate-ping"
-                          style={{
-                            top: `${20 + i * 25}%`,
-                            left: `${15 + i * 25}%`,
-                            animationDelay: `${i * 200}ms`,
-                          }}
-                        />
-                      ))}
-                    </>
-                  )}
 
                   <div className="absolute top-4 right-4 z-10">
                     <div className={`h-3 w-3 rounded-full transition-all duration-500 ${
                       hoveredIndex === index
-                        ? 'bg-red-500 shadow-lg shadow-red-500/50'
-                        : 'bg-gray-500'
+                        ? 'bg-[#ff7a3c] shadow-lg shadow-[#ff7a3c]/60'
+                        : 'bg-white/30'
                     }`}></div>
                   </div>
 
@@ -180,14 +163,14 @@ export default function AboutUsSection() {
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
                       hoveredIndex === index
-                        ? 'from-black/60 via-red-900/20 to-transparent'
+                        ? 'from-black/70 via-[rgba(255,122,60,0.06)] to-transparent'
                         : 'from-black/90 via-black/50 to-transparent'
                     }`} />
 
                     {hoveredIndex === index && (
                       <>
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-purple-500"></div>
-                        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-red-500"></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)]"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-1 bg-[linear-gradient(135deg,#ff3f3f,#ff7a3c)]"></div>
                       </>
                     )}
                   </div>
@@ -195,7 +178,7 @@ export default function AboutUsSection() {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className={`absolute inset-0 rounded-b-2xl transition-all duration-500 ${
                       hoveredIndex === index
-                        ? 'bg-gradient-to-t from-black/95 via-red-900/40 to-transparent'
+                        ? 'bg-gradient-to-t from-black/95 via-black/65 to-[rgba(255,122,60,0.08)]'
                         : 'bg-gradient-to-t from-black/95 via-black/70 to-transparent'
                     }`}></div>
 
@@ -203,21 +186,21 @@ export default function AboutUsSection() {
                       hoveredIndex === index ? 'transform translate-y-0' : 'transform translate-y-2'
                     }`}>
                       <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
-                        hoveredIndex === index ? 'text-red-100 scale-105' : 'text-white'
+                        hoveredIndex === index ? 'text-white scale-105' : 'text-white'
                       }`}>
                         {member.name}
                       </h3>
                       <p className={`font-medium tracking-wide transition-all duration-500 ${
-                        hoveredIndex === index ? 'text-red-300 text-lg' : 'text-gray-300'
+                        hoveredIndex === index ? 'text-[#ff8a4c] text-lg' : 'text-gray-300'
                       }`}>
                         {member.designation}
                       </p>
                     </div>
 
                     <div className={`relative h-1 rounded-full mt-4 transition-all duration-500 overflow-hidden ${
-                      hoveredIndex === index ? 'bg-red-500/30' : 'bg-gray-700/50'
+                      hoveredIndex === index ? 'bg-[rgba(255,122,60,0.30)]' : 'bg-white/10'
                     }`}>
-                      <div className={`h-full bg-gradient-to-r from-red-500 to-purple-500 rounded-full transition-all duration-700 ${
+                      <div className={`h-full bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] rounded-full transition-all duration-700 ${
                         hoveredIndex === index ? 'w-full' : 'w-1/4'
                       }`}></div>
                     </div>

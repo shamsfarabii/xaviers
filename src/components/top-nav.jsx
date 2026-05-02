@@ -13,13 +13,13 @@ const Navigation = () => {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[black] backdrop-blur-md transition-all duration-300">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,5,4,0.78)] border-b border-white/[0.06] backdrop-blur-md transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="flex items-center justify-between h-16 sm:h-20">
                     {/* Logo/Brand */}
                     <div className="flex items-center space-x-3">
                         <div className="relative">
-                            <img src="/logo.png" className='w-[150px]' alt="Logo" />
+                            <img src="/logo.png" className='w-[40px]' alt="Logo" />
                         </div>
 
                     </div>
@@ -30,7 +30,7 @@ const Navigation = () => {
                             <a
                                 key={item.name}
                                 href={item.href}
-                                className="group relative px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-500/10"
+                                className="group relative px-4 py-2 rounded-lg transition-all duration-300 hover:bg-[#ff7a3c]/10"
                             >
                                 <div className="flex items-center space-x-2 text-gray-300 group-hover:text-white">
                                     {item.icon}
@@ -53,13 +53,13 @@ const Navigation = () => {
                 {/* Mobile Menu */}
                 <div className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}>
-                    <div className="py-4 space-y-2 border-t border-red-500/30">
+                    <div className="py-4 space-y-2 border-t border-[#ff7a3c]/30">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
                                 href={item.href}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-red-500/10 transition-all duration-200"
+                                className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-[#ff7a3c]/10 transition-all duration-200"
                             >
                                 {item.icon}
                                 <span className="font-medium">{item.name}</span>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MyTeam() {
     return (
-        <section className='w-full bg-[black]'>
+        <section className='w-full bg-transparent'>
             <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-between gap-10 overflow-hidden px-4 py-8 sm:px-6 md:px-10 md:py-10 lg:flex-row lg:gap-[100px] lg:px-14 xl:px-16'>
                 <div className='flex w-full items-center justify-center lg:w-[48%] lg:justify-start'>
                     <img
@@ -28,9 +28,9 @@ export default function MyTeam() {
                         </h2>
 
                         <div className='mt-3 flex flex-col items-center gap-[5px] sm:mt-4 sm:gap-[6px]'>
-                            <span className='block h-[3px] w-[150px] -rotate-[1.5deg] rounded-full bg-[#ff2b2b] sm:w-[240px]' />
-                            <span className='ml-4 block h-[3px] w-[120px] rotate-[1deg] rounded-full bg-[#ff2b2b] sm:ml-6 sm:w-[200px]' />
-                            <span className='mr-2 block h-[3px] w-[140px] -rotate-[1deg] rounded-full bg-[#ff2b2b] sm:mr-3 sm:w-[225px]' />
+                            <span className='block h-[3px] w-[150px] -rotate-[1.5deg] rounded-full bg-[#ff7a3c] sm:w-[240px]' />
+                            <span className='ml-4 block h-[3px] w-[120px] rotate-[1deg] rounded-full bg-[#ff7a3c] sm:ml-6 sm:w-[200px]' />
+                            <span className='mr-2 block h-[3px] w-[140px] -rotate-[1deg] rounded-full bg-[#ff7a3c] sm:mr-3 sm:w-[225px]' />
                         </div>
 
                         <p

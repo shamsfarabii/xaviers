@@ -2,23 +2,10 @@ export default function Hero() {
   return (
     <section
       className={[
-        "relative flex flex-col min-h-[90vh] bg-[#000000] items-center justify-center overflow-hidden px-[18px] py-[60px] text-center font-['Plus_Jakarta_Sans',sans-serif]",
+        "relative flex flex-col min-h-[90vh] bg-transparent items-center justify-center overflow-hidden px-[18px] py-[60px] text-center font-['Plus_Jakarta_Sans',sans-serif]",
         "md:min-h-screen md:px-6 md:py-20",
       ].join(" ")}
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[length:32px_32px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,112,56,0.28),transparent_48%),radial-gradient(circle_at_50%_72%,rgba(255,112,56,0.16),transparent_38%)] blur-[24px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0)_48%,rgba(0,0,0,0.45)_100%)]"
-      />
-
       <div className="relative z-10 max-w-[1180px]">
         <h1 className="text-[clamp(48px,8.8vw,118px)] font-black uppercase leading-[0.9] tracking-[-0.055em] md:tracking-[-0.07em]">
           <span className="block text-white">Your Go-To</span>

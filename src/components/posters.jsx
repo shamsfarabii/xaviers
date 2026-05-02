@@ -21,7 +21,7 @@ export default function Posters() {
           />
         </div>
   
-        <div className="bg-[black] py-5 px-4 relative flex items-center justify-center">
+        <div className="bg-transparent py-5 px-4 relative flex items-center justify-center">
           {/* Background mask overlays */}
           <div className="absolute inset-0 hidden md:flex justify-between items-center pointer-events-none z-0">
             <img

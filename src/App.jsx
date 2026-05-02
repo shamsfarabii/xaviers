@@ -46,15 +46,25 @@ function App() {
           <MyWorks />
         </section>
 
-        <section className="py-4" id="video-collage">
+        <section className="hidden py-4 md:block" id="video-collage">
           <VideoCollage videoLinks={videos} />
         </section>
 
         <section className="py-4" id="podcast">
           <Tabs defaultValue="video" className="w-full flex items-center">
-            <TabsList className="flex gap-[5px]">
-              <TabsTrigger className="text-[#ffffff] dark:text-white " value="video">Videos</TabsTrigger>
-              <TabsTrigger className="text-[#ffffff] dark:text-white " value="reels">Reels</TabsTrigger>
+            <TabsList className="flex gap-[5px] !bg-white/[0.06] border border-white/[0.09] backdrop-blur-sm">
+              <TabsTrigger
+                className="text-white/70 data-[state=active]:!bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] data-[state=active]:!text-white data-[state=active]:!border-transparent data-[state=active]:shadow-[0_8px_24px_rgba(255,122,60,0.30)]"
+                value="video"
+              >
+                Videos
+              </TabsTrigger>
+              <TabsTrigger
+                className="text-white/70 data-[state=active]:!bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] data-[state=active]:!text-white data-[state=active]:!border-transparent data-[state=active]:shadow-[0_8px_24px_rgba(255,122,60,0.30)]"
+                value="reels"
+              >
+                Reels
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="video">
               <AllVideos />

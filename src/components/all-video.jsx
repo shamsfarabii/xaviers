@@ -8,7 +8,7 @@ const AllVideos = () => {
     return (
         <div
             ref={sectionRef}
-            className={`bg-[black] text-white px-8 py-6 font-sans transition-all duration-700 ${
+            className={`bg-transparent text-white px-8 py-6 font-sans transition-all duration-700 ${
                 isVisible ? 'animate-fade-up' : ''
             }`}
         >

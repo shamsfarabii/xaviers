@@ -175,7 +175,7 @@ export default function MyWorks() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'scale-125 bg-[#ff3131]' : 'bg-gray-400'
+                    currentSlide === index ? 'scale-125 bg-[#ff7a3c]' : 'bg-gray-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
