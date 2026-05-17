@@ -1,3 +1,6 @@
+import { typography } from "../lib/utils";
+import SectionHeading from "./ui/SectionHeading";
+
 export default function Hero() {
   return (
     <section
@@ -7,16 +10,9 @@ export default function Hero() {
       ].join(" ")}
     >
       <div className="relative z-10 max-w-[1180px]">
-        <h1 className="text-[clamp(48px,8.8vw,118px)] font-black uppercase leading-[0.9] tracking-[-0.055em] md:tracking-[-0.07em]">
-          <span className="block text-white">Your Go-To</span>
-          <span className="block text-[#ff7038] drop-shadow-[0_0_54px_rgba(255,112,56,0.85)]">
-            <em className="inline-block -skew-x-6 [font-style:italic]">
-              Video Editing Team
-            </em>
-          </span>
-        </h1>
+        <SectionHeading primary="Your Go-To" secondary="Video Editing Team" />
 
-        <p className="mx-auto mt-[30px] max-w-[920px] text-[clamp(11px,1.25vw,16px)] font-medium uppercase leading-[1.7] tracking-[0.14em] text-white/70 md:leading-[1.8] md:tracking-[0.24em]">
+        <p className={typography.heroSubtext}>
           We partner with agencies, brands and creators to scale high-volume
           content without hiring, managing, or operational friction.
         </p>

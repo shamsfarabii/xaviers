@@ -99,10 +99,6 @@ export default function MyWorks() {
 
   return (
     <div>
-      <div className="relative flex items-center justify-center" id="works">
-        <img src="https://xaviers.b-cdn.net/gifs/1230%20(1)(1).gif" className="w-[1440px]" alt="Hero Image" />
-      </div>
-
       <div className="relative">
         {/* Desktop */}
         <div className="hidden lg:block">
@@ -113,18 +109,6 @@ export default function MyWorks() {
             }`}
           >
             <div className="relative mx-auto aspect-[1193/369] w-full overflow-hidden">
-              <img
-                src="/MaskLeft.png"
-                alt=""
-                className="pointer-events-none absolute inset-y-0 left-0 h-full max-w-none select-none"
-              />
-
-              <img
-                src="/MaskRight.png"
-                alt=""
-                className="pointer-events-none absolute inset-y-0 right-0 h-full max-w-none select-none object-contain"
-              />
-
               {workImages.map((imageUrl, index) => {
                 const imagePosition = desktopWorkImagePositions[index];
 

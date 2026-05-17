@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react'
+import SectionHeading from './ui/SectionHeading'
 
 const partnerCards = [
   {
@@ -32,13 +33,7 @@ export default function ContentPartnerSection() {
     <section className="relative min-h-screen overflow-hidden bg-transparent px-5 py-[72px] font-['Plus_Jakarta_Sans',Arial,sans-serif] text-white max-[900px]:px-[18px] max-[900px]:py-8">
       <div className="relative z-[1] mx-auto w-full max-w-[1180px]">
         <div className="mx-auto mb-14 max-w-[820px] text-center max-[640px]:mb-9">
-          <h2 className="mb-5 text-[clamp(42px,7vw,86px)] font-black uppercase leading-[0.92] tracking-[-4px] text-white max-[640px]:tracking-[-2px]">
-            You&apos;ve found the
-            <br />
-            <span className="inline-block text-[#ff7a3c] italic drop-shadow-[0_0_24px_rgba(255,122,60,0.22)]">
-              right partner
-            </span>
-          </h2>
+          <SectionHeading primary="You've found the" secondary="right partner" />
           <p className="mx-auto max-w-[650px] text-[15px] uppercase leading-[1.7] tracking-[2px] text-[#9f9f9f] max-[640px]:text-[13px] max-[640px]:tracking-[1.4px]">
             If you are looking for excellence
           </p>

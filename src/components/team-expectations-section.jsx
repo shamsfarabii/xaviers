@@ -1,3 +1,5 @@
+import SectionHeading from "./ui/SectionHeading";
+
 export default function TeamExpectationsSection() {
   const features = [
     {
@@ -34,12 +36,7 @@ export default function TeamExpectationsSection() {
     <main className="relative min-h-screen overflow-hidden bg-transparent px-5 py-10 font-sans text-white sm:px-8 lg:px-10">
       <section className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-[1050px] flex-col justify-center">
         <div className="mx-auto mb-12 max-w-[900px] text-center">
-          <p className="mb-3 text-[clamp(2.6rem,7vw,4.7rem)] font-black uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)]">
-            A more modern way
-          </p>
-          <h1 className="text-[clamp(2.7rem,7vw,4.9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.06em] text-[#ff6a3d] drop-shadow-[0_0_22px_rgba(255,90,54,0.20)]">
-            to handle content production
-          </h1>
+          <SectionHeading primary="A more modern way" secondary="to handle content production" />
           <p className="mx-auto mt-5 max-w-[720px] text-[0.72rem] font-medium uppercase leading-[1.9] tracking-[0.38em] text-[#aeb3bd] sm:text-xs">
             Built for brands, creators, and agencies that want clean systems, faster delivery, and consistent quality without the chaos of managing freelancers.
           </p>

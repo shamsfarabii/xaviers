@@ -1,75 +1,280 @@
-import { Briefcase, Menu, MessageCircle, Star, User } from 'lucide-react';
-import { useState } from 'react';
+import { Briefcase, Menu, MessageCircle, Star, User, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
-const Navigation = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const navItems = [
+  { name: 'Home',    icon: <User          className="w-4 h-4" />, href: '#home'    },
+  { name: 'Works',   icon: <Briefcase     className="w-4 h-4" />, href: '#podcast' },
+  { name: 'About',   icon: <User          className="w-4 h-4" />, href: '#about'   },
+  { name: 'Reviews', icon: <Star          className="w-4 h-4" />, href: '#reviews' },
+  { name: 'Contact', icon: <MessageCircle className="w-4 h-4" />, href: '#contact' },
+];
 
-    const navItems = [
-        { name: 'Home', icon: <User className="w-4 h-4" />, href: '#home' },
-        { name: 'Works', icon: <Briefcase className="w-4 h-4" />, href: '#podcast' },
-        { name: 'About', icon: <User className="w-4 h-4" />, href: '#about' },
-        { name: 'Reviews', icon: <Star className="w-4 h-4" />, href: '#reviews' },
-        { name: 'Contact', icon: <MessageCircle className="w-4 h-4" />, href: '#contact' },
-    ];
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled,   setScrolled]   = useState(false);
+  const [pill,       setPill]       = useState({ opacity: 0, left: 0, width: 0, height: 0 });
+  const desktopNavRef                = useRef(null);
 
-    return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,5,4,0.78)] border-b border-white/[0.06] backdrop-blur-md transition-all duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="flex items-center justify-between h-16 sm:h-20">
-                    {/* Logo/Brand */}
-                    <div className="flex items-center space-x-3">
-                        <div className="relative">
-                            <img src="/logo.png" className='w-[40px]' alt="Logo" />
-                        </div>
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-                    </div>
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setIsMenuOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-1">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="group relative px-4 py-2 rounded-lg transition-all duration-300 hover:bg-[#ff7a3c]/10"
-                            >
-                                <div className="flex items-center space-x-2 text-gray-300 group-hover:text-white">
-                                    {item.icon}
-                                    <span className="font-medium">{item.name}</span>
-                                </div>
-                                <div className="absolute bottom-0 left-0 w-0 h-0.5  group-hover:w-full transition-all duration-300"></div>
-                            </a>
-                        ))}
-                    </div>
+  const handleItemEnter = (e) => {
+    const nav  = desktopNavRef.current;
+    const item = e.currentTarget;
+    if (!nav) return;
+    const navRect  = nav.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    setPill({
+      opacity: 1,
+      left:   itemRect.left - navRect.left,
+      width:  itemRect.width,
+      height: itemRect.height,
+    });
+  };
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden relative w-10 h-10 rounded-lg flex items-center justify-center"
-                    >
-                        <Menu className="w-5 h-5 " />
-                    </button>
-                </div>
+  const handleNavLeave = () => setPill((p) => ({ ...p, opacity: 0 }));
 
-                {/* Mobile Menu */}
-                <div className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}>
-                    <div className="py-4 space-y-2 border-t border-[#ff7a3c]/30">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                onClick={() => setIsMenuOpen(false)}
-                                className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-[#ff7a3c]/10 transition-all duration-200"
-                            >
-                                {item.icon}
-                                <span className="font-medium">{item.name}</span>
-                            </a>
-                        ))}
-                    </div>
-                </div>
+  return (
+    <>
+      {/* Watery distortion filter — applied to the glass surface for refraction feel */}
+      <svg className="absolute w-0 h-0" aria-hidden="true">
+        <defs>
+          <filter id="glass-water" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.022" numOctaves="2" seed="7">
+              <animate attributeName="baseFrequency" dur="22s" values="0.012 0.022;0.018 0.014;0.012 0.022" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="6" />
+          </filter>
+        </defs>
+      </svg>
+
+      <style>{`
+        @keyframes glassSlideDown {
+          from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+          to   { opacity: 1; transform: translateY(0)    scale(1);    }
+        }
+        @keyframes glassItemFade {
+          from { opacity: 0; transform: translateY(-4px); }
+          to   { opacity: 1; transform: translateY(0);    }
+        }
+        @keyframes glassShimmer {
+          0%   { transform: translateX(-120%); }
+          100% { transform: translateX(220%);  }
+        }
+        @keyframes glassCaustic {
+          0%   { transform: translate(0%, 0%)    scale(1);   opacity: 0.55; }
+          50%  { transform: translate(8%, -4%)   scale(1.08); opacity: 0.85; }
+          100% { transform: translate(0%, 0%)    scale(1);   opacity: 0.55; }
+        }
+        @keyframes glassRipple {
+          0%   { transform: translate(-2%, 0%) scale(1);    opacity: 0.4; }
+          50%  { transform: translate(2%, 1%)  scale(1.04); opacity: 0.7; }
+          100% { transform: translate(-2%, 0%) scale(1);    opacity: 0.4; }
+        }
+        .glass-menu-enter { animation: glassSlideDown 0.26s cubic-bezier(0.22,1,0.36,1) forwards; }
+        .glass-item-fade  { animation: glassItemFade  0.22s cubic-bezier(0.22,1,0.36,1) both; }
+        .glass-shimmer    { animation: glassShimmer   7s   cubic-bezier(0.4,0,0.2,1) infinite; }
+        .glass-caustic    { animation: glassCaustic   12s  ease-in-out infinite; }
+        .glass-ripple     { animation: glassRipple    9s   ease-in-out infinite; }
+
+        /* The core glass surface — heavy blur + saturation + multi-layered translucent fills */
+        .glass-surface {
+          background:
+            radial-gradient(120% 180% at 12% 0%,  rgba(255,160,110,0.10) 0%, transparent 55%),
+            radial-gradient(120% 180% at 88% 100%, rgba(120,180,255,0.07) 0%, transparent 55%),
+            linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%),
+            rgba(8,5,4,0.45);
+          backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
+          -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.18),
+            inset 0 -1px 0 rgba(255,255,255,0.04),
+            inset 1px 0 0 rgba(255,255,255,0.05),
+            inset -1px 0 0 rgba(255,255,255,0.05),
+            0 18px 50px -10px rgba(0,0,0,0.55),
+            0 4px 18px -6px rgba(255,122,60,0.18);
+        }
+        .glass-surface-scrolled {
+          background:
+            radial-gradient(120% 180% at 12% 0%,  rgba(255,160,110,0.14) 0%, transparent 55%),
+            radial-gradient(120% 180% at 88% 100%, rgba(120,180,255,0.09) 0%, transparent 55%),
+            linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
+            rgba(8,5,4,0.58);
+        }
+      `}</style>
+
+      <nav className="fixed top-0 left-0 right-0 z-50 font-['Plus_Jakarta_Sans',sans-serif] pointer-events-none">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-3 sm:pt-4">
+
+          {/* Floating glass capsule */}
+          <div
+            className={[
+              'relative pointer-events-auto rounded-2xl overflow-hidden',
+              'glass-surface',
+              'border border-white/[0.10]',
+              'transition-all duration-500 ease-out',
+              scrolled ? 'glass-surface-scrolled border-white/[0.14]' : '',
+            ].join(' ')}
+          >
+            {/* Watery caustic light blobs — slow drifting refractions */}
+            <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
+              <div
+                className="glass-caustic absolute -top-1/2 -left-10 w-[55%] h-[260%] rounded-full blur-3xl"
+                style={{ background: 'radial-gradient(closest-side, rgba(255,160,90,0.22), transparent 70%)' }}
+              />
+              <div
+                className="glass-ripple absolute -bottom-1/2 right-0 w-[45%] h-[260%] rounded-full blur-3xl"
+                style={{ background: 'radial-gradient(closest-side, rgba(120,170,255,0.16), transparent 70%)' }}
+              />
             </div>
-        </nav>
-    );
-};
 
-export default Navigation;
+            {/* Distorted refraction layer — uses SVG turbulence for the watery feel */}
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none opacity-60 mix-blend-overlay"
+              style={{ filter: 'url(#glass-water)' }}
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.10)_45%,rgba(255,255,255,0.18)_50%,rgba(255,255,255,0.10)_55%,transparent_100%)]" />
+            </div>
+
+            {/* Slow specular shimmer sweeping across the glass */}
+            <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
+              <div className="glass-shimmer absolute top-0 -left-1/3 h-full w-1/3 bg-[linear-gradient(105deg,transparent_0%,rgba(255,255,255,0.0)_30%,rgba(255,255,255,0.10)_50%,rgba(255,255,255,0.0)_70%,transparent_100%)]" />
+            </div>
+
+            {/* Top highlight edge — the "light catching the rim" of glass */}
+            <div aria-hidden className="absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.55),rgba(255,180,130,0.45),rgba(255,255,255,0.55),transparent)]" />
+            {/* Bottom subtle inner shadow */}
+            <div aria-hidden className="absolute inset-x-6 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.45),transparent)]" />
+
+            <div className="relative px-4 sm:px-6">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center h-[58px] sm:h-[64px]">
+
+                {/* Logo — left */}
+                <a href="#home" className="group relative flex items-center justify-self-start">
+                    <img
+                      src="/logo.png"
+                      className="w-[28px] transition-transform duration-300 group-hover:scale-[1.08]"
+                      alt="Xaviers"
+                    />
+                  <div className="absolute inset-0 rounded-xl bg-[#ff7a3c]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                </a>
+
+                {/* Desktop nav — floating glass pill follows cursor */}
+                <div
+                  ref={desktopNavRef}
+                  onMouseLeave={handleNavLeave}
+                  className="hidden md:flex items-center gap-0.5 relative"
+                >
+                  {/* moving glass highlight — looks like a water droplet of light */}
+                  <div
+                    aria-hidden
+                    className="absolute top-1/2 -translate-y-1/2 rounded-[12px] pointer-events-none
+                               bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))]
+                               border border-white/[0.22]
+                               shadow-[inset_0_1px_0_rgba(255,255,255,0.45),inset_0_-1px_0_rgba(255,122,60,0.18),0_4px_14px_rgba(255,122,60,0.18),0_0_20px_rgba(255,180,130,0.10)]
+                               backdrop-blur-md
+                               transition-[left,width,opacity] duration-300 ease-out"
+                    style={{
+                      opacity: pill.opacity,
+                      left:    pill.left,
+                      width:   pill.width,
+                      height:  pill.height,
+                    }}
+                  />
+
+                  {navItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onMouseEnter={handleItemEnter}
+                      className="relative z-10 px-[15px] py-[8px] rounded-[12px]
+                                 text-[12.5px] font-bold tracking-[0.07em] uppercase
+                                 text-white/65 hover:text-white
+                                 transition-colors duration-200"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+
+                {/* Right — mobile toggle (desktop: spacer) */}
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setIsMenuOpen((v) => !v)}
+                    aria-label="Toggle menu"
+                    className="md:hidden relative flex items-center justify-center w-10 h-10 rounded-xl
+                               bg-white/[0.06] hover:bg-white/[0.12]
+                               border border-white/[0.14] hover:border-white/[0.25]
+                               text-white/80 hover:text-white
+                               shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_4px_14px_rgba(0,0,0,0.25)]
+                               backdrop-blur-md
+                               transition-all duration-200"
+                  >
+                    <span className={['absolute transition-all duration-200', isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'].join(' ')}>
+                      <X className="w-[15px] h-[15px]" />
+                    </span>
+                    <span className={['absolute transition-all duration-200', isMenuOpen ? 'opacity-0 -rotate-90' : 'opacity-100 rotate-0'].join(' ')}>
+                      <Menu className="w-[15px] h-[15px]" />
+                    </span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile dropdown — matching glass capsule */}
+          {isMenuOpen && (
+            <div className="md:hidden pointer-events-auto mt-2 glass-menu-enter">
+              <div className="relative rounded-2xl overflow-hidden glass-surface glass-surface-scrolled border border-white/[0.12]">
+                {/* top highlight */}
+                <div aria-hidden className="absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent)]" />
+                {/* watery caustic */}
+                <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
+                  <div
+                    className="glass-caustic absolute -top-1/2 left-0 w-[60%] h-[200%] rounded-full blur-3xl"
+                    style={{ background: 'radial-gradient(closest-side, rgba(255,160,90,0.20), transparent 70%)' }}
+                  />
+                </div>
+
+                <div className="relative px-3 py-3 flex flex-col gap-[3px]">
+                  {navItems.map((item, i) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      style={{ animationDelay: `${i * 35}ms` }}
+                      className="glass-item-fade group flex items-center gap-3 px-4 py-[11px] rounded-xl
+                                 text-[13px] font-semibold tracking-[0.06em] uppercase
+                                 text-white/70 hover:text-white
+                                 border border-transparent hover:border-white/[0.18]
+                                 hover:bg-white/[0.07]
+                                 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.20)]
+                                 transition-all duration-200"
+                    >
+                      <span className="text-[#ff7a3c]/70 group-hover:text-[#ff7a3c] transition-colors duration-200">
+                        {item.icon}
+                      </span>
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+    </>
+  );
+}

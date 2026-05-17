@@ -3,11 +3,11 @@ import './App.css'
 import AboutUsSection from './components/about-us/AboutUsSection'
 import AllVideos from './components/all-video'
 import AllReels from './components/allreels'
+import { BackgroundGrid } from './components/background-grid'
 import ClientReviews from './components/client-reviews'
 import ContentPartnerSection from './components/content-partner-section'
 import Contact from './components/contact'
 import FAQ from "./components/faq"
-import Footer from './components/footer'
 import Hero from './components/hero'
 import MyTeam from "./components/my-team"
 import MyWorks from './components/my-works'
@@ -32,6 +32,8 @@ const videos = [
 function App() {
   return (
     <>
+      <BackgroundGrid />
+
       <div className="sticky top-0 z-50">
         <Navigation />
       </div>
@@ -113,8 +115,6 @@ function App() {
         <section className="py-4" id="contact">
           <Contact />
         </section>
-
-        <Footer />
       </main>
     </>
   )

@@ -1,3 +1,5 @@
+import SectionHeading from "./ui/SectionHeading";
+
 const reviews = [
   {
     initials: "SJ",
@@ -38,12 +40,8 @@ const ClientReviews = () => {
             Client Stories
           </div>
 
-          <h1 className="mb-[26px] text-[clamp(44px,7vw,88px)] font-black uppercase leading-[0.92] tracking-[-4px] text-white max-[1050px]:tracking-[-3px] max-[640px]:text-[clamp(42px,13vw,62px)] max-[640px]:leading-[0.95] max-[640px]:tracking-[-2px]">
-            PEOPLE DONT JUST HIRE US.
-            <span className="block italic text-[#ff7a3c]">
-              THEY TRUST US
-            </span>
-          </h1>
+
+          <SectionHeading primary="People don't just hire us." secondary="They trust us" />
 
           <p className="mx-auto max-w-[760px] text-[13px] uppercase leading-[1.7] tracking-[9px] text-[#6f7890] max-[640px]:text-[11px] max-[640px]:tracking-[4px]">
             FROM BRANDS TO CREATORS,OUR CLIENTS RELY ON US.
