@@ -55,7 +55,7 @@ export default function AboutUsSection() {
   return (
     <div
       ref={sectionRef}
-      className="bg-transparent text-white py-8 px-4 overflow-hidden"
+      className="bg-transparent text-[#F5EFE2] py-8 px-4 overflow-hidden"
       id="about"
     >
       <div className="max-w-7xl mx-auto">
@@ -66,7 +66,7 @@ export default function AboutUsSection() {
           <p className="text-sm font-semibold text-[#ff7a3c] tracking-wider uppercase mb-4">
             MEET THE TEAM
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#F5EFE2] mb-6">
             About <span className="text-[#ff7a3c]">Us</span>
           </h2>
           <div className="h-1 w-24 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] mx-auto rounded-full mb-8"></div>
@@ -100,7 +100,7 @@ export default function AboutUsSection() {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="absolute inset-0 rounded-b-2xl bg-gradient-to-t from-black/95 via-black/70 to-transparent group-hover:from-black/95 group-hover:via-black/65 group-hover:to-[rgba(255,122,60,0.08)] transition-all duration-500"></div>
                     <div className="relative">
-                      <h3 className="text-2xl font-bold mb-2 text-white group-hover:scale-105 transition-all duration-500">
+                      <h3 className="text-2xl font-bold mb-2 text-[#F5EFE2] group-hover:scale-105 transition-all duration-500">
                         {member.name}
                       </h3>
                       <p className="font-medium tracking-wide text-gray-300 group-hover:text-[#ff8a4c] group-hover:text-lg transition-all duration-500">
@@ -186,7 +186,7 @@ export default function AboutUsSection() {
                       hoveredIndex === index ? 'transform translate-y-0' : 'transform translate-y-2'
                     }`}>
                       <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
-                        hoveredIndex === index ? 'text-white scale-105' : 'text-white'
+                        hoveredIndex === index ? 'text-[#F5EFE2] scale-105' : 'text-[#F5EFE2]'
                       }`}>
                         {member.name}
                       </h3>

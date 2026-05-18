@@ -200,7 +200,7 @@ export default function Navigation() {
                       onMouseEnter={handleItemEnter}
                       className="relative z-10 px-[15px] py-[8px] rounded-[12px]
                                  text-[12.5px] font-bold tracking-[0.07em] uppercase
-                                 text-white/65 hover:text-white
+                                 text-[#F5EFE2]/65 hover:text-[#F5EFE2]
                                  transition-colors duration-200"
                     >
                       {item.name}
@@ -216,7 +216,7 @@ export default function Navigation() {
                     className="md:hidden relative flex items-center justify-center w-10 h-10 rounded-xl
                                bg-white/[0.06] hover:bg-white/[0.12]
                                border border-white/[0.14] hover:border-white/[0.25]
-                               text-white/80 hover:text-white
+                               text-[#F5EFE2]/80 hover:text-[#F5EFE2]
                                shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_4px_14px_rgba(0,0,0,0.25)]
                                backdrop-blur-md
                                transition-all duration-200"
@@ -257,7 +257,7 @@ export default function Navigation() {
                       style={{ animationDelay: `${i * 35}ms` }}
                       className="glass-item-fade group flex items-center gap-3 px-4 py-[11px] rounded-xl
                                  text-[13px] font-semibold tracking-[0.06em] uppercase
-                                 text-white/70 hover:text-white
+                                 text-[#F5EFE2]/70 hover:text-[#F5EFE2]
                                  border border-transparent hover:border-white/[0.18]
                                  hover:bg-white/[0.07]
                                  hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.20)]

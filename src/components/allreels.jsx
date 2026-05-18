@@ -14,7 +14,7 @@ const AllReels = () => {
     return (
         <div
             ref={sectionRef}
-            className={`bg-transparent flex flex-col container md:flex-row gap-[10px] text-white px-8 py-6 font-sans transition-all duration-700 ${
+            className={`bg-transparent flex flex-col container md:flex-row gap-[10px] text-[#F5EFE2] px-8 py-6 font-sans transition-all duration-700 ${
                 isVisible ? 'animate-fade-up' : ''
             }`}
         >

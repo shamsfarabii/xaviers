@@ -13,7 +13,7 @@ export default function MyTeam() {
                     />
                 </div>
 
-                <div className='flex w-full flex-col items-center justify-center text-center text-white lg:w-[52%]'>
+                <div className='flex w-full flex-col items-center justify-center text-center text-[#F5EFE2] lg:w-[52%]'>
                     <div className='max-w-[700px]'>
                         <h2
                             className='m-0 uppercase leading-none'

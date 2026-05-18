@@ -33,7 +33,7 @@ export default function TeamExpectationsSection() {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-transparent px-5 py-10 font-sans text-white sm:px-8 lg:px-10">
+    <main className="relative min-h-screen overflow-hidden bg-transparent px-5 py-10 font-sans text-[#F5EFE2] sm:px-8 lg:px-10">
       <section className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-[1050px] flex-col justify-center">
         <div className="mx-auto mb-12 max-w-[900px] text-center">
           <SectionHeading primary="A more modern way" secondary="to handle content production" />
@@ -64,7 +64,7 @@ function FeatureCard({ title, description, tag, icon }) {
           {tag}
         </span>
 
-        <h3 className="mb-4 max-w-[470px] text-[clamp(1.45rem,2.4vw,1.82rem)] font-black leading-[0.98] tracking-[-0.055em] text-white drop-shadow-[0_3px_0_rgba(255,255,255,0.10)]">
+        <h3 className="mb-4 max-w-[470px] text-[clamp(1.45rem,2.4vw,1.82rem)] font-black leading-[0.98] tracking-[-0.055em] text-[#F5EFE2] drop-shadow-[0_3px_0_rgba(255,255,255,0.10)]">
           {title}
         </h3>
 

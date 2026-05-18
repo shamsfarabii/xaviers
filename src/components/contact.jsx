@@ -26,7 +26,7 @@ export default function Contact() {
     return (
         <div
             ref={sectionRef}
-            className="bg-transparent text-white py-12 px-4 relative"
+            className="bg-transparent text-[#F5EFE2] py-12 px-4 relative"
             id="contact"
         >
             <div className="max-w-7xl mx-auto relative z-10">
@@ -34,7 +34,7 @@ export default function Contact() {
                 <div className={`text-center mb-16 transition-all duration-700 ${
                     isVisible ? 'animate-fade-up' : ''
                 }`}>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                    <h2 className="text-4xl md:text-6xl font-bold text-[#F5EFE2] mb-6">
                         Contact <span className="text-[#ff7a3c]">Us</span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
@@ -63,7 +63,7 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             placeholder="Name"
-                                            className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
+                                            className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-[#F5EFE2] placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
                                             required
                                         />
                                     </div>
@@ -79,7 +79,7 @@ export default function Contact() {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 placeholder="Your E-mail"
-                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
+                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-[#F5EFE2] placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
                                                 required
                                             />
                                         </div>
@@ -93,7 +93,7 @@ export default function Contact() {
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 placeholder="+01634633244"
-                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
+                                                className="w-full pl-10 pr-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-[#F5EFE2] placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300"
                                             />
                                         </div>
                                     </div>
@@ -105,13 +105,13 @@ export default function Contact() {
                                             onChange={handleInputChange}
                                             placeholder="Write Some Description about your project if you want."
                                             rows={5}
-                                            className="w-full px-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300 resize-none"
+                                            className="w-full px-4 py-3 bg-transparent border-2 border-gray-600 rounded-lg text-[#F5EFE2] placeholder-gray-400 focus:border-[#ff7a3c] focus:outline-none transition-colors duration-300 resize-none"
                                         />
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="w-full relative group bg-[linear-gradient(135deg,#ff7a3c_0%,#ff5a2a_100%)] text-white px-8 py-4 rounded-lg font-semibold hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2"
+                                        className="w-full relative group bg-[linear-gradient(135deg,#ff7a3c_0%,#ff5a2a_100%)] text-[#F5EFE2] px-8 py-4 rounded-lg font-semibold hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2"
                                     >
                                         <Send className="h-5 w-5" />
                                         SUBMIT
@@ -131,10 +131,10 @@ export default function Contact() {
                                 <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-[#ff7a3c]">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center">
-                                            <Mail className="h-6 w-6 text-white" />
+                                            <Mail className="h-6 w-6 text-[#F5EFE2]" />
                                         </div>
                                         <div className='flex flex-col items-start'>
-                                            <h3 className="text-lg font-semibold text-white">Email</h3>
+                                            <h3 className="text-lg font-semibold text-[#F5EFE2]">Email</h3>
                                             <p className="text-gray-300">xavier@example.com</p>
                                         </div>
                                     </div>
@@ -146,10 +146,10 @@ export default function Contact() {
                                 <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-[#ff7a3c]">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center">
-                                            <Phone className="h-6 w-6 text-white" />
+                                            <Phone className="h-6 w-6 text-[#F5EFE2]" />
                                         </div>
                                         <div className='flex flex-col items-start'>
-                                            <h3 className="text-lg font-semibold text-white">Phone</h3>
+                                            <h3 className="text-lg font-semibold text-[#F5EFE2]">Phone</h3>
                                             <p className="text-gray-300">+01634633244</p>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                         </div>
 
                         <div>
-                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center">
+                            <h2 className="text-4xl md:text-6xl font-bold text-[#F5EFE2] mb-6 text-center">
                                 Contact <span className="text-[#ff7a3c]">Us</span>
                             </h2>
                             <div className="flex justify-center gap-6">

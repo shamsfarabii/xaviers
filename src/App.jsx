@@ -44,7 +44,10 @@ function App() {
           <ContentPartnerSection />
         </section>
 
-        <section className="py-4" id="works">
+        <section className="py-4 flex flex-col items-center" id="works">
+          <div className="mb-6 text-3xl inline-flex items-center gap-2 rounded-full border border-[rgba(255,122,60,0.26)] bg-[rgba(255,122,60,0.08)] px-3.5 py-2 font-extrabold uppercase tracking-[1.8px] text-[#ff8a4c] before:rounded-full before:bg-[#ff7a3c] before:shadow-[0_0_18px_rgba(255,122,60,0.9)]">
+            Our Works
+          </div>
           <MyWorks />
         </section>
 
@@ -56,13 +59,13 @@ function App() {
           <Tabs defaultValue="video" className="w-full flex items-center">
             <TabsList className="flex gap-[5px] !bg-white/[0.06] border border-white/[0.09] backdrop-blur-sm">
               <TabsTrigger
-                className="text-white/70 data-[state=active]:!bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] data-[state=active]:!text-white data-[state=active]:!border-transparent data-[state=active]:shadow-[0_8px_24px_rgba(255,122,60,0.30)]"
+                className="text-[#F5EFE2]/70 data-[state=active]:!bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] data-[state=active]:!text-[#F5EFE2] data-[state=active]:!border-transparent data-[state=active]:shadow-[0_8px_24px_rgba(255,122,60,0.30)]"
                 value="video"
               >
                 Videos
               </TabsTrigger>
               <TabsTrigger
-                className="text-white/70 data-[state=active]:!bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] data-[state=active]:!text-white data-[state=active]:!border-transparent data-[state=active]:shadow-[0_8px_24px_rgba(255,122,60,0.30)]"
+                className="text-[#F5EFE2]/70 data-[state=active]:!bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] data-[state=active]:!text-[#F5EFE2] data-[state=active]:!border-transparent data-[state=active]:shadow-[0_8px_24px_rgba(255,122,60,0.30)]"
                 value="reels"
               >
                 Reels
@@ -88,16 +91,15 @@ function App() {
           </div>
         </section>
 
-        <section className="py-4">
+        <section className="py-4 flex flex-col items-center">
+          <div className="mb-6 text-3xl inline-flex items-center gap-2 rounded-full border border-[rgba(255,122,60,0.26)] bg-[rgba(255,122,60,0.08)] px-3.5 py-2 font-extrabold uppercase tracking-[1.8px] text-[#ff8a4c] before:rounded-full before:bg-[#ff7a3c] before:shadow-[0_0_18px_rgba(255,122,60,0.9)]">
+            Our Designs
+          </div>
           <Posters />
         </section>
 
         <section className="py-4" id="reviews">
           <ClientReviews />
-        </section>
-
-        <section>
-          <MyTeam />
         </section>
 
         <section>
@@ -110,6 +112,10 @@ function App() {
 
         <section className="py-4" id="about">
           <AboutUsSection />
+        </section>
+
+        <section>
+          <MyTeam />
         </section>
 
         <section className="py-4" id="contact">

@@ -1,5 +1,6 @@
 import { Plus, X } from 'lucide-react'
 import { useState } from 'react'
+import SectionHeading from './ui/SectionHeading'
 
 const faqs = [
     {
@@ -67,7 +68,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
 
                 <span
                     aria-hidden='true'
-                    className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ff7a3c] text-white shadow-[0_2px_8px_rgba(255,122,60,0.4)] transition-transform duration-300'
+                    className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ff7a3c] text-[#F5EFE2] shadow-[0_2px_8px_rgba(255,122,60,0.4)] transition-transform duration-300'
                 >
                     {isOpen ? (
                         <X size={16} strokeWidth={3} />
@@ -110,7 +111,7 @@ export default function FAQ() {
     }
 
     return (
-        <section className='w-full bg-transparent text-white'>
+        <section className='w-full bg-transparent text-[#F5EFE2]'>
             <div className='mx-auto w-full max-w-[1280px] px-4 py-12 sm:px-6 sm:py-8 md:px-10 lg:px-12 lg:py-20'>
                 <div className='mx-auto max-w-[900px]'>
                     <p
@@ -120,19 +121,11 @@ export default function FAQ() {
                         Got Questions?
                     </p>
 
-                    <h2
-                        className='mb-12 text-center uppercase'
-                        style={{
-                            fontFamily: "'Montserrat', sans-serif",
-                            fontWeight: 900,
-                            fontSize: 'clamp(30px, 7vw, 72px)',
-                            lineHeight: 1,
-                            letterSpacing: '-0.02em',
-                        }}
-                    >
-                        <span className='block text-white'>Frequently Asked</span>
-                        <span className='block text-[#ff7a3c]'>Questions</span>
-                    </h2>
+
+
+                   <div className='flex items-center justify-center text-center mb-[30px]'>
+                   <SectionHeading primary="Frequently Asked" secondary="Questions" />
+                   </div>
 
                     <div className='flex flex-col gap-3'>
                         {faqs.map((faq, index) => (

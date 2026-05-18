@@ -52,7 +52,7 @@ export function VideoCollage({ videoLinks }) {
                     }}
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-neutral-900 text-xs text-white/70">
+                  <div className="flex h-full w-full items-center justify-center bg-neutral-900 text-xs text-[#F5EFE2]/70">
                     Video {index + 1}
                   </div>
                 )}

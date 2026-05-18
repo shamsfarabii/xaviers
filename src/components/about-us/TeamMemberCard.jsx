@@ -82,14 +82,14 @@ export const TeamMemberCard = ({
             ${isHovered ? 'translate-y-0' : 'translate-y-2'}
           `}>
             <h3 className={`
-              text-2xl font-bold text-white mb-2
+              text-2xl font-bold text-[#F5EFE2] mb-2
               transition-all duration-500
               ${isHovered ? 'scale-105' : 'scale-100'}
             `}>
               {name}
             </h3>
             <p className={`
-              text-white/90 font-medium tracking-wide
+              text-[#F5EFE2]/90 font-medium tracking-wide
               transition-all duration-500 delay-100
               ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-80 translate-y-1'}
             `}>

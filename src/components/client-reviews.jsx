@@ -33,7 +33,7 @@ const reviews = [
 
 const ClientReviews = () => {
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent px-5 py-10 font-[Inter,Arial,sans-serif] text-white max-[640px]:items-start max-[640px]:px-4 max-[640px]:py-8">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent px-5 py-10 font-[Inter,Arial,sans-serif] text-[#F5EFE2] max-[640px]:items-start max-[640px]:px-4 max-[640px]:py-8">
       <section className="relative z-[1] w-full max-w-[1180px]">
         <div className="mx-auto mb-[54px] max-w-[980px] text-center max-[640px]:mb-[34px]">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,122,60,0.26)] bg-[rgba(255,122,60,0.08)] px-3.5 py-2 text-xs font-extrabold uppercase tracking-[1.8px] text-[#ff8a4c] before:h-[7px] before:w-[7px] before:rounded-full before:bg-[#ff7a3c] before:shadow-[0_0_18px_rgba(255,122,60,0.9)]">
@@ -41,9 +41,9 @@ const ClientReviews = () => {
           </div>
 
 
-          <SectionHeading primary="People don't just hire us." secondary="They trust us" />
+          <SectionHeading primary="People don't just hire us." noWrap secondary="They trust us" />
 
-          <p className="mx-auto max-w-[760px] text-[13px] uppercase leading-[1.7] tracking-[9px] text-[#6f7890] max-[640px]:text-[11px] max-[640px]:tracking-[4px]">
+          <p className="mt-[30px] mx-auto text-[13px] uppercase leading-[1.7] tracking-[9px] text-[#6f7890] max-[660px]:text-[11px]">
             FROM BRANDS TO CREATORS,OUR CLIENTS RELY ON US.
           </p>
         </div>
@@ -54,12 +54,12 @@ const ClientReviews = () => {
               key={review.initials}
               className="group relative flex min-h-[360px] flex-col overflow-hidden rounded-[28px] border border-white/[0.09] bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-[26px] transition duration-300 ease-in-out after:absolute after:inset-x-[-30%] after:bottom-[-50%] after:h-[180px] after:bg-[radial-gradient(ellipse_at_center,rgba(255,122,60,0.09),transparent_72%)] after:opacity-0 after:transition after:duration-300 hover:-translate-y-2 hover:border-[rgba(255,122,60,0.22)] hover:shadow-[0_28px_80px_rgba(0,0,0,0.35)] hover:after:opacity-100 max-[640px]:min-h-0"
             >
-              <div className="absolute right-6 top-[22px] text-[70px] font-black leading-none text-white/[0.08]">
+              <div className="absolute right-6 top-[22px] text-[70px] font-black leading-none text-[#F5EFE2]/[0.08]">
                 “
               </div>
 
               <div className="relative z-[1] mb-[30px] flex items-center gap-3.5">
-                <div className="flex h-[58px] w-[58px] items-center justify-center rounded-[18px] bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] font-black text-white shadow-[0_16px_34px_rgba(255,122,60,0.24)]">
+                <div className="flex h-[58px] w-[58px] items-center justify-center rounded-[18px] bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] font-black text-[#F5EFE2] shadow-[0_16px_34px_rgba(255,122,60,0.24)]">
                   {review.initials}
                 </div>
 

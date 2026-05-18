@@ -49,7 +49,7 @@ export default function Posters() {
   
               <div className="mt-4 flex items-center relative">
                 <div className="ml-[120px]">
-                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">
+                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
                     Thumbnails
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export default function Posters() {
   
               <div className="mt-4 flex items-center justify-center md:justify-start">
                 <div className="ml-0 md:ml-12 text-center md:text-left relative">
-                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-white relative">
+                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2] relative">
                     social media poster
                   </p>
                 </div>
@@ -95,7 +95,7 @@ export default function Posters() {
   
               <div className="mt-4 flex items-center justify-center md:justify-start">
                 <div className="ml-0 md:ml-20 text-center md:text-left relative">
-                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-white">
+                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
                     Reel thumbnails
                   </p>
                 </div>
