@@ -17,7 +17,7 @@ const AllVideos = () => {
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain"  />
                     </div>
-                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/l2.mp4"} />
+                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/videos/video1.mp4"} />
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeBottomBar.png" alt="" className="w-full h-auto object-contain"  />
                     </div>
@@ -26,7 +26,7 @@ const AllVideos = () => {
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain" />
                     </div>
-                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/l3.mp4"} />
+                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/videos/video2.mp4"} />
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeBottomBar.png" alt="" className="w-full h-auto object-contain"  />
                     </div>
@@ -35,7 +35,7 @@ const AllVideos = () => {
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain"  />
                     </div>
-                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/l4.mp4"} />
+                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/videos/video3.mp4"} />
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeBottomBar.png" alt="" className="w-full h-auto object-contain"  />
                     </div>
@@ -44,7 +44,7 @@ const AllVideos = () => {
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeTopBar.png" alt="" className="w-full h-auto object-contain" />
                     </div>
-                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/l5.mp4"} />
+                    <YoutubeFrame url={"https://xaviers.b-cdn.net/videos/videos/video4.mp4"} />
                     <div className="flex items-center justify-between text-[#F5EFE2] mb-2 sm:mb-4 w-full">
                         <img src="/youtubeBottomBar.png" alt="" className="w-full h-auto object-contain"  />
                     </div>

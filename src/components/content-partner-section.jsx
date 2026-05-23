@@ -41,10 +41,9 @@ export default function ContentPartnerSection() {
 
         <div className="grid grid-cols-2 gap-[22px] max-[900px]:grid-cols-1">
           {partnerCards.map((card) => (
-            <article
-              key={card.tag}
-              className="group relative flex min-h-[285px] flex-col overflow-hidden rounded-[28px] border border-white/[0.09] bg-[linear-gradient(180deg,rgba(255,255,255,0.075),rgba(255,255,255,0.026))] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.32)] transition duration-300 ease-in-out before:absolute before:left-0 before:top-0 before:h-px before:w-full before:bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.25)_50%,transparent_100%)] before:opacity-75 after:pointer-events-none after:absolute after:inset-x-[-30%] after:bottom-[-50%] after:h-[200px] after:bg-[radial-gradient(ellipse_at_center,rgba(255,122,60,0.10),transparent_72%)] after:opacity-0 after:transition after:duration-300 hover:-translate-y-2 hover:border-[rgba(255,122,60,0.22)] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.03))] hover:shadow-[0_28px_80px_rgba(0,0,0,0.42),0_0_42px_rgba(255,122,60,0.05)] hover:after:opacity-100 max-[900px]:min-h-0 max-[640px]:p-[25px]"
-            >
+                <article
+                className={`group relative min-h-[245px] overflow-hidden rounded-[22px] border-5 border-transparent bg-[linear-gradient(145deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.03)_55%,rgba(255,90,54,0.025)_100%)] p-6 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.09),0_18px_55px_rgba(0,0,0,0.32)] transition duration-300 before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(255,90,54,0.07),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent)] before:opacity-80 hover:z-[2] hover:-translate-y-1 hover:border-[#ff5a36] hover:shadow-[0_24px_70px_rgba(255,90,54,0.05)] sm:p-7 lg:p-8`}
+              >
               <div className="relative z-[1] mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-[18px] bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] shadow-[0_16px_34px_rgba(255,122,60,0.24)]">
                 <Check className="h-6 w-6 text-[#F5EFE2]" strokeWidth={2.4} />
               </div>

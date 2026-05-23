@@ -5,10 +5,10 @@ const AllReels = () => {
     const [sectionRef, isVisible] = useInView();
 
     const reelVideoUrls = [
-        "https://xaviers.b-cdn.net/videos/s1.mp4",
-        "https://xaviers.b-cdn.net/videos/s2.mp4",
-        "https://xaviers.b-cdn.net/videos/s3.mp4",
-        "https://xaviers.b-cdn.net/videos/s4.mp4",
+        "https://xaviers.b-cdn.net/videos/reels/reel1.mp4",
+        "https://xaviers.b-cdn.net/videos/reels/reel2.mp4",
+        "https://xaviers.b-cdn.net/videos/reels/reel3.mp4",
+        "https://xaviers.b-cdn.net/videos/reels/reel4.mp4",
     ];
 
     return (

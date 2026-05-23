@@ -22,10 +22,8 @@ export default function Hero() {
           className="block h-auto w-full rounded-[25px]"
           src="https://xaviers.b-cdn.net/videos/hero-section-video.mp4"
           autoPlay
-          muted
           loop
           playsInline
-          preload="metadata"
           controls
         />
       </div>

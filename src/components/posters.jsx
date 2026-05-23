@@ -1,14 +1,14 @@
 export default function Posters() {
     const posters = [
-      "https://xaviers.b-cdn.net/poster_images/Copy%20of%20agent.jpg",
-      "https://xaviers.b-cdn.net/poster_images/Bangladesh%20victory%20day.jpg",
+      "https://xaviers.b-cdn.net/poster_images/Copyofagent.jpg",
+      "https://xaviers.b-cdn.net/poster_images/Bangladeshvictoryday.jpg",
       "https://xaviers.b-cdn.net/poster_images/trap.jpg",
-      "https://xaviers.b-cdn.net/poster_images/Copy%20of%20agent2.jpg",
+      "https://xaviers.b-cdn.net/poster_images/VentureSouqV2.jpg",
     ];
   
     const reels = [
-      "https://xaviers.b-cdn.net/poster_reels/poster_reel_1.jpg",
-      "https://xaviers.b-cdn.net/poster_reels/poster_reel_2.jpg",
+      "https://xaviers.b-cdn.net/poster_images/Reels/reel_poster1.jpg",
+      "https://xaviers.b-cdn.net/poster_images/Reels/reel_poster2.jpg",
     ];
   
     return (
@@ -22,7 +22,7 @@ export default function Posters() {
               <div className="flex-1 flex flex-col gap-2">
                 <div className="relative w-full aspect-video">
                   <img
-                    src="https://xaviers.b-cdn.net/thumbnails/unboxing.jpg"
+                    src="https://xaviers.b-cdn.net/poster_images/Thumbnails/unboxing.jpg"
                     alt="Thumbnail 1"
                     className="w-full h-full"
                   />
@@ -35,7 +35,7 @@ export default function Posters() {
   
                 <div className="relative w-full aspect-video">
                   <img
-                    src="https://xaviers.b-cdn.net/thumbnails/4.jpg"
+                    src="https://xaviers.b-cdn.net/poster_images/Thumbnails/4.jpg"
                     alt="Thumbnail 2"
                     className="w-full h-full"
                   />
