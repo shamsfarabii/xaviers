@@ -13,7 +13,7 @@ export default function MyTeam() {
                         draggable={false}
                     />
                     <img
-                        src='/my-team3.png'
+                        src='/team.png'
                         alt='Xavier Media team collage'
                         className='h-auto w-full max-h-[240px] object-contain select-none sm:max-h-[320px] md:max-h-[400px] lg:max-h-none'
                         draggable={false}
