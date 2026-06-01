@@ -99,6 +99,10 @@ function App() {
             <button
               className="see-more-btn"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
+              onClick={() => {
+                //Target to new tab
+                window.open("https://www.behance.net/xaviermedia", "_blank");
+              }}
             >
               <span className="see-more-shimmer" aria-hidden="true" />
               <span className="see-more-content">

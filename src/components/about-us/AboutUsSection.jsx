@@ -2,9 +2,9 @@ import React from 'react';
 import useInView from '../../hooks/useInView';
 
 const teamMembers = [
-  { name: 'Asad', designation: 'Video Editor', image: '/asad.jpg' },
-  { name: 'Nafis', designation: 'Art Director', image: '/tomal.jpg' },
-  { name: 'Tahasin', designation: 'Creative Director', image: '/tahasin.jpg' },
+  { name: 'Asadul Islam', designation: 'Creative Director', image: '/asad.jpg' },
+  { name: 'Nafis Sadeeken', designation: 'CEO', image: '/tomal.jpg' },
+  { name: 'Tahasin Bin Faruque', designation: 'Operation Director', image: '/tahasin.jpg' },
 ];
 
 export default function AboutUsSection() {

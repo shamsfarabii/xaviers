@@ -65,15 +65,7 @@ export default function MyTeam() {
                                 letterSpacing: '0.02em',
                             }}
                         >
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem ipsum has been the industry&apos;s standard dummy
-                            text ever since the 1500s, when an unknown printer took a galley
-                            of type and scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged. It was popularised in
-                            the 1960s with the release of Letraset sheets containing lorem
-                            ipsum passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of lorem ipsum.
+                            Our people are our biggest flex at Xavier Media . We&apos;ve brought together a squad of seriously talented content creators and video editors, and with the kind of retention that speaks for itself, you know the culture here is real. Everyone on our team lives and breathes content, from editing and motion graphics to strategy and storytelling. So you get scroll-stopping videos without the back-and-forth stress. We keep things smooth, communication tight, and your content pipeline running like clockwork.
                         </p>
                     </div>
                 </div>
