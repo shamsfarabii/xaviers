@@ -13,6 +13,7 @@ import MyTeam from "./components/my-team"
 import MyWorks from './components/my-works'
 import Posters from './components/posters'
 import TeamExpectationsSection from "./components/team-expectations-section"
+import Footer from './components/footer'
 import Navigation from './components/top-nav'
 import { VideoCollage } from './components/video-collage'
 
@@ -160,6 +161,8 @@ function App() {
           <Contact />
         </section>
       </main>
+
+      <Footer />
     </>
   )
 }
