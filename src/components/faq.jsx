@@ -52,8 +52,9 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
             style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
             <button
+                type='button'
                 onClick={onToggle}
-                className='flex w-full items-start justify-between gap-4 border-0 bg-transparent px-5 py-4 text-left outline-none sm:px-7 sm:py-5'
+                className='faq-accordion-btn flex w-full items-start justify-between gap-4 border-0 bg-transparent px-5 py-4 text-left sm:px-7 sm:py-5'
                 style={{ background: 'transparent' }}
             >
                 <span
@@ -104,7 +105,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
 }
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState(0)
+    const [openIndex, setOpenIndex] = useState(null)
 
     const toggle = (index) => {
         setOpenIndex(openIndex === index ? null : index)

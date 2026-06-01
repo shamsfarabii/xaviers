@@ -49,7 +49,7 @@ export default function Contact() {
                     }`}>
                         <div className="relative group">
                             {/* Orange glow border */}
-                            <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] rounded-lg blur opacity-60 group-hover:opacity-90 transition duration-500"></div>
+                            <div className="absolute inset-0 rounded-lg border border-[#ff7a3c]/20 opacity-50"></div>
 
                             <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-8 border border-[#ff7a3c]">
                                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -127,7 +127,7 @@ export default function Contact() {
                     }`}>
                         <div className="space-y-6 mb-12">
                             <div className="relative group">
-                                <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] rounded-lg blur opacity-40 group-hover:opacity-65 transition duration-300"></div>
+                                <div className="absolute inset-0 rounded-lg border border-[#ff7a3c]/20 opacity-50"></div>
                                 <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-[#ff7a3c]">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center">
@@ -142,7 +142,7 @@ export default function Contact() {
                             </div>
 
                             <div className="relative group">
-                                <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] rounded-lg blur opacity-40 group-hover:opacity-65 transition duration-300"></div>
+                                <div className="absolute inset-0 rounded-lg border border-[#ff7a3c]/20 opacity-50"></div>
                                 <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border border-[#ff7a3c]">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff5a2a)] flex items-center justify-center">

@@ -51,9 +51,26 @@ export default function AboutUsSection() {
             isVisible ? 'animate-fade-up' : ''
           }`}
         >
-          <p className="text-sm font-semibold text-[#ff7a3c] tracking-wider uppercase mb-4">
-            MEET THE TEAM
-          </p>
+                    <div
+            className="
+    mb-6 inline-flex items-center gap-2 rounded-full
+    border border-[rgba(255,122,60,0.26)]
+    bg-[rgba(255,122,60,0.08)]
+    px-3.5 py-2
+    text-xs font-extrabold uppercase tracking-[1.8px]
+    text-[#ff8a4c]
+    before:h-[7px] before:w-[7px] before:rounded-full
+    before:bg-[#ff7a3c]
+    before:shadow-[0_0_18px_rgba(255,122,60,0.9)]
+
+    transition-all duration-300 ease-out
+    hover:-translate-y-1 hover:scale-[1.03]
+    hover:shadow-[0_8px_24px_rgba(255,122,60,0.18)]
+    hover:border-[rgba(255,122,60,0.4)]
+  "
+          >
+            Meet the Team
+          </div>
 
           <h2 className="text-4xl md:text-6xl font-bold text-[#F5EFE2] mb-6">
             About <span className="text-[#ff7a3c]">Us</span>

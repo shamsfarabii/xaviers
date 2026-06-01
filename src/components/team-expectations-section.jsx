@@ -57,7 +57,7 @@ function FeatureCard({ title, description, tag, icon, index }) {
 
   return (
     <article
-      className={`group relative min-h-[245px] overflow-hidden rounded-[22px] border-5 border-transparent bg-[linear-gradient(145deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.03)_55%,rgba(255,90,54,0.025)_100%)] p-6 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.09),0_18px_55px_rgba(0,0,0,0.32)] transition duration-300 before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(255,90,54,0.07),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent)] before:opacity-80 hover:z-[2] hover:-translate-y-1 hover:border-[#ff5a36] hover:shadow-[0_24px_70px_rgba(255,90,54,0.05)] sm:p-7 lg:p-8 ${isTopRow ? "lg:z-[1]" : "lg:z-0"}`}
+      className={`group relative min-h-[245px] overflow-hidden rounded-[22px] border border-transparent bg-[linear-gradient(145deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.03)_55%,rgba(255,90,54,0.025)_100%)] p-6 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.09),0_18px_55px_rgba(0,0,0,0.32)] transition duration-300 before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(255,90,54,0.07),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent)] before:opacity-80 hover:-translate-y-2 hover:border-[rgba(255,122,60,0.22)] hover:shadow-[0_28px_80px_rgba(0,0,0,0.35)] hover:after:opacity-100 sm:p-7 lg:p-8 ${isTopRow ? "lg:z-[1]" : "lg:z-0"}`}
     >
       <div className="relative z-10">
         <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-[15px] bg-[#ff5a36] shadow-[0_10px_24px_rgba(255,90,54,0.20)] [&_svg]:h-6 [&_svg]:w-6">
