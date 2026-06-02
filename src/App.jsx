@@ -46,7 +46,7 @@ function App() {
         </section>
 
         <section className="py-4 flex flex-col items-center" id="works">
-        <div
+          <div
             className="
     mb-6 inline-flex items-center gap-2 rounded-full
     border border-[rgba(255,122,60,0.26)]

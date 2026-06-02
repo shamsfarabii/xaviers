@@ -36,7 +36,24 @@ const ClientReviews = () => {
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent px-5 py-10 font-[Inter,Arial,sans-serif] text-[#F5EFE2] max-[640px]:items-start max-[640px]:px-4 max-[640px]:py-8">
       <section className="relative z-[1] w-full max-w-[1180px]">
         <div className="mx-auto mb-[54px] max-w-[980px] text-center max-[640px]:mb-[34px]">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,122,60,0.26)] bg-[rgba(255,122,60,0.08)] px-3.5 py-2 text-xs font-extrabold uppercase tracking-[1.8px] text-[#ff8a4c] before:h-[7px] before:w-[7px] before:rounded-full before:bg-[#ff7a3c] before:shadow-[0_0_18px_rgba(255,122,60,0.9)]">
+        <div
+            className="
+    mb-6 inline-flex items-center gap-2 rounded-full
+    border border-[rgba(255,122,60,0.26)]
+    bg-[rgba(255,122,60,0.08)]
+    px-3.5 py-2
+    text-xs font-extrabold uppercase tracking-[1.8px]
+    text-[#ff8a4c]
+    before:h-[7px] before:w-[7px] before:rounded-full
+    before:bg-[#ff7a3c]
+    before:shadow-[0_0_18px_rgba(255,122,60,0.9)]
+
+    transition-all duration-300 ease-out
+    hover:-translate-y-1 hover:scale-[1.03]
+    hover:shadow-[0_8px_24px_rgba(255,122,60,0.18)]
+    hover:border-[rgba(255,122,60,0.4)]
+  "
+          >
             Client Stories
           </div>
 
