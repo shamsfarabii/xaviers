@@ -93,12 +93,12 @@ export default function Posters() {
     <div>
       <div className="bg-transparent py-5 px-4 relative flex items-center justify-center overflow-visible">
         <div
-          className="relative z-10 grid grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-0 overflow-visible"
+          className="relative z-10 grid grid-cols-1 md:grid-cols-3 md:items-stretch w-full gap-4 md:gap-0 overflow-visible"
           onMouseLeave={() => setHoveredKey(null)}
         >
           {/* Left Column – Thumbnails */}
           <div className="flex flex-col h-full overflow-visible">
-            <div className="flex-1 flex flex-col gap-2 overflow-visible">
+            <div className="flex-1 flex flex-col gap-2 overflow-visible md:min-h-0 md:justify-center">
               <PosterImage
                 id="thumbnail-0"
                 hoveredKey={hoveredKey}
@@ -145,7 +145,7 @@ export default function Posters() {
 
           {/* Center Column – Social Media Posters */}
           <div className="flex flex-col h-full mx-0 md:mx-[10px] overflow-visible">
-            <div className="flex-grow grid grid-cols-2 w-full gap-2 md:gap-[10px] overflow-visible">
+            <div className="flex-grow grid grid-cols-2 grid-rows-2 w-full gap-2 md:gap-[10px] overflow-visible md:min-h-0 md:auto-rows-fr">
               {posters.map((posterImage, posterIndex) => (
                 <PosterImage
                   key={posterIndex}
@@ -154,6 +154,7 @@ export default function Posters() {
                   onHover={setHoveredKey}
                   src={posterImage}
                   alt={`Social Post ${posterIndex}`}
+                  wrapperClassName="h-full min-h-0"
                   zoomOnFocus
                 />
               ))}
@@ -170,19 +171,23 @@ export default function Posters() {
 
           {/* Right Column – Reel Thumbnails */}
           <div className="flex flex-col h-full overflow-visible">
-            <div className="flex-1 grid grid-cols-2 gap-2 md:gap-4 w-full overflow-visible">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full overflow-visible md:min-h-0 md:items-stretch">
               {reels.map((reelImage, reelIndex) => (
-                <PosterImage
+                <div
                   key={reelIndex}
-                  id={`reel-${reelIndex}`}
-                  hoveredKey={hoveredKey}
-                  onHover={setHoveredKey}
-                  src={reelImage}
-                  alt={`Reel ${reelIndex}`}
-                  wrapperClassName=""
-                  anchorClassName="h-[137px] w-full"
-                  zoomOnFocus
-                />
+                  className="flex min-h-0 items-center justify-center md:h-full"
+                >
+                  <PosterImage
+                    id={`reel-${reelIndex}`}
+                    hoveredKey={hoveredKey}
+                    onHover={setHoveredKey}
+                    src={reelImage}
+                    alt={`Reel ${reelIndex}`}
+                    wrapperClassName="mx-auto aspect-[9/16] w-full max-w-[280px] md:h-full md:w-auto md:max-w-full"
+                    anchorClassName="h-full w-full"
+                    zoomOnFocus
+                  />
+                </div>
               ))}
             </div>
 
