@@ -1,108 +1,191 @@
+import { useState } from "react";
+
+function PosterImage({
+  id,
+  hoveredKey,
+  onHover,
+  src,
+  alt,
+  wrapperClassName = "",
+  anchorClassName = "h-auto w-full",
+  zoomOnFocus = false,
+  overlay = null,
+}) {
+  const isHovered = hoveredKey === id;
+  const isDimmed = hoveredKey !== null && !isHovered;
+
+  const visibleImageClassName = zoomOnFocus
+    ? isHovered
+      ? "h-auto w-auto max-h-[120%] max-w-[120%] origin-center scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
+      : "h-full w-full origin-center scale-100 object-cover"
+    : isHovered
+      ? "h-auto w-auto max-h-full max-w-full scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
+      : "h-full w-full scale-100 object-cover";
+
+  return (
+    <div
+      className={`relative w-full ${wrapperClassName} ${
+        isHovered ? "z-30 overflow-visible" : "z-0 overflow-hidden"
+      }`}
+      onMouseEnter={() => onHover(id)}
+    >
+      {/* In-flow anchor — preserves original cell height/width in the grid */}
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        className={`invisible block object-cover ${anchorClassName}`}
+      />
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img
+          src={src}
+          alt={alt}
+          className={`${visibleImageClassName} transition-[transform,filter,box-shadow] duration-300 ease-out ${
+            isDimmed ? "blur-[3px] brightness-50" : ""
+          }`}
+        />
+      </div>
+
+      {overlay && (
+        <div
+          className={`absolute inset-0 z-10 pointer-events-none transition-opacity duration-300 ${
+            isHovered ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          {overlay}
+        </div>
+      )}
+
+      {isDimmed && (
+        <div className="absolute inset-0 bg-black/30 pointer-events-none transition-opacity duration-300" />
+      )}
+    </div>
+  );
+}
+
 export default function Posters() {
-    const posters = [
-      "https://xaviers.b-cdn.net/poster_images/Copyofagent.jpg",
-      "https://xaviers.b-cdn.net/poster_images/Bangladeshvictoryday.jpg",
-      "https://xaviers.b-cdn.net/poster_images/trap.jpg",
-      "https://xaviers.b-cdn.net/poster_images/VentureSouqV2.jpg",
-    ];
-  
-    const reels = [
-      "https://xaviers.b-cdn.net/poster_images/Reels/reel_poster1.jpg",
-      "https://xaviers.b-cdn.net/poster_images/Reels/reel_poster2.jpg",
-    ];
-  
-    return (
-      <div>
-        <div className="bg-transparent py-5 px-4 relative flex items-center justify-center">
-          {/* Background mask overlays */}
-          {/* Main content grid */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-0">
-            {/* Left Column – Thumbnails */}
-            <div className="flex flex-col h-full">
-              <div className="flex-1 flex flex-col gap-2">
-                <div className="relative w-full aspect-video">
-                  <img
-                    src="https://xaviers.b-cdn.net/poster_images/Thumbnails/unboxing.jpg"
-                    alt="Thumbnail 1"
-                    className="w-full h-full"
-                  />
-                  <img
-                    src="/whitebox.png"
-                    alt=""
-                    className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                  />
-                </div>
-  
-                <div className="relative w-full aspect-video">
-                  <img
-                    src="https://xaviers.b-cdn.net/poster_images/Thumbnails/4.jpg"
-                    alt="Thumbnail 2"
-                    className="w-full h-full"
-                  />
+  const [hoveredKey, setHoveredKey] = useState(null);
+
+  const posters = [
+    "https://xaviers.b-cdn.net/poster_images/Copyofagent.jpg",
+    "https://xaviers.b-cdn.net/poster_images/Bangladeshvictoryday.jpg",
+    "https://xaviers.b-cdn.net/poster_images/trap.jpg",
+    "https://xaviers.b-cdn.net/poster_images/VentureSouqV2.jpg",
+  ];
+
+  const reels = [
+    "https://xaviers.b-cdn.net/poster_images/Reels/reel_poster1.jpg",
+    "https://xaviers.b-cdn.net/poster_images/Reels/reel_poster2.jpg",
+  ];
+
+  return (
+    <div>
+      <div className="bg-transparent py-5 px-4 relative flex items-center justify-center overflow-visible">
+        <div
+          className="relative z-10 grid grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-0 overflow-visible"
+          onMouseLeave={() => setHoveredKey(null)}
+        >
+          {/* Left Column – Thumbnails */}
+          <div className="flex flex-col h-full overflow-visible">
+            <div className="flex-1 flex flex-col gap-2 overflow-visible">
+              <PosterImage
+                id="thumbnail-0"
+                hoveredKey={hoveredKey}
+                onHover={setHoveredKey}
+                src="https://xaviers.b-cdn.net/poster_images/Thumbnails/unboxing.jpg"
+                alt="Thumbnail 1"
+                wrapperClassName="aspect-video"
+                anchorClassName="h-full w-full"
+                overlay={
                   <img
                     src="/whitebox.png"
                     alt=""
-                    className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                    className="h-full w-full"
                   />
-                </div>
-              </div>
-  
-              <div className="mt-4 flex items-center relative">
-                <div className="ml-[120px]">
-                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
-                    Thumbnails
-                  </p>
-                </div>
+                }
+              />
+
+              <PosterImage
+                id="thumbnail-1"
+                hoveredKey={hoveredKey}
+                onHover={setHoveredKey}
+                src="https://xaviers.b-cdn.net/poster_images/Thumbnails/4.jpg"
+                alt="Thumbnail 2"
+                wrapperClassName="aspect-video"
+                anchorClassName="h-full w-full"
+                overlay={
+                  <img
+                    src="/whitebox.png"
+                    alt=""
+                    className="h-full w-full"
+                  />
+                }
+              />
+            </div>
+
+            <div className="mt-4 flex items-center relative">
+              <div className="ml-[120px]">
+                <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
+                  Thumbnails
+                </p>
               </div>
             </div>
-  
-            {/* Center Column – Social Media Posters */}
-            <div className="flex flex-col h-full mx-0 md:mx-[10px]">
-              <div className="flex-grow grid grid-cols-2 w-full gap-2 md:gap-[10px]">
-                {posters.map((posterImage, posterIndex) => (
-                  <div key={posterIndex}>
-                    <img
-                      src={posterImage}
-                      alt={`Social Post ${posterIndex}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-  
-              <div className="mt-4 flex items-center justify-center md:justify-start">
-                <div className="ml-0 md:ml-12 text-center md:text-left relative">
-                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2] relative">
-                    social media poster
-                  </p>
-                </div>
+          </div>
+
+          {/* Center Column – Social Media Posters */}
+          <div className="flex flex-col h-full mx-0 md:mx-[10px] overflow-visible">
+            <div className="flex-grow grid grid-cols-2 w-full gap-2 md:gap-[10px] overflow-visible">
+              {posters.map((posterImage, posterIndex) => (
+                <PosterImage
+                  key={posterIndex}
+                  id={`poster-${posterIndex}`}
+                  hoveredKey={hoveredKey}
+                  onHover={setHoveredKey}
+                  src={posterImage}
+                  alt={`Social Post ${posterIndex}`}
+                  zoomOnFocus
+                />
+              ))}
+            </div>
+
+            <div className="mt-4 flex items-center justify-center md:justify-start">
+              <div className="ml-0 md:ml-12 text-center md:text-left relative">
+                <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2] relative">
+                  social media poster
+                </p>
               </div>
             </div>
-  
-            {/* Right Column – Reel Thumbnails */}
-            <div className="flex flex-col h-full">
-              <div className="flex-1 grid grid-cols-2 gap-2 md:gap-4 w-full">
-                {reels.map((reelImage, reelIndex) => (
-                  <div key={reelIndex} className="overflow-hidden">
-                    <img
-                      src={reelImage}
-                      alt={`Reel ${reelIndex}`}
-                      className="w-full h-137 object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-  
-              <div className="mt-4 flex items-center justify-center md:justify-start">
-                <div className="ml-0 md:ml-20 text-center md:text-left relative">
-                  <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
-                    Reel thumbnails
-                  </p>
-                </div>
+          </div>
+
+          {/* Right Column – Reel Thumbnails */}
+          <div className="flex flex-col h-full overflow-visible">
+            <div className="flex-1 grid grid-cols-2 gap-2 md:gap-4 w-full overflow-visible">
+              {reels.map((reelImage, reelIndex) => (
+                <PosterImage
+                  key={reelIndex}
+                  id={`reel-${reelIndex}`}
+                  hoveredKey={hoveredKey}
+                  onHover={setHoveredKey}
+                  src={reelImage}
+                  alt={`Reel ${reelIndex}`}
+                  wrapperClassName=""
+                  anchorClassName="h-[137px] w-full"
+                  zoomOnFocus
+                />
+              ))}
+            </div>
+
+            <div className="mt-4 flex items-center justify-center md:justify-start">
+              <div className="ml-0 md:ml-20 text-center md:text-left relative">
+                <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
+                  Reel thumbnails
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
