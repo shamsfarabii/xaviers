@@ -13,14 +13,33 @@ function PosterImage({
 }) {
   const isHovered = hoveredKey === id;
   const isDimmed = hoveredKey !== null && !isHovered;
+  const hasFrame = Boolean(overlay);
 
   const visibleImageClassName = zoomOnFocus
     ? isHovered
       ? "h-auto w-auto max-h-[120%] max-w-[120%] origin-center scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
       : "h-full w-full origin-center scale-100 object-cover"
     : isHovered
-      ? "h-auto w-auto max-h-full max-w-full scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
+      ? hasFrame
+        ? "block h-auto w-auto max-h-full max-w-full object-contain"
+        : "h-auto w-auto max-h-full max-w-full scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
       : "h-full w-full scale-100 object-cover";
+
+  const frameWrapperClassName = hasFrame
+    ? isHovered
+      ? "relative h-auto w-auto origin-center scale-110 brightness-110 shadow-xl shadow-black/50 transition-[transform,filter,box-shadow] duration-300 ease-out"
+      : "relative h-full w-full origin-center scale-100 transition-[transform,filter,box-shadow] duration-300 ease-out"
+    : "";
+
+  const visibleImage = (
+    <img
+      src={src}
+      alt={alt}
+      className={`${visibleImageClassName} transition-[transform,filter,box-shadow] duration-300 ease-out ${
+        isDimmed ? "blur-[3px] brightness-50" : ""
+      }`}
+    />
+  );
 
   return (
     <div
@@ -38,24 +57,15 @@ function PosterImage({
       />
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <img
-          src={src}
-          alt={alt}
-          className={`${visibleImageClassName} transition-[transform,filter,box-shadow] duration-300 ease-out ${
-            isDimmed ? "blur-[3px] brightness-50" : ""
-          }`}
-        />
+        {hasFrame ? (
+          <div className={frameWrapperClassName}>
+            {visibleImage}
+            <div className="pointer-events-none absolute inset-0 z-10">{overlay}</div>
+          </div>
+        ) : (
+          visibleImage
+        )}
       </div>
-
-      {overlay && (
-        <div
-          className={`absolute inset-0 z-10 pointer-events-none transition-opacity duration-300 ${
-            isHovered ? "opacity-0" : "opacity-100"
-          }`}
-        >
-          {overlay}
-        </div>
-      )}
 
       {isDimmed && (
         <div className="absolute inset-0 bg-black/30 pointer-events-none transition-opacity duration-300" />
