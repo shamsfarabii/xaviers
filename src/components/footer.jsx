@@ -49,12 +49,11 @@ export default function Footer() {
                 alt=""
                 className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <span
-                className="text-lg font-bold tracking-wide text-[#F5EFE2]"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                Xavier <span className="text-[#ff7a3c]">Media</span>
-              </span>
+              <img
+                src="/xavier.png"
+                alt="Xavier Media"
+                className="h-[50px] w-auto object-contain transition-opacity duration-200 hover:opacity-90"
+              />
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#F5EFE2]/60">
               Creative media production — video, reels, and design that tell your story.

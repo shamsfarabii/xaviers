@@ -135,10 +135,14 @@ export default function Posters() {
             </div>
 
             <div className="mt-4 flex items-center relative">
-              <div className="ml-[120px]">
+              <div className="ml-[120px] relative">
                 <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
                   Thumbnails
                 </p>
+                <img
+                  src="/Last.png"
+                  className="absolute top-6 left-0 w-[500px] scale-150"
+                />
               </div>
             </div>
           </div>
@@ -161,10 +165,14 @@ export default function Posters() {
             </div>
 
             <div className="mt-4 flex items-center justify-center md:justify-start">
-              <div className="ml-0 md:ml-12 text-center md:text-left relative">
+              <div className="ml-0 md:ml-12 text-center md:text-left relative ">
                 <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2] relative">
-                  social media poster
+                  Social Media <span className="ml-2">Posters</span>
                 </p>
+                <img
+                  src="/CircleMarkerFinal.png"
+                  className="absolute top-[-27px] right-[-85px] w-[500px] scale-55"
+                />
               </div>
             </div>
           </div>
@@ -196,6 +204,10 @@ export default function Posters() {
                 <p className="font-nanum-pen-script text-3xl md:text-4xl text-[#F5EFE2]">
                   Reel thumbnails
                 </p>
+                <img
+                  src="/Last.png"
+                  className="absolute top-6 left-0 w-[500px] scale-150"
+                />
               </div>
             </div>
           </div>

@@ -60,7 +60,6 @@ export default function Hero() {
           ].join(" ")}
           src="https://xaviers.b-cdn.net/videos/hero-section-video.mp4"
           autoPlay
-          loop
           playsInline
           controls
           preload="auto"
