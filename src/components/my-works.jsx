@@ -3,25 +3,25 @@
 import { useEffect, useRef, useState } from 'react';
 
 const desktopWorkImagePositions = [
-  { left: '15.7%', top: '29.5%', width: '50%' },
-  { left: '37.8%', top: '30.6%', width: '50%' },
-  { left: '59.1%', top: '29.5%', width: '50%' },
-  { left: '81.5%', top: '30.6%', width: '50%' },
-  { left: '14.7%', top: '72.4%', width: '50%' },
-  { left: '37.6%', top: '74.7%', width: '50%' },
-  { left: '58.3%', top: '72.6%', width: '50%' },
-  { left: '82.3%', top: '75.6%', width: '50%' },
+  { left: '15.7%', top: '29.5%', width: '17%' },
+  { left: '37.8%', top: '30.6%', width: '12%' },
+  { left: '59.1%', top: '29.5%', width: '15%' },
+  { left: '81.5%', top: '30.6%', width: '15%' },
+  { left: '14.7%', top: '72.4%', width: '12%' },
+  { left: '37.6%', top: '74.7%', width: '12%' },
+  { left: '58.3%', top: '72.6%', width: '12%' },
+  { left: '82.3%', top: '75.6%', width: '12%' },
 ];
 
 const workImages = [
-  'https://xaviers.b-cdn.net/works/documantary.png',
-  'https://xaviers.b-cdn.net/works/drop%20shipping.png',
-  'https://xaviers.b-cdn.net/works/face_less.png',
-  'https://xaviers.b-cdn.net/works/infotanment.png',
-  'https://xaviers.b-cdn.net/works/podcast.png',
-  'https://xaviers.b-cdn.net/works/tutorial.png',
-  'https://xaviers.b-cdn.net/works/ugc.png',
-  'https://xaviers.b-cdn.net/works/vlog.png',
+  '/works/documantary.png',
+  '/works/drop%20shipping.png',
+  '/works/face_less.png',
+  '/works/infotanment.png',
+  '/works/podcast.png',
+  '/works/tutorial.png',
+  '/works/ugc.png',
+  '/works/vlog.png',
 ];
 
 const AUTO_SLIDE_INTERVAL_MS = 2000;
