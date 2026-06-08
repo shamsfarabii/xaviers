@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
 import useInView from '../hooks/useInView';
-import { Mail, Phone, Send, User } from 'lucide-react';
+import { Loader2, Mail, Phone, Send, User } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaBehance } from 'react-icons/fa';
+
+const SITE_URL = 'https://xaviermediaagency.com';
+const CONTACT_EMAIL = 'hello@xaviermediaagency.com';
 
 export default function Contact() {
     const [sectionRef, isVisible] = useInView();
@@ -12,17 +15,71 @@ export default function Contact() {
         phone: '',
         description: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState('idle');
+    const [submitMessage, setSubmitMessage] = useState('');
 
     const handleInputChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
+        if (submitStatus !== 'idle') {
+            setSubmitStatus('idle');
+            setSubmitMessage('');
+        }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setSubmitMessage('');
+
+        try {
+            const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone || 'Not provided',
+                    message: formData.description || 'No description provided',
+                    _subject: `New contact inquiry from ${formData.name}`,
+                    _template: 'table',
+                    _captcha: 'false',
+                    _next: `${SITE_URL}/#contact`,
+                }),
+            });
+
+            const result = await response.json();
+            const isSuccess = result.success === true || result.success === 'true';
+
+            if (!response.ok || !isSuccess) {
+                throw new Error(result.message || 'Failed to send message. Please try again.');
+            }
+
+            setSubmitStatus('success');
+            setSubmitMessage('Thank you! Your message has been sent. We will get back to you soon.');
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                description: ''
+            });
+        } catch (error) {
+            setSubmitStatus('error');
+            setSubmitMessage(
+                error instanceof Error
+                    ? error.message
+                    : 'Something went wrong. Please try again or email us directly.'
+            );
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -109,12 +166,36 @@ export default function Contact() {
                                         />
                                     </div>
 
+                                    {submitStatus !== 'idle' && (
+                                        <p
+                                            role="status"
+                                            aria-live="polite"
+                                            className={`text-sm rounded-lg px-4 py-3 border ${
+                                                submitStatus === 'success'
+                                                    ? 'text-green-300 border-green-500/40 bg-green-500/10'
+                                                    : 'text-red-300 border-red-500/40 bg-red-500/10'
+                                            }`}
+                                        >
+                                            {submitMessage}
+                                        </p>
+                                    )}
+
                                     <button
                                         type="submit"
-                                        className="w-full relative group bg-[linear-gradient(135deg,#ff7a3c_0%,#ff5a2a_100%)] text-[#F5EFE2] px-8 py-4 rounded-lg font-semibold hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2"
+                                        disabled={isSubmitting}
+                                        className="w-full relative group bg-[linear-gradient(135deg,#ff7a3c_0%,#ff5a2a_100%)] text-[#F5EFE2] px-8 py-4 rounded-lg font-semibold hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:brightness-100"
                                     >
-                                        <Send className="h-5 w-5" />
-                                        SUBMIT
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="h-5 w-5 animate-spin" />
+                                                SENDING...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="h-5 w-5" />
+                                                SUBMIT
+                                            </>
+                                        )}
                                     </button>
                                 </form>
                             </div>
@@ -134,7 +215,12 @@ export default function Contact() {
                                         </div>
                                         <div className='flex flex-col items-start'>
                                             <h3 className="text-lg font-semibold text-[#F5EFE2]">Email</h3>
-                                            <p className="text-gray-300">hello@xaviermediaagency.com</p>
+                                            <a
+                                                href={`mailto:${CONTACT_EMAIL}`}
+                                                className="text-gray-300 hover:text-[#ff7a3c] transition-colors duration-300"
+                                            >
+                                                {CONTACT_EMAIL}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
