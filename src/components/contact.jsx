@@ -172,8 +172,8 @@ export default function Contact() {
                                             aria-live="polite"
                                             className={`text-sm rounded-lg px-4 py-3 border ${
                                                 submitStatus === 'success'
-                                                    ? 'text-green-300 border-green-500/40 bg-green-500/10'
-                                                    : 'text-red-300 border-red-500/40 bg-red-500/10'
+                                                    ? 'text-[#F5EFE2] border-[#ff7a3c]/50 bg-[#ff7a3c]/10'
+                                                    : 'text-[#ff8a4c] border-[#ff7a3c]/30 bg-gray-900/80'
                                             }`}
                                         >
                                             {submitMessage}
