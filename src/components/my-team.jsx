@@ -3,15 +3,23 @@ import React from 'react'
 export default function MyTeam() {
     return (
         <div className='w-full overflow-hidden bg-transparent z-10'>
-            <div className='mx-auto flex w-full max-w-[1440px] flex-col items-center gap-8 px-4 py-14 sm:gap-10 sm:px-6 sm:py-16 md:gap-12 md:px-8 md:py-20 lg:min-h-screen lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-12 lg:py-24 xl:gap-[100px] xl:px-16 relative'>
+            <div className='relative mx-auto flex w-full max-w-[1440px] flex-col items-center gap-8 px-4 py-14 sm:gap-10 sm:px-6 sm:py-16 md:gap-12 md:px-8 md:py-20 lg:min-h-screen lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-12 lg:py-24 xl:gap-[100px] xl:px-16'>
+                <img
+                    src='/camera.png'
+                    alt=''
+                    aria-hidden='true'
+                    className='pointer-events-none absolute left-[-20px] top-[60px] z-10 h-auto w-[clamp(120px,18vw,260px)]'
+                    draggable={false}
+                />
+                <img
+                    src='/flimCard.png'
+                    alt=''
+                    aria-hidden='true'
+                    className='pointer-events-none absolute bottom-[100px] right-[-120px] z-10 h-auto w-[clamp(120px,18vw,260px)]'
+                    draggable={false}
+                />
+
                 <div className='flex w-full max-w-[520px] shrink-0 items-center justify-center sm:max-w-[580px] md:max-w-[640px] lg:max-w-none lg:w-[48%] lg:justify-start'>
-                    <img
-                        src='/camera.png'
-                        alt=''
-                        aria-hidden='true'
-                        className='absolute w-[52vw] left-[-250px] top-[-80px]'
-                        draggable={false}
-                    />
                     <img
                         src='/team.png'
                         alt='Xavier Media team collage'
@@ -45,13 +53,6 @@ export default function MyTeam() {
                         >
                             Our people are our biggest flex at Xavier Media . We&apos;ve brought together a squad of seriously talented content creators and video editors, and with the kind of retention that speaks for itself, you know the culture here is real. Everyone on our team lives and breathes content, from editing and motion graphics to strategy and storytelling. So you get scroll-stopping videos without the back-and-forth stress. We keep things smooth, communication tight, and your content pipeline running like clockwork.
                         </p>
-                        <img
-                        src='/flimCard.png'
-                        alt=''
-                        aria-hidden='true'
-                        className='absolute w-[800px] right-[-450px] bottom-[-100px]'
-                        draggable={false}
-                    />
                     </div>
                 </div>
             </div>
