@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MyTeam() {
     return (
-        <div className='w-full overflow-hidden bg-transparent z-10'>
+        <div className='relative z-10 w-full overflow-visible bg-transparent'>
             <div className='relative mx-auto flex w-full max-w-[1440px] flex-col items-center gap-8 px-4 py-14 sm:gap-10 sm:px-6 sm:py-16 md:gap-12 md:px-8 md:py-20 lg:min-h-screen lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-12 lg:py-24 xl:gap-[100px] xl:px-16'>
                 <img
                     src='/camera.png'
@@ -15,11 +15,11 @@ export default function MyTeam() {
                     src='/flimCard.png'
                     alt=''
                     aria-hidden='true'
-                    className='pointer-events-none absolute bottom-[100px] right-[-120px] z-10 h-auto w-[clamp(120px,18vw,260px)]'
+                    className='pointer-events-none absolute bottom-[100px] right-[-120px] z-40 h-auto w-[clamp(120px,18vw,260px)]'
                     draggable={false}
                 />
 
-                <div className='flex w-full max-w-[520px] shrink-0 items-center justify-center sm:max-w-[580px] md:max-w-[640px] lg:max-w-none lg:w-[48%] lg:justify-start'>
+                <div className='relative z-0 flex w-full max-w-[520px] shrink-0 items-center justify-center sm:max-w-[580px] md:max-w-[640px] lg:max-w-none lg:w-[48%] lg:justify-start'>
                     <img
                         src='/team.png'
                         alt='Xavier Media team collage'
@@ -28,7 +28,7 @@ export default function MyTeam() {
                     />
                 </div>
 
-                <div className='flex w-full flex-col items-center justify-center text-center text-[#F5EFE2] lg:w-[52%] lg:items-start lg:text-left'>
+                <div className='relative z-0 flex w-full flex-col items-center justify-center text-center text-[#F5EFE2] lg:w-[52%] lg:items-start lg:text-left'>
                     <div className='w-full max-w-[700px] lg:max-w-none'>
                         <h2
                             className='m-0 uppercase leading-[1.05] tracking-[-0.03em]'

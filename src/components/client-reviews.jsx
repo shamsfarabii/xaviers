@@ -2,41 +2,84 @@ import SectionHeading from "./ui/SectionHeading";
 
 const reviews = [
   {
-    initials: "SJ",
-    name: "Sarah Johnson",
-    role: "Brand Owner",
-    comment:
-      "Xavier's content creation is absolutely phenomenal. The quality and creativity exceeded all my expectations.",
+    src: "/review1.png",
+    alt: "Client review — 5.0 stars: A S M Nafis has been amazing to work with. His work ethic, creativity, and commitment were outstanding.",
   },
   {
-    initials: "MC",
-    name: "Michael Chen",
-    role: "Marketing Lead",
-    comment:
-      "Working with Xavier was a game-changer for our brand. The video content drove amazing engagement.",
+    src: "/review2.png",
+    alt: "Client review — 5.0 stars, Jun 25 2024: Working with ASM Nafis has been awesome. Professional, adaptable, and knowledgeable video editor.",
   },
   {
-    initials: "ER",
-    name: "Emily Rodriguez",
-    role: "Creative Director",
-    comment:
-      "Professional, creative, and always on time. Xavier's work speaks for itself with outstanding quality.",
-  },
-  {
-    initials: "DT",
-    name: "David Thompson",
-    role: "Founder",
-    comment:
-      "The storytelling and visual quality is next level. Xavier transformed our vision into something incredible.",
+    src: "/review3.png",
+    alt: "Client review — 5.0 stars: A S M Nafis has been awesome. Endorsed for Committed to Quality and Collaborative.",
   },
 ];
 
+const marqueeReviews = [...reviews, ...reviews];
+
+const ReviewCard = ({ review, index, layout = "marquee" }) => (
+  <article
+    className={`relative flex flex-col overflow-hidden rounded-[24px] border-2 border-[rgba(255,122,60,0.45)] bg-[#fafafa] shadow-[0_24px_64px_rgba(0,0,0,0.45),0_0_24px_rgba(255,122,60,0.12)] ${
+      layout === "marquee" ? "w-[min(88vw,760px)] shrink-0" : "w-full"
+    }`}
+  >
+    <div className="flex items-center justify-between gap-4 border-b border-[#ececec] px-6 py-4 max-[640px]:px-4 max-[640px]:py-3">
+      <div className="flex items-center gap-3">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] text-sm font-black text-white shadow-[0_8px_20px_rgba(255,122,60,0.35)]">
+          {index + 1}
+        </span>
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#8a8a8a]">
+            Verified Client Review
+          </p>
+          <p className="text-sm font-extrabold text-[#1a1a1a]">Client&apos;s review</p>
+        </div>
+      </div>
+
+      <div className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[rgba(255,122,60,0.1)] px-3.5 py-1.5">
+        <span className="text-[13px] tracking-[1px] text-[#ff7a3c]">★★★★★</span>
+        <span className="text-sm font-extrabold text-[#ff7a3c]">5.0</span>
+      </div>
+    </div>
+
+    <div className="flex items-center justify-center bg-[#f5f5f5] px-8 py-10 max-[640px]:px-5 max-[640px]:py-7">
+      <img
+        src={review.src}
+        alt={review.alt}
+        className={`mx-auto w-full rounded-[12px] object-contain [image-rendering:-webkit-optimize-contrast] ${
+          layout === "marquee" ? "min-w-[620px] max-w-none max-[640px]:min-w-0" : ""
+        }`}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </article>
+);
+
 const ClientReviews = () => {
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent px-5 py-10 font-[Inter,Arial,sans-serif] text-[#F5EFE2] max-[640px]:items-start max-[640px]:px-4 max-[640px]:py-8">
-      <section className="relative z-[1] w-full max-w-[1180px]">
-        <div className="mx-auto mb-[54px] max-w-[980px] text-center max-[640px]:mb-[34px]">
-        <div
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-transparent px-0 py-16 font-[Inter,Arial,sans-serif] text-[#F5EFE2] max-[640px]:py-10">
+      <style>{`
+        @keyframes review-marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+
+        @media (min-width: 641px) {
+          .review-marquee-track {
+            animation: review-marquee 36s linear infinite;
+            will-change: transform;
+          }
+
+          .review-marquee:hover .review-marquee-track {
+            animation-play-state: paused;
+          }
+        }
+      `}</style>
+
+      <section className="relative z-[1] w-full">
+        <div className="mx-auto mb-16 max-w-[980px] px-5 text-center max-[640px]:mb-10 max-[640px]:px-4">
+          <div
             className="
     mb-6 inline-flex items-center gap-2 rounded-full
     border border-[rgba(255,122,60,0.26)]
@@ -57,7 +100,6 @@ const ClientReviews = () => {
             Client Stories
           </div>
 
-
           <SectionHeading primary="People don't just hire us." noWrap secondary="They trust us" />
 
           <p className="mt-[30px] mx-auto text-[13px] uppercase leading-[1.7] tracking-[9px] text-[#6f7890] max-[660px]:text-[11px]">
@@ -65,40 +107,26 @@ const ClientReviews = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 min-[641px]:grid-cols-2 min-[1051px]:grid-cols-4">
-          {reviews.map((review) => (
-            <article
-              key={review.initials}
-              className="group relative flex min-h-[360px] flex-col overflow-hidden rounded-[28px] border border-white/[0.09] bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-[26px] transition duration-300 ease-in-out after:absolute after:inset-x-[-30%] after:bottom-[-50%] after:h-[180px] after:bg-[radial-gradient(ellipse_at_center,rgba(255,122,60,0.09),transparent_72%)] after:opacity-0 after:transition after:duration-300 hover:-translate-y-2 hover:border-[rgba(255,122,60,0.22)] hover:shadow-[0_28px_80px_rgba(0,0,0,0.35)] hover:after:opacity-100 max-[640px]:min-h-0"
-            >
-              <div className="absolute right-6 top-[22px] text-[70px] font-black leading-none text-[#F5EFE2]/[0.08]">
-                “
-              </div>
-
-              <div className="relative z-[1] mb-[30px] flex items-center gap-3.5">
-                <div className="flex h-[58px] w-[58px] items-center justify-center rounded-[18px] bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] font-black text-[#F5EFE2] shadow-[0_16px_34px_rgba(255,122,60,0.24)]">
-                  {review.initials}
-                </div>
-
-                <div>
-                  <h3 className="mb-[5px] text-lg font-extrabold">
-                    {review.name}
-                  </h3>
-                  <span className="text-[13px] text-[#8f8f8f]">
-                    {review.role}
-                  </span>
-                </div>
-              </div>
-
-              <p className="relative z-[1] mb-[30px] text-[15px] leading-[1.75] text-[#d7d7d7]">
-                {review.comment}
-              </p>
-
-              <div className="relative z-[1] mt-auto inline-flex w-fit gap-1 rounded-full bg-[rgba(255,122,60,0.1)] px-3 py-[9px] text-[13px] tracking-[1px] text-[#ff8a4c]">
-                ★★★★★
-              </div>
-            </article>
+        <div className="mx-auto flex max-w-[640px] flex-col gap-6 px-4 min-[641px]:hidden">
+          {reviews.map((review, index) => (
+            <ReviewCard key={review.src} review={review} index={index} layout="static" />
           ))}
+        </div>
+
+        <div className="review-marquee relative hidden w-full overflow-hidden py-2 min-[641px]:block">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-48 bg-[linear-gradient(to_right,#050302_0%,rgba(5,3,2,0.92)_18%,rgba(5,3,2,0.65)_42%,rgba(5,3,2,0.28)_68%,transparent_100%)] min-[901px]:w-56" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-48 bg-[linear-gradient(to_left,#050302_0%,rgba(5,3,2,0.92)_18%,rgba(5,3,2,0.65)_42%,rgba(5,3,2,0.28)_68%,transparent_100%)] min-[901px]:w-56" />
+
+          <div className="review-marquee-track flex w-max items-stretch gap-10 px-8">
+            {marqueeReviews.map((review, index) => (
+              <ReviewCard
+                key={`${review.src}-${index}`}
+                review={review}
+                index={index % reviews.length}
+                layout="marquee"
+              />
+            ))}
+          </div>
         </div>
       </section>
     </main>

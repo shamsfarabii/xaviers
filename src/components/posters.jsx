@@ -1,5 +1,18 @@
 import { useState } from "react";
 
+const FRAME_OVERLAY_SIZE = "104%";
+
+function WhiteboxFrame() {
+  return (
+    <img
+      src="/whitebox.png"
+      alt=""
+      aria-hidden="true"
+      className="block h-full w-full object-fill"
+    />
+  );
+}
+
 function PosterImage({
   id,
   hoveredKey,
@@ -15,20 +28,25 @@ function PosterImage({
   const isDimmed = hoveredKey !== null && !isHovered;
   const hasFrame = Boolean(overlay);
 
+  const framedImageClassName =
+    "block h-auto w-auto max-h-full max-w-full object-contain";
+
   const visibleImageClassName = zoomOnFocus
     ? isHovered
       ? "h-auto w-auto max-h-[120%] max-w-[120%] origin-center scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
       : "h-full w-full origin-center scale-100 object-cover"
     : isHovered
       ? hasFrame
-        ? "block h-auto w-auto max-h-full max-w-full object-contain"
+        ? framedImageClassName
         : "h-auto w-auto max-h-full max-w-full scale-110 object-contain brightness-110 shadow-xl shadow-black/50"
-      : "h-full w-full scale-100 object-cover";
+      : hasFrame
+        ? framedImageClassName
+        : "h-full w-full scale-100 object-cover";
 
   const frameWrapperClassName = hasFrame
     ? isHovered
-      ? "relative h-auto w-auto origin-center scale-110 brightness-110 shadow-xl shadow-black/50 transition-[transform,filter,box-shadow] duration-300 ease-out"
-      : "relative h-full w-full origin-center scale-100 transition-[transform,filter,box-shadow] duration-300 ease-out"
+      ? "relative inline-block h-auto w-auto max-h-full max-w-full origin-center scale-110 brightness-110 shadow-xl shadow-black/50 transition-[transform,filter,box-shadow] duration-300 ease-out"
+      : "relative inline-block h-auto w-auto max-h-full max-w-full origin-center scale-100 transition-[transform,filter,box-shadow] duration-300 ease-out"
     : "";
 
   const visibleImage = (
@@ -44,7 +62,7 @@ function PosterImage({
   return (
     <div
       className={`relative w-full ${wrapperClassName} ${
-        isHovered ? "z-30 overflow-visible" : "z-0 overflow-hidden"
+        isHovered || hasFrame ? "z-30 overflow-visible" : "z-0 overflow-hidden"
       }`}
       onMouseEnter={() => onHover(id)}
     >
@@ -60,7 +78,15 @@ function PosterImage({
         {hasFrame ? (
           <div className={frameWrapperClassName}>
             {visibleImage}
-            <div className="pointer-events-none absolute inset-0 z-10">{overlay}</div>
+            <div
+              className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-visible"
+              style={{
+                width: FRAME_OVERLAY_SIZE,
+                height: FRAME_OVERLAY_SIZE,
+              }}
+            >
+              {overlay}
+            </div>
           </div>
         ) : (
           visibleImage
@@ -98,7 +124,7 @@ export default function Posters() {
         >
           {/* Left Column – Thumbnails */}
           <div className="flex flex-col h-full overflow-visible">
-            <div className="flex-1 flex flex-col gap-2 overflow-visible md:min-h-0 md:justify-center">
+            <div className="flex-1 flex flex-col gap-4 overflow-visible md:min-h-0 md:justify-center">
               <PosterImage
                 id="thumbnail-0"
                 hoveredKey={hoveredKey}
@@ -107,13 +133,7 @@ export default function Posters() {
                 alt="Thumbnail 1"
                 wrapperClassName="aspect-video"
                 anchorClassName="h-full w-full"
-                overlay={
-                  <img
-                    src="/whitebox.png"
-                    alt=""
-                    className="h-full w-full"
-                  />
-                }
+                overlay={<WhiteboxFrame />}
               />
 
               <PosterImage
@@ -124,13 +144,7 @@ export default function Posters() {
                 alt="Thumbnail 2"
                 wrapperClassName="aspect-video"
                 anchorClassName="h-full w-full"
-                overlay={
-                  <img
-                    src="/whitebox.png"
-                    alt=""
-                    className="h-full w-full"
-                  />
-                }
+                overlay={<WhiteboxFrame />}
               />
             </div>
 
