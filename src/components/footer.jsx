@@ -43,7 +43,7 @@ export default function Footer() {
       <div className="container mx-auto min-w-0 px-4 sm:px-6 lg:px-8 py-12 pb-[max(3rem,env(safe-area-inset-bottom))]">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#home" className="inline-flex items-center gap-3 group">
+            <a href="#home" className="inline-flex items-center gap-0.5 group">
               <img
                 src="/logo.png"
                 alt=""

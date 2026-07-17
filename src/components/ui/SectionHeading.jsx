@@ -6,7 +6,9 @@ const accentClass =
 const italicClass = "inline-block -skew-x-6 [font-style:italic]";
 
 export default function SectionHeading({ primary, secondary, as: Tag = "h2", noWrap = false }) {
-  const primaryFinal = noWrap ? `${primaryClass} whitespace-nowrap` : primaryClass;
+  const primaryFinal = noWrap
+    ? `${primaryClass} whitespace-normal min-[641px]:whitespace-nowrap`
+    : primaryClass;
   return (
     <Tag className={headingClass}>
       <span className={primaryFinal}>{primary}</span>

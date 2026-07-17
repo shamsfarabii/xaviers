@@ -23,25 +23,6 @@ const ReviewCard = ({ review, index, layout = "marquee" }) => (
       layout === "marquee" ? "w-[min(88vw,760px)] shrink-0" : "w-full"
     }`}
   >
-    <div className="flex items-center justify-between gap-4 border-b border-[#ececec] px-6 py-4 max-[640px]:px-4 max-[640px]:py-3">
-      <div className="flex items-center gap-3">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff7a3c,#ff3f3f)] text-sm font-black text-white shadow-[0_8px_20px_rgba(255,122,60,0.35)]">
-          {index + 1}
-        </span>
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#8a8a8a]">
-            Verified Client Review
-          </p>
-          <p className="text-sm font-extrabold text-[#1a1a1a]">Client&apos;s review</p>
-        </div>
-      </div>
-
-      <div className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[rgba(255,122,60,0.1)] px-3.5 py-1.5">
-        <span className="text-[13px] tracking-[1px] text-[#ff7a3c]">★★★★★</span>
-        <span className="text-sm font-extrabold text-[#ff7a3c]">5.0</span>
-      </div>
-    </div>
-
     <div className="flex items-center justify-center bg-[#f5f5f5] px-8 py-10 max-[640px]:px-5 max-[640px]:py-7">
       <img
         src={review.src}
